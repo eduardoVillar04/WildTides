@@ -6,6 +6,11 @@ public class GustOfWindController : MonoBehaviour
 {
     public float m_GustForce;
 
+    private void Start()
+    {
+        Invoke("DestroyThisObject", 5f);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         //Checks if other obkect is enemy to move it, might have to be changed if we continue development
@@ -15,9 +20,8 @@ public class GustOfWindController : MonoBehaviour
             
             //We use impulse to add more or less force depending on mass of the object
             m_EnemyRB.AddForce(transform.forward * m_GustForce, ForceMode.Impulse);
+            Destroy(gameObject);
         }
-
-        Invoke("DestroyThisObject", 5f);
     }
 
     public void DestroyThisObject()

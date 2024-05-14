@@ -12,6 +12,7 @@ public class CannonController : MonoBehaviour
     public GameObject m_Projectile;
     public Transform m_CannonEndPoint;
     public float m_ProjectileSpeed;
+    public float m_RecoilFroce;
 
     [Header("CONTROL VARIABLES")]
     public float m_ShootCooldown;
@@ -19,13 +20,15 @@ public class CannonController : MonoBehaviour
     public bool m_ShootIsPressed;
     public GameObject m_CannonCamera;
 
-    [Header("INPUT VARIABLES")]
+    [Header("COMPONENTS")]
     public PlayerInput m_PlayerInput;
+    public Rigidbody m_Rigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
         m_PlayerInput = GetComponent<PlayerInput>();
+        m_Rigidbody = GetComponent<Rigidbody>();
         m_ShootColdowntimer = Time.time + 0.1f;
     }
 
@@ -55,11 +58,15 @@ public class CannonController : MonoBehaviour
         //And give it force 
         Rigidbody projectileRB = projectile.GetComponent<Rigidbody>();
         projectileRB.AddForce(projectile.transform.forward * m_ProjectileSpeed, ForceMode.VelocityChange);
+
+        Recoil();
     }
 
     public void Recoil()
     {
-
+        //After each attack, the boat will suffer knockback from the shot
+        Vector3 direction = transform.position - m_CannonEndPoint.position;
+        m_Rigidbody.AddForce(direction * m_RecoilFroce, ForceMode.Impulse);
     }
 
 }

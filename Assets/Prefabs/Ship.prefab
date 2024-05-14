@@ -311,10 +311,12 @@ MonoBehaviour:
   m_Projectile: {fileID: 7707442352019119470, guid: b53d0d7112e463e44a03778227afb6db, type: 3}
   m_CannonEndPoint: {fileID: 8354490320861730430}
   m_ProjectileSpeed: 25
+  m_RecoilFroce: 5
   m_ShootCooldown: 1
   m_ShootIsPressed: 0
   m_CannonCamera: {fileID: 7043638213741916078}
   m_PlayerInput: {fileID: 0}
+  m_Rigidbody: {fileID: 0}
 --- !u!114 &-3160034399767500232
 MonoBehaviour:
   m_ObjectHideFlags: 0

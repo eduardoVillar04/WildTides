@@ -14,7 +14,7 @@ public class ExplosionController : MonoBehaviour
 
         //And send back whatever entered the explosion
         Vector3 direction = other.transform.position - transform.position;
-        other.GetComponent<Rigidbody>().AddForce(direction * m_BlastForce, ForceMode.Impulse);
+        other.GetComponent<Rigidbody>().AddForce(direction.normalized * m_BlastForce, ForceMode.Impulse);
 
         //After 0.2s, we destroy the explosion
         Invoke("DestroyThisObject", 0.2f);

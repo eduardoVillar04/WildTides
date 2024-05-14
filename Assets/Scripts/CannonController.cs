@@ -57,4 +57,9 @@ public class CannonController : MonoBehaviour
         projectileRB.AddForce(projectile.transform.forward * m_ProjectileSpeed, ForceMode.VelocityChange);
     }
 
+    public void Recoil()
+    {
+
+    }
+
 }

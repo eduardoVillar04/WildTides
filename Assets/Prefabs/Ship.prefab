@@ -109,9 +109,10 @@ GameObject:
   - component: {fileID: 7870577572351835943}
   - component: {fileID: 3361039281036345690}
   - component: {fileID: 5187241450053577951}
+  - component: {fileID: -3160034399767500232}
   m_Layer: 0
   m_Name: Ship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,7 +223,7 @@ MonoBehaviour:
   m_MaxSpeed: 20
   m_RotationSpeed: 300
   m_MaxRotationSpeed: 30
-  m_RotationDamping: 1
+  m_RotationDamping: 1.5
 --- !u!54 &3045488769620642188
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -231,7 +232,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2946949973777413602}
   serializedVersion: 4
-  m_Mass: 1000
+  m_Mass: 1
   m_Drag: 1
   m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -309,11 +310,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Projectile: {fileID: 7707442352019119470, guid: b53d0d7112e463e44a03778227afb6db, type: 3}
   m_CannonEndPoint: {fileID: 8354490320861730430}
-  m_ProjectileSpeed: 50
+  m_ProjectileSpeed: 25
   m_ShootCooldown: 1
   m_ShootIsPressed: 0
   m_CannonCamera: {fileID: 7043638213741916078}
   m_PlayerInput: {fileID: 0}
+--- !u!114 &-3160034399767500232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2946949973777413602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54a50f7a35575db47a39aea8166cd374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HealthPoints: 100
+  m_IsDead: 0
 --- !u!1 &7043638213741916078
 GameObject:
   m_ObjectHideFlags: 0

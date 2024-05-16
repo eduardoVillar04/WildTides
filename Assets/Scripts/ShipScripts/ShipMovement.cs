@@ -7,7 +7,6 @@ public class ShipMovement : MonoBehaviour
 {
     public PlayerInput m_PlayerInput;
 
-    private bool m_ShootPressed = false;
     public Vector2 m_MoveInput = Vector2.zero;
 
     [Header("VELOCITY VARIABLES")]

@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: e9ec7bd7681d1a8469df2fdd4678140e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - soundFXObject: {fileID: 5319170952045037786, guid: 16734950cbc1d854584f18bd1d4f442c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

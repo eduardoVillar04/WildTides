@@ -13,6 +13,10 @@ public class HealthController : MonoBehaviour
         {
             m_IsDead = true;
         }
+        else
+        {
+            m_IsDead = false;
+        }
     }
 
 

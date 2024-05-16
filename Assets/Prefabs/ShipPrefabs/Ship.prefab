@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Camera: {fileID: 6986420393445757807}
   m_Sensitivity: 1
   m_ShipTransform: {fileID: 4999727259808342519}
-  m_MouseDirection: 0
+  m_CameraDirection: 0
   m_PlayerInput: {fileID: 3361039281036345690}
 --- !u!1 &2946949973777413602
 GameObject:
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerInput: {fileID: 0}
   m_MoveInput: {x: 0, y: 0}
-  m_Speed: 500
+  m_Acceleration: 500
   m_MaxSpeed: 20
   m_RotationSpeed: 300
   m_MaxRotationSpeed: 30

@@ -9,7 +9,7 @@ public class MainCameraController : MonoBehaviour
     public Camera m_Camera;
     public float m_Sensitivity;
     public Transform m_ShipTransform;
-    public float m_MouseDirection;
+    public float m_CameraDirection;
     public PlayerInput m_PlayerInput;
 
 
@@ -26,8 +26,12 @@ public class MainCameraController : MonoBehaviour
         //if player isnt moving with a controller, move the camera with the mouse, else do it with the controller
         if (m_PlayerInput.actions["Look"].ReadValue<Vector2>().x != 0)
         {
-            m_MouseDirection = Input.GetAxis("Mouse X");
-            m_Camera.transform.RotateAround(m_ShipTransform.position, Vector3.up, 500 * m_MouseDirection * m_Sensitivity * Time.deltaTime);
+            m_CameraDirection = m_PlayerInput.actions["Look"].ReadValue<Vector2>().x;
+
+            //We clamp the value between -1 / 1 to have consistency between platforms
+            m_CameraDirection = Mathf.Clamp(m_CameraDirection, -1, 1);
+
+            m_Camera.transform.RotateAround(m_ShipTransform.position, Vector3.up, 500 * m_CameraDirection * m_Sensitivity * Time.deltaTime);
         }
 
     }

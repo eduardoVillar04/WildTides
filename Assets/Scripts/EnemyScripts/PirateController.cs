@@ -10,10 +10,12 @@ public class PirateController : MonoBehaviour
     public int m_Damage;
 
     [Header("PURSUIT VARIABLES")]
-    public float m_Speed;
+    public bool m_PlayerInView;
 
     [Header("NAVIGATION VARIABLES")]
-    public Transform m_ReturnPoint;
+    public Vector3 m_ReturnPoint;
+    public float m_TimeBetweenSetDestination;
+    private float m_RerouteTimer;
 
     [Header("COMPONENTS")]
     public SphereCollider m_VisionSphere;
@@ -38,17 +40,18 @@ public class PirateController : MonoBehaviour
         m_VisionSphere = GetComponent<SphereCollider>();
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
 
+        //We find the player transforms by searching it with the tag
+        m_PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
         m_MaxLife = m_HealthController.m_HealthPoints;
 
         //The return point for the pirate will be wherever it spawns
-        m_ReturnPoint = transform;
+        m_ReturnPoint = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float dt = Time.deltaTime;
-
         if (m_HealthController.m_IsDead) m_CurrentState = PirateStates.RETURN_TO_POINT;
 
         switch (m_CurrentState)
@@ -69,19 +72,26 @@ public class PirateController : MonoBehaviour
     public void CheckingForPlayer()
     {
         m_NavMeshAgent.isStopped = true;
+
+        if (m_PlayerInView) m_CurrentState = PirateStates.PURSUING;
     }
 
     public void Pursuit()
     {
         m_NavMeshAgent.isStopped = false;
-        m_NavMeshAgent.SetDestination(m_PlayerTransform.position);
+
+        if(Time.time > m_RerouteTimer) 
+        {
+            m_NavMeshAgent.SetDestination(m_PlayerTransform.position);
+            m_RerouteTimer = Time.time + m_TimeBetweenSetDestination;
+        }
     }
 
 
     public void ReturnToPoint()
     {
         m_NavMeshAgent.isStopped = false;
-        m_NavMeshAgent.SetDestination(m_ReturnPoint.position);
+        m_NavMeshAgent.SetDestination(m_ReturnPoint);
 
         if(m_NavMeshAgent.remainingDistance < 0.1f)
         {
@@ -95,7 +105,7 @@ public class PirateController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            m_CurrentState = PirateStates.PURSUING;
+            m_PlayerInView = true;
         }
     }
 
@@ -103,6 +113,7 @@ public class PirateController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            m_PlayerInView = false;
             m_CurrentState = PirateStates.RETURN_TO_POINT;
         }
     }

@@ -10,7 +10,7 @@ public class ShipMovement : MonoBehaviour
     public Vector2 m_MoveInput = Vector2.zero;
 
     [Header("VELOCITY VARIABLES")]
-    public float m_Speed;
+    public float m_Acceleration;
     public float m_MaxSpeed;
 
     [Header("ROTATION VARIABLES")]
@@ -49,7 +49,7 @@ public class ShipMovement : MonoBehaviour
         //Make the velocity of the ship not go above maximum
         m_Rigidbody.velocity = Vector3.ClampMagnitude(m_Rigidbody.velocity, m_MaxSpeed);
         
-        Vector3 movement = transform.forward * forwardMovement * m_Speed * dt;
+        Vector3 movement = transform.forward * forwardMovement * m_Acceleration * dt;
         m_Rigidbody.AddForce(movement);
 
     }

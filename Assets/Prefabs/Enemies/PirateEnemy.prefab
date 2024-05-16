@@ -186,12 +186,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MaxLife: 0
   m_Damage: 0
-  m_Speed: 0
-  m_ReturnPoint: {fileID: 0}
+  m_PlayerInView: 0
+  m_ReturnPoint: {x: 0, y: 0, z: 0}
+  m_TimeBetweenSetDestination: 0.2
   m_VisionSphere: {fileID: 0}
   m_HealthController: {fileID: 0}
   m_NavMeshAgent: {fileID: 0}
-  m_PlayerTransform: {fileID: 4999727259808342519, guid: 32d8a575b6133b840ab0b7687b6c4bdf, type: 3}
+  m_PlayerTransform: {fileID: 0}
   m_CurrentState: 0
 --- !u!195 &5308369281125840235
 NavMeshAgent:
@@ -203,13 +204,13 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.50000006
-  m_Speed: 3.5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 0.99999994
   m_BaseOffset: 0.49999997

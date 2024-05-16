@@ -1856,7 +1856,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 663.1301, y: 332.0511}
+  m_SizeDelta: {x: 710.8276, y: 358.765}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3963953260257244886
 CanvasRenderer:
@@ -3296,7 +3296,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5722454851189270061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa355c0ad898651438b465b030803648, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f3beadac748f394e815d7bfae8300f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5945802638528997130
@@ -3411,7 +3411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2523707712348856866}
   - component: {fileID: 8752090211955887468}
-  - component: {fileID: 5642601608917958941}
+  - component: {fileID: -7802520353354027503}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -3452,7 +3452,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5968558260690887962}
   m_CullTransparentMesh: 1
---- !u!114 &5642601608917958941
+--- !u!114 &-7802520353354027503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3461,7 +3461,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5968558260690887962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5de0b8b29762664db18e1afa18e365a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4150361ce9237a64ba511dc611723eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 2118731892bcee94fafdee7c9a15df08, type: 2}

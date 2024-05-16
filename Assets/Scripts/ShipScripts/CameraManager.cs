@@ -20,7 +20,8 @@ public class CameraManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_PlayerInput.actions["ChangeCamera"].IsPressed())
+        //We change the camera if the action button is pressed and if the game is not paused
+        if (m_PlayerInput.actions["ChangeCamera"].IsPressed() && Time.timeScale != 0)
         {
             m_MainCamera.gameObject.SetActive(false);
             m_CannonCamera.gameObject.SetActive(true);

@@ -11,6 +11,11 @@ public class PirateController : MonoBehaviour
 
     [Header("PURSUIT VARIABLES")]
     public bool m_PlayerInView;
+    public Transform m_Patrol;
+    public Transform[] m_AllTargetPoints;
+    public int m_CurrentTargetPointIndex = 0;
+    public Transform m_CurrentTargetPoint;
+    public bool m_IsPatrolingPirate;
 
     [Header("NAVIGATION VARIABLES")]
     public Vector3 m_ReturnPoint;
@@ -46,7 +51,25 @@ public class PirateController : MonoBehaviour
         m_MaxLife = m_HealthController.m_HealthPoints;
 
         //The return point for the pirate will be wherever it spawns
-        m_ReturnPoint = transform.position;
+
+        //If the patrol transform is null, an exception will be thrown
+        try
+        {
+            //We put all the patrol points into a list
+            m_AllTargetPoints = new Transform[m_Patrol.childCount];
+            for (int i = 0; i < m_AllTargetPoints.Length; i++)
+            {
+                m_AllTargetPoints[i] = m_Patrol.GetChild(i);
+            }
+            m_CurrentTargetPoint = m_AllTargetPoints[m_CurrentTargetPointIndex];
+            m_IsPatrolingPirate = true;
+        }
+        catch (System.Exception)
+        {
+            m_IsPatrolingPirate = false;
+            m_ReturnPoint = transform.position;
+        }
+
     }
 
     // Update is called once per frame
@@ -54,20 +77,28 @@ public class PirateController : MonoBehaviour
     {
         if (m_HealthController.m_IsDead) m_CurrentState = PirateStates.RETURN_TO_POINT;
 
-        switch (m_CurrentState)
+        if(!m_IsPatrolingPirate)
         {
-            case PirateStates.CHECKING_FOR_PLAYER:
-                CheckingForPlayer();
-                break;
-            case PirateStates.PURSUING:
-                Pursuit();
-                break;
-            case PirateStates.RETURN_TO_POINT:
-                ReturnToPoint();
-                break;
-            default:
-                break;
+            switch (m_CurrentState)
+            {
+                case PirateStates.CHECKING_FOR_PLAYER:
+                    CheckingForPlayer();
+                    break;
+                case PirateStates.PURSUING:
+                    Pursuit();
+                    break;
+                case PirateStates.RETURN_TO_POINT:
+                    ReturnToPoint();
+                    break;
+                default:
+                    break;
+            }
         }
+        else
+        {
+
+        }
+
     }
     public void CheckingForPlayer()
     {

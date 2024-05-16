@@ -27,7 +27,7 @@ public class MainCameraController : MonoBehaviour
         if (m_PlayerInput.actions["Look"].ReadValue<Vector2>().x != 0)
         {
             m_MouseDirection = Input.GetAxis("Mouse X");
-            m_Camera.transform.RotateAround(m_ShipTransform.position, Vector3.up, m_MouseDirection * m_Sensitivity * Time.deltaTime);
+            m_Camera.transform.RotateAround(m_ShipTransform.position, Vector3.up, 500 * m_MouseDirection * m_Sensitivity * Time.deltaTime);
         }
 
     }

@@ -105,11 +105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0532f594fd88ba94dab99efa7ec6fa18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Camera: {fileID: 0}
-  m_Sensitivity: 0
+  m_Camera: {fileID: 6986420393445757807}
+  m_Sensitivity: 1
   m_ShipTransform: {fileID: 4999727259808342519}
   m_MouseDirection: 0
-  m_PlayerInput: {fileID: 0}
+  m_PlayerInput: {fileID: 3361039281036345690}
 --- !u!1 &2946949973777413602
 GameObject:
   m_ObjectHideFlags: 0

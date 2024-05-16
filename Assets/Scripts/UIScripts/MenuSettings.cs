@@ -9,6 +9,8 @@ public class MenuSettings : MonoBehaviour
 
     public TMPro.TMP_Dropdown resolutionDropdown;
 
+    public static Singleton player_Sensitivity;
+
     Resolution[] resolutions;
     void Start()
     {
@@ -45,6 +47,11 @@ public class MenuSettings : MonoBehaviour
         audioMixer.SetFloat("volume", volume);
     }
 
+    public void SetSensitivity(float sensitivity)
+    {
+        player_Sensitivity = sensitivity;
+    }
+
     public void SetQuality (int qualityIndex)
     {
         switch(qualityIndex)
@@ -75,3 +82,5 @@ public class MenuSettings : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 }
+
+

@@ -65,4 +65,13 @@ public class MenuSettings : MonoBehaviour
         Screen.fullScreen = isFullScreen;
     }
 
+    private void OnEnable()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    private void OnDisable()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 }

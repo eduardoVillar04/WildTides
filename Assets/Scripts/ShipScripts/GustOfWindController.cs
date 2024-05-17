@@ -21,7 +21,13 @@ public class GustOfWindController : MonoBehaviour
 
             //If the enemy has a healthcontroller, remove 1 point of life
             if (other.gameObject.GetComponent<HealthController>()) other.gameObject.GetComponent<HealthController>().DealDamage(1);
-
+            
+            //If the target is a pirate, we make it pursue the player no matter the distance
+            if (other.gameObject.GetComponent<PirateController>())
+            {
+                other.gameObject.GetComponent<PirateController>().m_CurrentState = PirateController.PirateStates.PURSUING;
+            }
+            
             //We use impulse to add more or less force depending on mass of the object
             m_EnemyRB.AddForce(transform.forward * m_GustForce, ForceMode.Impulse);
             Destroy(gameObject);

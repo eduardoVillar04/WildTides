@@ -13,7 +13,10 @@ public class DockController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            other.gameObject.GetComponent<RespawnController>().m_Checkpoint = transform.position;
+
             //TODO: Give next dock location to compass
+            
             m_NextDock.gameObject.SetActive(true);
             gameObject.SetActive(false);
         }

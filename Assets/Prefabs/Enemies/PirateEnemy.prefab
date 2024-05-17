@@ -185,8 +185,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaxLife: 0
-  m_Damage: 0
+  m_Damage: 1
+  m_Patrol: {fileID: 0}
   m_PlayerInView: 0
+  m_AllTargetPoints: []
+  m_CurrentTargetPointIndex: 0
+  m_CurrentTargetPoint: {fileID: 0}
+  m_IsPatrolingPirate: 0
   m_ReturnPoint: {x: 0, y: 0, z: 0}
   m_TimeBetweenSetDestination: 0.2
   m_VisionSphere: {fileID: 0}

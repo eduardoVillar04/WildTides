@@ -2464,6 +2464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 404503587388152810}
+  - component: {fileID: 8458753260521925246}
   m_Layer: 5
   m_Name: PauseOptionsMenu
   m_TagString: Untagged
@@ -2497,6 +2498,19 @@ RectTransform:
   m_AnchoredPosition: {x: -34, y: 16.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8458753260521925246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3914905768503526404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabd4c2c5dc011648b9ec49e35c17848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstButton: {fileID: 4483918933860519838}
 --- !u!1 &4236277896194409261
 GameObject:
   m_ObjectHideFlags: 0
@@ -3299,6 +3313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3beadac748f394e815d7bfae8300f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstButton: {fileID: 0}
 --- !u!1 &5945802638528997130
 GameObject:
   m_ObjectHideFlags: 0
@@ -3459,6 +3474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d31e0322ae21c6499174f7e12831d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstButton: {fileID: 1481443688251614854}
   pauseMenuUI: {fileID: 8698629707612364069}
   pauseMainMenu: {fileID: 5722454851189270061}
   pauseOptionsMenu: {fileID: 3914905768503526404}

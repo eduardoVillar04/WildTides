@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CannonCamera : MonoBehaviour
 {
+    public GameObject m_Sails;
+
     public float Sensitivity
     {
         get { return sensitivity; }
@@ -31,5 +33,15 @@ public class CannonCamera : MonoBehaviour
         var yQuat = Quaternion.AngleAxis(rotation.y, Vector3.left);
 
         transform.localRotation = xQuat * yQuat; //Quaternions seem to rotate more consistently than EulerAngles. Sensitivity seemed to change slightly at certain degrees using Euler. transform.localEulerAngles = new Vector3(-rotation.y, rotation.x, 0);
+    }
+
+    private void OnEnable()
+    {
+        m_Sails.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        m_Sails.SetActive(true);
     }
 }

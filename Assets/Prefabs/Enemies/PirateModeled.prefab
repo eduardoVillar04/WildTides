@@ -126,7 +126,7 @@ Rigidbody:
   m_GameObject: {fileID: 2759851232384120508}
   serializedVersion: 4
   m_Mass: 10
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -204,7 +204,7 @@ NavMeshAgent:
   m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 0.99999994
-  m_BaseOffset: 0.49999997
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!135 &8366058206738451633

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GustOfWindController : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class GustOfWindController : MonoBehaviour
             //We use impulse to add more or less force depending on mass of the object
             m_EnemyRB.AddForce(transform.forward * m_GustForce, ForceMode.Impulse);
             Destroy(gameObject);
+
         }
     }
 

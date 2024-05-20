@@ -83,6 +83,7 @@ public class PirateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (m_HealthController.m_IsDead) m_CurrentState = PirateStates.RETURN_TO_POINT;
 
         switch (m_CurrentState)
@@ -164,7 +165,7 @@ public class PirateController : MonoBehaviour
             m_NavMeshAgent.SetDestination(m_CurrentTargetPoint.position);
         }
 
-        if(m_NavMeshAgent.remainingDistance < 0.1f)
+        if(m_NavMeshAgent.remainingDistance < 1f)
         {
             m_HealthController.m_HealthPoints = m_MaxLife;
             m_CurrentState = PirateStates.CHECKING_FOR_PLAYER;
@@ -178,6 +179,7 @@ public class PirateController : MonoBehaviour
         {
             m_PlayerInView = true;
         }
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -197,5 +199,10 @@ public class PirateController : MonoBehaviour
             collision.gameObject.GetComponent<HealthController>().DealDamage(m_Damage);
             m_CurrentState = PirateStates.RETURN_TO_POINT;
         }
+    }
+
+    public void EnableNavMeshAgent()
+    {
+        m_NavMeshAgent.enabled = true;
     }
 }

@@ -185,8 +185,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaxLife: 0
-  m_Damage: 0
+  m_Damage: 1
+  m_Patrol: {fileID: 0}
   m_PlayerInView: 0
+  m_AllTargetPoints: []
+  m_CurrentTargetPointIndex: 0
+  m_CurrentTargetPoint: {fileID: 0}
+  m_IsPatrolingPirate: 0
   m_ReturnPoint: {x: 0, y: 0, z: 0}
   m_TimeBetweenSetDestination: 0.2
   m_VisionSphere: {fileID: 0}
@@ -202,7 +207,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2355490536462479831}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_Radius: 0.50000006
   m_Speed: 10
   m_Acceleration: 8

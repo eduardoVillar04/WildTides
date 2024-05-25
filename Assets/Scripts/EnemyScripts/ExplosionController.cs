@@ -17,6 +17,9 @@ public class ExplosionController : MonoBehaviour
         Vector3 direction = other.transform.position - transform.position;
         other.GetComponent<Rigidbody>().AddForce(direction.normalized * m_BlastForce, ForceMode.Impulse);
 
+        //Explosion sound effect
+        
+
         //After 0.2s, we destroy the explosion
         Invoke("DestroyThisObject", 0.2f);
     }
@@ -26,5 +29,5 @@ public class ExplosionController : MonoBehaviour
         Destroy(gameObject);
     }
 
-
+    
 }

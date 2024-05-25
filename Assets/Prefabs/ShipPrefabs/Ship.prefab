@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 3361039281036345690}
   - component: {fileID: 5187241450053577951}
   - component: {fileID: -3160034399767500232}
+  - component: {fileID: -105198406960814938}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Player
@@ -335,7 +336,6 @@ MonoBehaviour:
   m_CannonCamera: {fileID: 7043638213741916078}
   m_PlayerInput: {fileID: 0}
   m_Rigidbody: {fileID: 0}
-  m_ShootSound: {fileID: 8300000, guid: c6d774aa61abdd64ea30b97940a9a3f2, type: 3}
 --- !u!114 &-3160034399767500232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,9 +348,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a50f7a35575db47a39aea8166cd374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HealthPoints: 100
-  m_IsDead: 0
-  m_WoodBreakSound: {fileID: 8300000, guid: 86518dc0ce5fe5a44aca0db9f7e984a9, type: 3}
+  m_HealthPoints: 3
+  m_IsDead: 1
+--- !u!114 &-105198406960814938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2946949973777413602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62f3756ef6204054cbc94d54cacb6296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerTransform: {fileID: 0}
+  m_Checkpoint: {x: 0, y: 0, z: 0}
+  m_HealthController: {fileID: 0}
 --- !u!1 &7043638213741916078
 GameObject:
   m_ObjectHideFlags: 0

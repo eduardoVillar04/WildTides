@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SoundEffectsManager : MonoBehaviour
 {
-   public static SoundEffectsManager instance;
+    public static SoundEffectsManager instance;
+
     [SerializeField] private AudioSource soundFXObject;
 
     private void Awake()

@@ -335,6 +335,7 @@ MonoBehaviour:
   m_CannonCamera: {fileID: 7043638213741916078}
   m_PlayerInput: {fileID: 0}
   m_Rigidbody: {fileID: 0}
+  m_ShootSound: {fileID: 8300000, guid: c6d774aa61abdd64ea30b97940a9a3f2, type: 3}
 --- !u!114 &-3160034399767500232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,6 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HealthPoints: 100
   m_IsDead: 0
+  m_WoodBreakSound: {fileID: 8300000, guid: 86518dc0ce5fe5a44aca0db9f7e984a9, type: 3}
 --- !u!1 &7043638213741916078
 GameObject:
   m_ObjectHideFlags: 0

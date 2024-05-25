@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -56861,6 +56861,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146722138}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &2722247260737363917
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5588996745270943013, guid: 726d418085127be408c7cc71619af5d0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4097184
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588996745270943013, guid: 726d418085127be408c7cc71619af5d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.571053
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588996745270943013, guid: 726d418085127be408c7cc71619af5d0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -46.31868
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588996745270943013, guid: 726d418085127be408c7cc71619af5d0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588996745270943013, guid: 726d418085127be408c7cc71619af5d0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588996745270943013, guid: 726d418085127be408c7cc71619af5d0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588996745270943013, guid: 726d418085127be408c7cc71619af5d0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588996745270943013, guid: 726d418085127be408c7cc71619af5d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588996745270943013, guid: 726d418085127be408c7cc71619af5d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588996745270943013, guid: 726d418085127be408c7cc71619af5d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498627159930427689, guid: 726d418085127be408c7cc71619af5d0, type: 3}
+      propertyPath: m_Name
+      value: SoundFXManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 726d418085127be408c7cc71619af5d0, type: 3}
 --- !u!1001 &3974189821236240089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56869,6 +56926,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2571708829248659548, guid: 491e3f69e30dc7a4b9980e00ea3ac03e, type: 3}
+      propertyPath: m_ExplosionSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8c7342d61a7133a4b82dc7ed5a47b945, type: 3}
     - target: {fileID: 3774355856268715829, guid: 491e3f69e30dc7a4b9980e00ea3ac03e, type: 3}
       propertyPath: m_Name
       value: ExplosiveBarrel
@@ -57075,6 +57136,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5187241450053577951, guid: 32d8a575b6133b840ab0b7687b6c4bdf, type: 3}
+      propertyPath: m_ShootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c6d774aa61abdd64ea30b97940a9a3f2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -57093,3 +57158,4 @@ SceneRoots:
   - {fileID: 832160475}
   - {fileID: 1573539134}
   - {fileID: 425826371}
+  - {fileID: 2722247260737363917}

@@ -3,7 +3,8 @@ guid: 54a50f7a35575db47a39aea8166cd374
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_WoodBreakSound: {fileID: 8300000, guid: 86518dc0ce5fe5a44aca0db9f7e984a9, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

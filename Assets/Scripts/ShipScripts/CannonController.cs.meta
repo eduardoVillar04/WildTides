@@ -3,7 +3,13 @@ guid: 9c83a88d8db420e46adadbeaf67606e4
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_Projectile: {instanceID: 0}
+  - m_CannonEndPoint: {instanceID: 0}
+  - m_CannonCamera: {instanceID: 0}
+  - m_PlayerInput: {instanceID: 0}
+  - m_Rigidbody: {instanceID: 0}
+  - m_ShootSound: {fileID: 8300000, guid: c6d774aa61abdd64ea30b97940a9a3f2, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

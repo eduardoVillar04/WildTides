@@ -7,6 +7,7 @@ public class ExplosionController : MonoBehaviour
     public int m_DamageDealt;
     public float m_BlastForce;
 
+
     private void OnTriggerEnter(Collider other)
     {
         //We deal damage

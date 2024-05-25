@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a9180d5d5cc1c8049bf936db99461006, type: 3}
       propertyPath: m_Name
-      value: PirateEnemy2
+      value: PirateModeled
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a9180d5d5cc1c8049bf936db99461006, type: 3}
       propertyPath: m_IsActive
@@ -158,6 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HealthPoints: 3
   m_IsDead: 0
+  m_DamageSound: {fileID: 8300000, guid: 86518dc0ce5fe5a44aca0db9f7e984a9, type: 3}
 --- !u!114 &6538209646479928475
 MonoBehaviour:
   m_ObjectHideFlags: 0

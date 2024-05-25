@@ -36,7 +36,7 @@ public class MainCameraController : MonoBehaviour
             //We clamp the value between -1 / 1 to have consistency between platforms
             //m_CameraDirection = Mathf.Clamp(m_CameraDirection, -1, 1);
 
-            Debug.Log(m_CameraDirection.ToString());
+            //Debug.Log(m_CameraDirection.ToString());
 
             m_Camera.transform.RotateAround(m_ShipTransform.position, Vector3.up, 500 * m_CameraDirection * m_Sensitivity * Time.deltaTime);
         }

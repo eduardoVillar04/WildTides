@@ -7,6 +7,7 @@ public class ExplosionController : MonoBehaviour
     public int m_DamageDealt;
     public float m_BlastForce;
 
+
     private void OnTriggerEnter(Collider other)
     {
         //We deal damage
@@ -15,6 +16,9 @@ public class ExplosionController : MonoBehaviour
         //And send back whatever entered the explosion
         Vector3 direction = other.transform.position - transform.position;
         other.GetComponent<Rigidbody>().AddForce(direction.normalized * m_BlastForce, ForceMode.Impulse);
+
+        //Explosion sound effect
+        
 
         //After 0.2s, we destroy the explosion
         Invoke("DestroyThisObject", 0.2f);
@@ -25,5 +29,5 @@ public class ExplosionController : MonoBehaviour
         Destroy(gameObject);
     }
 
-
+    
 }

@@ -23,6 +23,8 @@ public class CannonController : MonoBehaviour
     public PlayerInput m_PlayerInput;
     public Rigidbody m_Rigidbody;
 
+    [Header("Audio")]
+    public AudioClip m_ShootSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,11 +55,11 @@ public class CannonController : MonoBehaviour
     {
         //We instantiate the projectile
         GameObject projectile = Instantiate(m_Projectile, m_CannonEndPoint.position, m_CannonEndPoint.rotation);
-
         //And give it force 
         Rigidbody projectileRB = projectile.GetComponent<Rigidbody>();
         projectileRB.AddForce(projectile.transform.forward * m_ProjectileSpeed, ForceMode.VelocityChange);
-
+        //Audio
+        SoundEffectsManager.instance.PlaySoundFXClip(m_ShootSound, transform, 0.6f);
         Recoil();
     }
 

@@ -17,6 +17,8 @@ public class CompassController : MonoBehaviour
 
     public Camera mainCam;
     public GameObject pauseMenu;
+
+    public GameObject healthUI;
     
     void Update()
     {
@@ -30,7 +32,12 @@ public class CompassController : MonoBehaviour
         if (!mainCam.gameObject.activeSelf || pauseMenu.activeSelf)
         {
             compassBarTransform.gameObject.SetActive(false);
-        } else {compassBarTransform.gameObject.SetActive(true); }
+            healthUI.gameObject.SetActive(false);
+        } else 
+        {
+            compassBarTransform.gameObject.SetActive(true);
+            healthUI.gameObject.SetActive(true);
+        }
 
 
     }

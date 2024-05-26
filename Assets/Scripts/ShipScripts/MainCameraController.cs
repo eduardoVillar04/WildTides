@@ -18,12 +18,14 @@ public class MainCameraController : MonoBehaviour
     {
         m_Camera = GetComponent<Camera>();
         m_PlayerInput = GetComponentInParent<PlayerInput>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Update the sensitivity selected by the player
+        m_Sensitivity = SingletonOptions.m_Instance.m_SensitivityValue;
+
         //if player isnt moving with a controller, move the camera with the mouse, else do it with the controller
         if (m_PlayerInput.actions["Look"].ReadValue<Vector2>().x != 0)
         {

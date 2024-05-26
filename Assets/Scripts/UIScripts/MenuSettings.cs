@@ -9,8 +9,6 @@ public class MenuSettings : MonoBehaviour
 
     public TMPro.TMP_Dropdown resolutionDropdown;
 
-    public static Singleton player_Sensitivity;
-
     Resolution[] resolutions;
     void Start()
     {
@@ -49,7 +47,7 @@ public class MenuSettings : MonoBehaviour
 
     public void SetSensitivity(float sensitivity)
     {
-        player_Sensitivity = sensitivity;
+        SingletonOptions.m_Instance.m_SensitivityValue = sensitivity;
     }
 
     public void SetQuality (int qualityIndex)

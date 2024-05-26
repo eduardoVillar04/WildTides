@@ -149,3 +149,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Explosion: {fileID: 6486863023591038773, guid: 115840c39665bcb4ea426a9989ea4a34, type: 3}
+  m_ExplosionSound: {fileID: 8300000, guid: 8c7342d61a7133a4b82dc7ed5a47b945, type: 3}

@@ -26,4 +26,11 @@ public class SingletonOptions : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
+        if(m_SensitivityValue == 0)
+        {
+            m_SensitivityValue = 1f;
+        }
+    }
 }

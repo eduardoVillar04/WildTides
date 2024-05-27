@@ -67,7 +67,7 @@ public class CannonController : MonoBehaviour
     {
         //After each attack, the boat will suffer knockback from the shot
         Vector3 direction = transform.position - m_CannonEndPoint.position;
-        m_Rigidbody.AddForce(direction * m_RecoilFroce, ForceMode.Impulse);
+        m_Rigidbody.AddForce(direction * m_RecoilFroce, ForceMode.VelocityChange);
     }
 
 }

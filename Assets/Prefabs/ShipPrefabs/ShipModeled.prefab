@@ -756,12 +756,13 @@ MonoBehaviour:
   m_Projectile: {fileID: 7707442352019119470, guid: b53d0d7112e463e44a03778227afb6db, type: 3}
   m_CannonEndPoint: {fileID: 8091340993787663213}
   m_ProjectileSpeed: 25
-  m_RecoilFroce: 5
+  m_RecoilFroce: 75
   m_ShootCooldown: 1
   m_ShootIsPressed: 0
   m_CannonCamera: {fileID: 4880667654920429035}
   m_PlayerInput: {fileID: 0}
   m_Rigidbody: {fileID: 0}
+  m_ShootSound: {fileID: 8300000, guid: c6d774aa61abdd64ea30b97940a9a3f2, type: 3}
 --- !u!114 &5359514897624062845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,6 +777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HealthPoints: 3
   m_IsDead: 1
+  m_DamageSound: {fileID: 0}
 --- !u!114 &3621538797724051473
 MonoBehaviour:
   m_ObjectHideFlags: 0

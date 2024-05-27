@@ -1,0 +1,54 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.AI;
+
+public abstract class Enemy : MonoBehaviour
+{
+    public Transform m_Transform;
+    public Rigidbody m_Rigidbody;
+    public bool m_IsDead;
+
+    public virtual void Start()
+    {
+        m_IsDead = false;
+        m_Transform = GetComponent<Transform>();
+        m_Rigidbody = GetComponent<Rigidbody>();
+    }
+
+    public virtual void Update()
+    {
+        if(m_IsDead)
+        {
+            //if it has a navmesh agent we disable it so the object can sink
+            if(GetComponent<NavMeshAgent>()) gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        //We make the enemy sink
+        m_Transform.position -= new Vector3(0, 0.02f, 0);
+        Invoke("InvokeDestroy",2f);
+    }
+
+    public virtual void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Terrain") || collision.gameObject.CompareTag("Enemy"))
+        {
+            m_IsDead = true;
+        }
+    }
+
+    public virtual void OnTriggerEnter(Collider other)
+    {
+        
+    }
+
+    public void InvokeDestroy()
+    {
+        Destroy(this.gameObject);
+    }
+}

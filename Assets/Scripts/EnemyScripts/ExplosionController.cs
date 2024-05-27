@@ -10,6 +10,10 @@ public class ExplosionController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //if its an enemy, it dies
+        if (other.gameObject.GetComponent<Enemy>()) other.gameObject.GetComponent<Enemy>().m_IsDead = true;
+
+
         //We deal damage
         other.gameObject.GetComponent<HealthController>().DealDamage(m_DamageDealt);
 

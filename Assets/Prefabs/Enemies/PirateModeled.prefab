@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a9180d5d5cc1c8049bf936db99461006, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -15.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a9180d5d5cc1c8049bf936db99461006, type: 3}
       propertyPath: m_LocalPosition.y
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a50f7a35575db47a39aea8166cd374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HealthPoints: 3
+  m_HealthPoints: 1
   m_IsDead: 0
   m_DamageSound: {fileID: 8300000, guid: 86518dc0ce5fe5a44aca0db9f7e984a9, type: 3}
 --- !u!114 &6538209646479928475
@@ -173,14 +173,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Transform: {fileID: 0}
   m_Rigidbody: {fileID: 0}
+  m_HealthController: {fileID: 0}
   m_IsDead: 0
+  m_DeathSpeed: 0
   m_Damage: 1
   m_Patrol: {fileID: 0}
   m_PlayerInView: 0
   m_AllTargetPoints: []
   m_CurrentTargetPointIndex: 0
   m_CurrentTargetPoint: {fileID: 0}
-  m_IsPatrolingPirate: 0
+  m_IsPatrolingEnemy: 0
   m_ReturnPoint: {x: 0, y: 0, z: 0}
   m_TimeBetweenSetDestination: 0
   m_VisionSphere: {fileID: 0}

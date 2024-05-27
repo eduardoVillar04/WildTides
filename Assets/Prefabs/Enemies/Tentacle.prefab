@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.16
+      value: 27.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.7088165
+      value: -4.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
       propertyPath: m_LocalRotation.w
@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tentacle
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 65702495048144492, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
@@ -89,6 +93,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
       insertIndex: -1
       addedObject: {fileID: 591863468087179908}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6930890207767273024}
   m_SourcePrefab: {fileID: 100100000, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
 --- !u!1 &2323671655070106567 stripped
 GameObject:
@@ -109,14 +116,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Transform: {fileID: 0}
   m_Rigidbody: {fileID: 0}
+  m_HealthController: {fileID: 0}
   m_IsDead: 0
-  m_Damage: 0
+  m_DeathSpeed: 0
+  m_Damage: 1
   m_Patrol: {fileID: 0}
   m_PlayerInView: 0
   m_AllTargetPoints: []
   m_CurrentTargetPointIndex: 0
   m_CurrentTargetPoint: {fileID: 0}
-  m_IsPatrolingPirate: 0
+  m_IsPatrolingEnemy: 0
   m_ReturnPoint: {x: 0, y: 0, z: 0}
   m_TimeBetweenSetDestination: 0
   m_VisionSphere: {fileID: 0}
@@ -189,10 +198,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!195 &591863468087179908
 NavMeshAgent:
@@ -216,3 +225,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &6930890207767273024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323671655070106567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54a50f7a35575db47a39aea8166cd374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HealthPoints: 1
+  m_IsDead: 0
+  m_DamageSound: {fileID: 0}

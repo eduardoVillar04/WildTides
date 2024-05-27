@@ -9,9 +9,12 @@ public abstract class Enemy : MonoBehaviour
     public Transform m_Transform;
     public Rigidbody m_Rigidbody;
     public bool m_IsDead;
+    public float m_DeathSpeed;
 
     public virtual void Start()
     {
+        //default deathspeed
+        m_DeathSpeed = 0.05f;
         m_IsDead = false;
         m_Transform = GetComponent<Transform>();
         m_Rigidbody = GetComponent<Rigidbody>();
@@ -30,7 +33,7 @@ public abstract class Enemy : MonoBehaviour
     public void Die()
     {
         //We make the enemy sink
-        m_Transform.position -= new Vector3(0, 0.02f, 0);
+        m_Transform.position -= new Vector3(0, m_DeathSpeed, 0);
         Invoke("InvokeDestroy",2f);
     }
 

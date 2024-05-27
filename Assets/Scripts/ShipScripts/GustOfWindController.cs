@@ -19,9 +19,6 @@ public class GustOfWindController : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy") && !other.isTrigger)
         {
             Rigidbody m_EnemyRB = other.GetComponent<Rigidbody>();
-
-            //If the enemy has a healthcontroller, remove 1 point of life
-            if (other.gameObject.GetComponent<HealthController>()) other.gameObject.GetComponent<HealthController>().DealDamage(1);
             
             //If the target is a pirate, we make it pursue the player no matter the distance
             if (other.gameObject.GetComponent<PirateController>())

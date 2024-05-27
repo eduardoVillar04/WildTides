@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,23 @@ public class PirateController : Enemy
     public Transform m_Patrol;
 
     [Header("PURSUIT VARIABLES")]
-    public bool m_PlayerInView;
+    public float m_PursuitSpeed;
+    public float m_StoppingDistance;
     public Transform[] m_AllTargetPoints;
     public int m_CurrentTargetPointIndex = 0;
     public Transform m_CurrentTargetPoint;
     public bool m_IsPatrolingEnemy;
+
+    [Header("SHOOTING VARIABLES")]
+    public float m_SpeedWhileShooting;
+    public float m_ShootingDistance;
+    public Transform m_BulletSpawnPoint;
+    public Transform m_CannonTransform;
+    public float m_CannonRotationSpeed;
+    public GameObject m_BulletPrefab;
+    public float m_BulletSpeed;
+    public float m_TimeBetweenShots;
+    public float m_ShotTimer;
 
     [Header("NAVIGATION VARIABLES")]
     public Vector3 m_ReturnPoint;
@@ -80,6 +93,7 @@ public class PirateController : Enemy
     // Update is called once per frame
     public override void Update()
     {
+        Debug.Log("Navmesh distance: " + m_NavMeshAgent.remainingDistance);
         base.Update();
 
         switch (m_CurrentState)
@@ -112,8 +126,6 @@ public class PirateController : Enemy
             m_CurrentState = PirateStates.GO_TO_NEXT_POINT;
         }
 
-        if (m_PlayerInView) m_CurrentState = PirateStates.PURSUING;
-
     }
 
     public void GoToNextPoint()
@@ -135,15 +147,56 @@ public class PirateController : Enemy
     public void Pursuit()
     {
         //We deactivate autobraking so the pirates dont try to stop when reaching the player
-        m_NavMeshAgent.autoBraking = false;
+        m_NavMeshAgent.autoBraking = true;
         m_NavMeshAgent.isStopped = false;
 
+        //[anterior]
         //The route is not calculated every frame to boost performance
-        if(Time.time > m_RerouteTimer) 
+        if (Time.time > m_RerouteTimer)
         {
             m_NavMeshAgent.SetDestination(m_PlayerTransform.position);
             m_RerouteTimer = Time.time + m_TimeBetweenSetDestination;
+            m_NavMeshAgent.stoppingDistance = m_StoppingDistance;
         }
+
+        if (m_NavMeshAgent.remainingDistance < m_ShootingDistance)
+        {
+            m_NavMeshAgent.speed = m_SpeedWhileShooting;
+
+            //We make the cannon rotate towards the player
+            CannonLooksAtPlayer();
+
+            ////We add time to the timer until timebetweenshots is reached
+            m_ShotTimer += Time.deltaTime;
+
+            if(m_ShotTimer > m_TimeBetweenShots)
+            {
+                m_ShotTimer = 0;
+                Shoot();
+            }
+        }
+        else
+        {
+            m_ShotTimer = 0;
+            m_NavMeshAgent.speed = m_PursuitSpeed;
+        }
+    }
+
+    public void CannonLooksAtPlayer()
+    {    
+        //Look at player
+        Vector3 lookPos = m_PlayerTransform.position - transform.position;
+        lookPos.y = 0;
+        Quaternion rotation = Quaternion.LookRotation(lookPos);
+        m_CannonTransform.rotation = Quaternion.Slerp(m_BulletSpawnPoint.rotation, rotation, Time.deltaTime * m_CannonRotationSpeed);
+    }
+
+    public void Shoot()
+    {
+        GameObject cannonBullet = Instantiate(m_BulletPrefab, m_BulletSpawnPoint.position, Quaternion.identity);
+        Rigidbody cbRB = cannonBullet.GetComponent<Rigidbody>();
+        Vector3 direction = m_PlayerTransform.position - m_BulletSpawnPoint.position;
+        cbRB.AddForce(direction * m_BulletSpeed, ForceMode.VelocityChange);
     }
 
 
@@ -174,7 +227,7 @@ public class PirateController : Enemy
 
         if(other.gameObject.CompareTag("Player"))
         {
-            m_PlayerInView = true;
+            m_CurrentState = PirateStates.PURSUING;
         }
 
     }
@@ -182,17 +235,6 @@ public class PirateController : Enemy
     public override void OnCollisionEnter(Collision collision)
     {
         base.OnCollisionEnter(collision);
-
-        if(collision.gameObject.CompareTag("Player"))
-        {
-            //When the player is hit, we deal damage to it and the pirate flees to the return point
-            collision.gameObject.GetComponent<HealthController>().DealDamage(m_Damage);
-            m_CurrentState = PirateStates.RETURN_TO_POINT;
-        }
     }
 
-    public void EnableNavMeshAgent()
-    {
-        m_NavMeshAgent.enabled = true;
-    }
 }

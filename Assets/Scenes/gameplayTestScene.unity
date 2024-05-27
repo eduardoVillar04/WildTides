@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -265,6 +265,11 @@ Transform:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7728384070223323279, guid: 3ec9f12ec89fc494ca5a3dc259c815bc, type: 3}
   m_PrefabInstance: {fileID: 4981885136231276652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &625977069 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2429022136965789402, guid: 6618b5580e8b96342be0520c68f9b2c4, type: 3}
+  m_PrefabInstance: {fileID: 5503973571776431504}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &644040598
 GameObject:
@@ -933,7 +938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1573539131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1036,7 +1041,7 @@ MonoBehaviour:
   southMarkerTransform: {fileID: 442510669}
   eastMarkerTransform: {fileID: 944381817}
   westMarkerTransform: {fileID: 93401812}
-  cameraObjectTransform: {fileID: 0}
+  cameraObjectTransform: {fileID: 625977069}
   objectiveObjectTransform: {fileID: 172236115}
   mainCam: {fileID: 0}
   pauseMenu: {fileID: 73516471}
@@ -1330,6 +1335,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6538209646479928475, guid: cd614d82c7bd50842956520fa7696c80, type: 3}
+      propertyPath: m_BulletSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538209646479928475, guid: cd614d82c7bd50842956520fa7696c80, type: 3}
+      propertyPath: m_BulletPrefab
+      value: 
+      objectReference: {fileID: 45345387307393872, guid: dace832d1ea0697429aacdbb48c84670, type: 3}
+    - target: {fileID: 6538209646479928475, guid: cd614d82c7bd50842956520fa7696c80, type: 3}
+      propertyPath: m_PursuitSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538209646479928475, guid: cd614d82c7bd50842956520fa7696c80, type: 3}
+      propertyPath: m_ShootingDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538209646479928475, guid: cd614d82c7bd50842956520fa7696c80, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538209646479928475, guid: cd614d82c7bd50842956520fa7696c80, type: 3}
+      propertyPath: m_SpeedWhileShooting
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021407239776746262, guid: cd614d82c7bd50842956520fa7696c80, type: 3}
+      propertyPath: m_Speed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1479,6 +1512,14 @@ PrefabInstance:
     - target: {fileID: 2700462362417093324, guid: 6618b5580e8b96342be0520c68f9b2c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359514897624062845, guid: 6618b5580e8b96342be0520c68f9b2c4, type: 3}
+      propertyPath: m_IsDead
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359514897624062845, guid: 6618b5580e8b96342be0520c68f9b2c4, type: 3}
+      propertyPath: m_HealthPoints
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5712579652754710955, guid: 6618b5580e8b96342be0520c68f9b2c4, type: 3}
       propertyPath: m_Name

@@ -17,7 +17,8 @@ public class MenuSettings : MonoBehaviour
     public GameObject m_FullScreenToggle;
 
     Resolution[] resolutions;
-    private void Awake()
+
+    void Start()
     {
         if (SingletonOptions.m_Instance.m_InitialResolutionIndex == 0)
         {
@@ -25,11 +26,7 @@ public class MenuSettings : MonoBehaviour
             SingletonOptions.m_Instance.m_InitialResolutionIndex = resolutions.Length;
             SingletonOptions.m_Instance.m_ResolutionIndex = resolutions.Length;
         }
-    }
 
-
-    void Start()
-    {
         resolutions = Screen.resolutions;
         m_ResolutionDropdown.ClearOptions();
         m_FullScreenToggle.GetComponent<Toggle>().isOn = SingletonOptions.m_Instance.m_IsFullScreen;

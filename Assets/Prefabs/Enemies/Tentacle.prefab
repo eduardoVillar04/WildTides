@@ -238,4 +238,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HealthPoints: 1
   m_IsDead: 0
-  m_DamageSound: {fileID: 0}
+  m_DamageSound: {fileID: 8300000, guid: 67d565f66f83fad4f939effe8d3c4e83, type: 3}

@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstButton: {fileID: 8812227641877108592}
+  m_ClickSound: {fileID: 0}
 --- !u!1 &480279813119463236
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4150361ce9237a64ba511dc611723eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ClickSound: {fileID: 8300000, guid: 1bc46e468ee452e4b9df95d8c4235545, type: 3}
   audioMixer: {fileID: 24100000, guid: 2118731892bcee94fafdee7c9a15df08, type: 2}
   m_ResolutionDropdown: {fileID: 9156260759589906276}
   m_GraphicDropdown: {fileID: 4753655676582560489}
@@ -1330,6 +1332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstButton: {fileID: 5211273017884308743}
+  m_ClickSound: {fileID: 0}
 --- !u!1 &2008468125715233102
 GameObject:
   m_ObjectHideFlags: 0

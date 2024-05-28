@@ -119,7 +119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DockName: 
-  m_TideLevelController: {fileID: 0}
   m_DockArray: []
-  m_CompassController: {fileID: 0}
   m_IsFirstDock: 0
+  m_TideLevelController: {fileID: 0}
+  m_MissionText: {fileID: 0}
+  m_CompassController: {fileID: 0}
+  m_ArrivingSound: {fileID: 8300000, guid: 5cf90fab19e59ce4a906f0408dd02812, type: 3}

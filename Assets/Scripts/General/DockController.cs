@@ -26,7 +26,8 @@ public class DockController : MonoBehaviour
     [Header("COMPASS CONTROLLER")]
     public CompassController m_CompassController;
 
-
+    [Header("AUDIO")]
+    public AudioClip m_ArrivingSound;
     //In the awake, when the docks are still al active, we get their references
     private void Awake()
     {
@@ -61,6 +62,9 @@ public class DockController : MonoBehaviour
 
             //Update compass target
             m_CompassController.objectiveObjectTransform = nextDock.transform;
+
+            //Audio
+            SoundEffectsManager.instance.PlaySoundFXClip(m_ArrivingSound, transform, 0.6f);
 
             //Update tide level
             m_TideLevelController.AddTideLevel();

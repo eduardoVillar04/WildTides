@@ -1,16 +1,38 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
 public class DockController : MonoBehaviour
 {
-    [Header("AUDIO")]
+    [Header("DOCK NAME")]
+    public string m_DockName;
 
-    [Header("NEXT DOCK")]
-    public Transform m_NextDock;
+    [Header("DOCKS LIST")]
+    public GameObject[] m_DockArray;
 
     [Header("COMPASS CONTROLLER")]
     public CompassController m_CompassController;
+
+    [Header("FIRST DOCK")]
+    public bool m_IsFirstDock;
+
+    //In the awake, when the docks are still al active, we get their references
+    private void Awake()
+    {
+        m_DockArray = GameObject.FindGameObjectsWithTag("Dock");
+    }
+
+    //We disable the docks that are not the first oen
+    private void Start()
+    {
+        if(!m_IsFirstDock)
+        {
+            gameObject.SetActive(false);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,12 +41,30 @@ public class DockController : MonoBehaviour
             //We set the checkpoint for the boat
             other.gameObject.GetComponent<RespawnController>().m_Checkpoint = transform.position;
 
-            //Update compass target
-            m_CompassController.objectiveObjectTransform = m_NextDock;
+            //Select random next dock
+            GameObject nextDock = getRandomDock();
 
-            m_NextDock.gameObject.SetActive(true);
+            //Update compass target
+            m_CompassController.objectiveObjectTransform = nextDock.transform;
+
+            nextDock.SetActive(true);
             gameObject.SetActive(false);
         }
 
+    }
+
+    public GameObject getRandomDock()
+    {
+        GameObject dock;
+    
+        while (true)
+        {
+            int index = UnityEngine.Random.Range(0, m_DockArray.Length);
+            dock = m_DockArray[index];
+            if(dock!=this.gameObject)
+            {
+                return dock;
+            }
+        }
     }
 }

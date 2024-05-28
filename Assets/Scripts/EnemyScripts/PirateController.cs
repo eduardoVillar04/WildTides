@@ -42,7 +42,9 @@ public class PirateController : Enemy
     public SphereCollider m_VisionSphere;
     public NavMeshAgent m_NavMeshAgent;
     public Transform m_PlayerTransform;
-    
+
+    [Header("Audio")]
+    public AudioClip m_ShootSound;
     public enum PirateStates
     {
         NONE = -1,
@@ -199,6 +201,8 @@ public class PirateController : Enemy
         Rigidbody cbRB = cannonBullet.GetComponent<Rigidbody>();
         Vector3 direction = m_PlayerTransform.position - m_BulletSpawnPoint.position;
         cbRB.AddForce(direction * m_BulletSpeed, ForceMode.VelocityChange);
+        //Audio
+        SoundEffectsManager.instance.PlaySoundFXClip(m_ShootSound, transform, 0.6f);
     }
 
 

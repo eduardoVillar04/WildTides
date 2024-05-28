@@ -3,7 +3,14 @@ guid: 4150361ce9237a64ba511dc611723eb6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_ClickSound: {fileID: 8300000, guid: 1bc46e468ee452e4b9df95d8c4235545, type: 3}
+  - audioMixer: {instanceID: 0}
+  - m_ResolutionDropdown: {instanceID: 0}
+  - m_GraphicDropdown: {instanceID: 0}
+  - m_SensitivitySlider: {instanceID: 0}
+  - m_VolumeSlider: {instanceID: 0}
+  - m_FullScreenToggle: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

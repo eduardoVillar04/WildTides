@@ -265,7 +265,6 @@ MonoBehaviour:
   m_Transform: {fileID: 0}
   m_Rigidbody: {fileID: 0}
   m_HealthController: {fileID: 0}
-  m_IsDead: 0
   m_DeathSpeed: 0
   m_Damage: 1
   m_Patrol: {fileID: 0}
@@ -289,6 +288,7 @@ MonoBehaviour:
   m_VisionSphere: {fileID: 8366058206738451633}
   m_NavMeshAgent: {fileID: 0}
   m_PlayerTransform: {fileID: 0}
+  m_ShootSound: {fileID: 8300000, guid: 9a2b096d1b59ae94a986d10c8a798304, type: 3}
   m_CurrentState: 1
 --- !u!195 &9021407239776746262
 NavMeshAgent:

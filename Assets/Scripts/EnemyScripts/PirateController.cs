@@ -93,7 +93,6 @@ public class PirateController : Enemy
     // Update is called once per frame
     public override void Update()
     {
-        Debug.Log("Navmesh distance: " + m_NavMeshAgent.remainingDistance);
         base.Update();
 
         switch (m_CurrentState)

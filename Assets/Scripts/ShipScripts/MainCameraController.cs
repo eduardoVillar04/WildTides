@@ -13,11 +13,14 @@ public class MainCameraController : MonoBehaviour
     public float m_CameraDirection;
     public PlayerInput m_PlayerInput;
 
+    public CameraShake m_CameraShake;
+
     // Start is called before the first frame update
     void Start()
     {
         m_Camera = GetComponent<Camera>();
         m_PlayerInput = GetComponentInParent<PlayerInput>();
+        m_CameraShake = GetComponentInParent<CameraShake>();
     }
 
     // Update is called once per frame
@@ -27,7 +30,8 @@ public class MainCameraController : MonoBehaviour
         m_Sensitivity = SingletonOptions.m_Instance.m_SensitivityValue;
 
         //if player isnt moving with a controller, move the camera with the mouse, else do it with the controller
-        if (m_PlayerInput.actions["Look"].ReadValue<Vector2>().x != 0)
+        //also, if the camera is shaking we dont allow it to move, since it causes problems
+        if (m_PlayerInput.actions["Look"].ReadValue<Vector2>().x != 0 && !m_CameraShake.m_IsShaking)
         {
             
             m_CameraDirection = m_PlayerInput.actions["Look"].ReadValue<Vector2>().x;

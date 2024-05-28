@@ -150,8 +150,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.143068, y: 2.624808, z: 8.421312}
-  m_Center: {x: -1.4687725e-23, y: 1.3718895, z: 0.92055905}
+  m_Size: {x: 2.143068, y: 2.9159367, z: 8.421312}
+  m_Center: {x: -4.2569245e-16, y: 1.2263252, z: 0.9205589}
 --- !u!54 &4095176288166240388
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -213,19 +213,19 @@ MonoBehaviour:
   m_DeathSpeed: 0
   m_Damage: 1
   m_Patrol: {fileID: 0}
-  m_PursuitSpeed: 0
-  m_StoppingDistance: 0
+  m_PursuitSpeed: 10
+  m_StoppingDistance: 20
   m_AllTargetPoints: []
   m_CurrentTargetPointIndex: 0
   m_CurrentTargetPoint: {fileID: 0}
   m_IsPatrolingEnemy: 0
-  m_SpeedWhileShooting: 0
+  m_SpeedWhileShooting: 5
   m_ShootingDistance: 30
   m_BulletSpawnPoint: {fileID: 5701739052611047072}
   m_CannonTransform: {fileID: 7805837849225910352}
   m_CannonRotationSpeed: 5
   m_BulletPrefab: {fileID: 45345387307393872, guid: dace832d1ea0697429aacdbb48c84670, type: 3}
-  m_BulletSpeed: 5
+  m_BulletSpeed: 1
   m_TimeBetweenShots: 3
   m_ShotTimer: 0
   m_ReturnPoint: {x: 0, y: 0, z: 0}
@@ -244,7 +244,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.50000006
-  m_Speed: 10
+  m_Speed: 20
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

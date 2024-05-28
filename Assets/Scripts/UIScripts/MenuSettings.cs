@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class MenuSettings : MonoBehaviour
 {
@@ -9,12 +10,19 @@ public class MenuSettings : MonoBehaviour
 
     public TMPro.TMP_Dropdown resolutionDropdown;
 
+    public GameObject m_SensitivitySlider;
+    public GameObject m_VolumeSlider;
+
     Resolution[] resolutions;
     void Start()
     {
         resolutions = Screen.resolutions;
 
         resolutionDropdown.ClearOptions();
+
+        m_SensitivitySlider.GetComponent<Slider>().value = SingletonOptions.m_Instance.m_SensitivityValue;
+        audioMixer.GetFloat("volume", out float Volume);
+        m_VolumeSlider.GetComponent<Slider>().value = Mathf.Pow(10,Volume/20);
 
         List<string> options = new List<string>();
         int currentResolutionIndex = 0;

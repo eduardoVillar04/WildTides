@@ -19,6 +19,9 @@ public class CompassController : MonoBehaviour
     public GameObject pauseMenu;
 
     public GameObject healthUI;
+    public GameObject tideLevel;
+    public GameObject missionUI;
+    public GameObject deathMenu;
     
     void Update()
     {
@@ -29,14 +32,18 @@ public class CompassController : MonoBehaviour
         SetMarkerPosition(westMarkerTransform, Vector3.left * 1000);
 
         //We disable the compass bar when the player aims
-        if (!mainCam.gameObject.activeSelf || pauseMenu.activeSelf)
+        if (!mainCam.gameObject.activeSelf || pauseMenu.activeSelf || deathMenu.activeSelf)
         {
             compassBarTransform.gameObject.SetActive(false);
             healthUI.gameObject.SetActive(false);
+            tideLevel.gameObject.SetActive(false);
+            missionUI.gameObject.SetActive(false);
         } else 
         {
             compassBarTransform.gameObject.SetActive(true);
             healthUI.gameObject.SetActive(true);
+            tideLevel.gameObject.SetActive(true);
+            missionUI.gameObject.SetActive(true);
         }
 
 

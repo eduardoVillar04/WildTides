@@ -5,6 +5,7 @@ using UnityEngine;
 public class CannonCamera : MonoBehaviour
 {
     public GameObject m_Sails;
+    public GameObject m_Sight;
 
     public float Sensitivity
     {
@@ -38,10 +39,12 @@ public class CannonCamera : MonoBehaviour
     private void OnEnable()
     {
         m_Sails.SetActive(false);
+        m_Sight.SetActive(true);
     }
 
     private void OnDisable()
     {
         m_Sails.SetActive(true);
+        m_Sight.SetActive(false);
     }
 }

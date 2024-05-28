@@ -743,7 +743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MissionNumber: 0
-  TextMision1: {fileID: 5409359253956558721}
+  TextMision1: {fileID: 1293144993285447971}
   TextMision2: {fileID: 2167803407493968352}
   TextMision3: {fileID: 321565405902413647}
   TextMision4: {fileID: 8531246683880750940}

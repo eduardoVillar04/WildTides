@@ -7,7 +7,11 @@ public class SingletonOptions : MonoBehaviour
     // We store the instance of this class here
     public static SingletonOptions m_Instance;
 
+    public int m_InitialResolutionIndex = 0;
+    public int m_ResolutionIndex;
+    public int m_QualityIndex = 3;
     public float m_SensitivityValue = 1f;
+    public bool m_IsFullScreen = true;
     // To change/read it you can call SingletonSample.m_Instance.m_YourValue = whatevervalue;
 
     private void Awake()

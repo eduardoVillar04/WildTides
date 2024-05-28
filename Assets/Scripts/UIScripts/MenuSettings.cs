@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -8,18 +9,31 @@ public class MenuSettings : MonoBehaviour
 
     public AudioMixer audioMixer;
 
-    public TMPro.TMP_Dropdown resolutionDropdown;
+    public TMPro.TMP_Dropdown m_ResolutionDropdown;
+    public TMPro.TMP_Dropdown m_GraphicDropdown;
 
     public GameObject m_SensitivitySlider;
     public GameObject m_VolumeSlider;
+    public GameObject m_FullScreenToggle;
 
     Resolution[] resolutions;
+    private void Awake()
+    {
+        if (SingletonOptions.m_Instance.m_InitialResolutionIndex == 0)
+        {
+            resolutions = Screen.resolutions;
+            SingletonOptions.m_Instance.m_InitialResolutionIndex = resolutions.Length;
+            SingletonOptions.m_Instance.m_ResolutionIndex = resolutions.Length;
+        }
+    }
+
+
     void Start()
     {
         resolutions = Screen.resolutions;
-
-        resolutionDropdown.ClearOptions();
-
+        m_ResolutionDropdown.ClearOptions();
+        m_FullScreenToggle.GetComponent<Toggle>().isOn = SingletonOptions.m_Instance.m_IsFullScreen;
+        m_GraphicDropdown.value = SingletonOptions.m_Instance.m_QualityIndex;
         m_SensitivitySlider.GetComponent<Slider>().value = SingletonOptions.m_Instance.m_SensitivityValue;
         audioMixer.GetFloat("volume", out float Volume);
         m_VolumeSlider.GetComponent<Slider>().value = Mathf.Pow(10,Volume/20);
@@ -37,15 +51,16 @@ public class MenuSettings : MonoBehaviour
             }
         }
 
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
+        m_ResolutionDropdown.AddOptions(options);
+        m_ResolutionDropdown.value = SingletonOptions.m_Instance.m_ResolutionIndex;
+        m_ResolutionDropdown.RefreshShownValue();
 
     }
 
     public void SetResolution (int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
+        SingletonOptions.m_Instance.m_ResolutionIndex = resolutionIndex;
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
     public void SetVolume (float volume)
@@ -60,6 +75,7 @@ public class MenuSettings : MonoBehaviour
 
     public void SetQuality (int qualityIndex)
     {
+        SingletonOptions.m_Instance.m_QualityIndex = qualityIndex;
         switch(qualityIndex)
         {
             case 0:
@@ -75,6 +91,7 @@ public class MenuSettings : MonoBehaviour
 
     public void SetFullScreen ( bool isFullScreen)
     {
+        SingletonOptions.m_Instance.m_IsFullScreen = isFullScreen;
         Screen.fullScreen = isFullScreen;
     }
 

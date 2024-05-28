@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 128357864964918852}
   m_Layer: 0
   m_Name: DockArea
-  m_TagString: Untagged
+  m_TagString: Dock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,4 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2282ea3070304f9edf2cfd00389ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NextDock: {fileID: 0}
+  m_DockName: 
+  m_TideLevelController: {fileID: 0}
+  m_DockArray: []
+  m_CompassController: {fileID: 0}
+  m_IsFirstDock: 0

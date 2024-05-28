@@ -1,14 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
 
+    public GameObject firstButton;
+
     public GameObject pauseMenuUI;
     public GameObject pauseMainMenu;
     public GameObject pauseOptionsMenu;
+    public GameObject PauseMobileButton;
+
+    public GameObject deathMenu;
+
+    private void Start()
+    {
+#if UNITY_ANDROID
+        PauseMobileButton.SetActive(true);
+#endif
+    }
 
     void Update()
     {
@@ -22,6 +35,7 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+        if (deathMenu.activeSelf) { gameObject.SetActive(false); }
     }
 
     public void Resume()
@@ -31,7 +45,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
-
     }
 
     public void Pause()
@@ -41,6 +54,19 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         gameIsPaused = true;
+        EventSystem.current.SetSelectedGameObject(firstButton);
+    }
+
+    public void PauseMobile()
+    {
+        if (gameIsPaused)
+        {
+            Resume();
+        }
+        else
+        {
+            Pause();
+        }
     }
 
     public void QuitGame()

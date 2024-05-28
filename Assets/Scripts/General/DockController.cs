@@ -10,6 +10,9 @@ public class DockController : MonoBehaviour
     [Header("DOCK NAME")]
     public string m_DockName;
 
+    [Header("TIDE LEVEL CONTROLLER")]
+    public TideLevelController m_TideLevelController;
+
     [Header("DOCKS LIST")]
     public GameObject[] m_DockArray;
 
@@ -46,6 +49,9 @@ public class DockController : MonoBehaviour
 
             //Update compass target
             m_CompassController.objectiveObjectTransform = nextDock.transform;
+
+            //Update tide level
+            m_TideLevelController.AddTideLevel();
 
             nextDock.SetActive(true);
             gameObject.SetActive(false);

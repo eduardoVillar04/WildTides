@@ -13,6 +13,13 @@ public class CannonController : MonoBehaviour
     public float m_ProjectileSpeed;
     public float m_RecoilFroce;
 
+    [Header("CAMERA SHAKE")]
+    public CameraShake m_MainCameraShake;
+    public CameraShake m_CannonCameraShake;
+    public float m_ShakeTime;
+    public float m_MainCamShakeMagnitude;
+    public float m_CannonCamShakeMagnitude;
+
     [Header("CONTROL VARIABLES")]
     public float m_ShootCooldown;
     private float m_ShootColdowntimer;
@@ -38,8 +45,8 @@ public class CannonController : MonoBehaviour
     {
         Inputs();
 
-        //We can shoot when it isnt on cooldown, the player presses the button, and the cannon camera is active, meaning the player is in "shoot mode"
-        if(Time.time > m_ShootColdowntimer && m_ShootIsPressed && m_CannonCamera.activeSelf)
+        //We can shoot when it isnt on cooldown and the player presses the button
+        if(Time.time > m_ShootColdowntimer && m_ShootIsPressed && Time.timeScale!=0)
         {
             m_ShootColdowntimer = Time.time + m_ShootCooldown;
             Shoot();
@@ -53,6 +60,10 @@ public class CannonController : MonoBehaviour
 
     public void Shoot()
     {
+        //We shake both the cannon and the main camera
+        StartCoroutine(m_MainCameraShake.Shake(m_ShakeTime,m_MainCamShakeMagnitude));
+        StartCoroutine(m_CannonCameraShake.Shake(m_ShakeTime, m_CannonCamShakeMagnitude));
+
         //We instantiate the projectile
         GameObject projectile = Instantiate(m_Projectile, m_CannonEndPoint.position, m_CannonEndPoint.rotation);
         //And give it force 

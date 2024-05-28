@@ -23,7 +23,6 @@ public class DockController : MonoBehaviour
     [Header("MISSION LOG TEXT")]
     public TextMeshProUGUI m_MissionText;
 
-
     [Header("COMPASS CONTROLLER")]
     public CompassController m_CompassController;
 
@@ -47,9 +46,6 @@ public class DockController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            //We set the checkpoint for the boat
-            other.gameObject.GetComponent<RespawnController>().m_Checkpoint = transform.position;
-
             //Select random next dock
             GameObject nextDock = getRandomDock();
 

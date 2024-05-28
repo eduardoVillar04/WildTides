@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
@@ -9,18 +10,23 @@ public class DockController : MonoBehaviour
 {
     [Header("DOCK NAME")]
     public string m_DockName;
+    
+    [Header("DOCKS LIST")]
+    public GameObject[] m_DockArray;
 
+    [Header("FIRST DOCK")]
+    public bool m_IsFirstDock;
+    
     [Header("TIDE LEVEL CONTROLLER")]
     public TideLevelController m_TideLevelController;
 
-    [Header("DOCKS LIST")]
-    public GameObject[] m_DockArray;
+    [Header("MISSION LOG TEXT")]
+    public TextMeshProUGUI m_MissionText;
+
 
     [Header("COMPASS CONTROLLER")]
     public CompassController m_CompassController;
 
-    [Header("FIRST DOCK")]
-    public bool m_IsFirstDock;
 
     //In the awake, when the docks are still al active, we get their references
     private void Awake()

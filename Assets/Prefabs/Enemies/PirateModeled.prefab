@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3082316551666737382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7977558906993608993}
+  - component: {fileID: 8992006252248702505}
+  m_Layer: 6
+  m_Name: TerrainCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7977558906993608993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3082316551666737382}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3244604655264443398}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8992006252248702505
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3082316551666737382}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7.7236404, y: 7.947006, z: 12.242865}
+  m_Center: {x: -8.8854914e-18, y: 3.4735036, z: 0.33670926}
 --- !u!1 &4415558278181597148
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +159,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: a9180d5d5cc1c8049bf936db99461006, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5701739052611047072}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: a9180d5d5cc1c8049bf936db99461006, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7977558906993608993}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a9180d5d5cc1c8049bf936db99461006, type: 3}
       insertIndex: -1
@@ -226,7 +282,7 @@ MonoBehaviour:
   m_CannonRotationSpeed: 5
   m_BulletPrefab: {fileID: 45345387307393872, guid: dace832d1ea0697429aacdbb48c84670, type: 3}
   m_BulletSpeed: 1
-  m_TimeBetweenShots: 3
+  m_TimeBetweenShots: 1
   m_ShotTimer: 0
   m_ReturnPoint: {x: 0, y: 0, z: 0}
   m_TimeBetweenSetDestination: 0.2

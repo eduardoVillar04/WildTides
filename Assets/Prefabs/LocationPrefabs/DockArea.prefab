@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DockName: 
+  m_TideLevelController: {fileID: 0}
   m_DockArray: []
   m_CompassController: {fileID: 0}
   m_IsFirstDock: 0

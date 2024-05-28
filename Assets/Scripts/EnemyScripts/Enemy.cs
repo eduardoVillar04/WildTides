@@ -41,7 +41,6 @@ public abstract class Enemy : MonoBehaviour
 
     public virtual void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("colision tag: " + collision.gameObject.tag);
         if(collision.gameObject.CompareTag("Terrain") || collision.gameObject.CompareTag("Enemy"))
         {
             m_HealthController.DealDamage(1);

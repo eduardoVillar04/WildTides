@@ -1598,34 +1598,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6538209646479928475, guid: cd614d82c7bd50842956520fa7696c80, type: 3}
-      propertyPath: m_BulletSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6538209646479928475, guid: cd614d82c7bd50842956520fa7696c80, type: 3}
-      propertyPath: m_BulletPrefab
-      value: 
-      objectReference: {fileID: 45345387307393872, guid: dace832d1ea0697429aacdbb48c84670, type: 3}
-    - target: {fileID: 6538209646479928475, guid: cd614d82c7bd50842956520fa7696c80, type: 3}
-      propertyPath: m_PursuitSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6538209646479928475, guid: cd614d82c7bd50842956520fa7696c80, type: 3}
-      propertyPath: m_ShootingDistance
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 6538209646479928475, guid: cd614d82c7bd50842956520fa7696c80, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6538209646479928475, guid: cd614d82c7bd50842956520fa7696c80, type: 3}
-      propertyPath: m_SpeedWhileShooting
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 9021407239776746262, guid: cd614d82c7bd50842956520fa7696c80, type: 3}
-      propertyPath: m_Speed
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

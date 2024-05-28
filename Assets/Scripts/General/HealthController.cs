@@ -9,6 +9,7 @@ public class HealthController : MonoBehaviour
 
     [Header("Audio")]
     public AudioClip m_DamageSound;
+
     private void Update()
     {
         if(m_HealthPoints <= 0)

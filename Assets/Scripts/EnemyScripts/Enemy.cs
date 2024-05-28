@@ -9,14 +9,12 @@ public abstract class Enemy : MonoBehaviour
     public Transform m_Transform;
     public Rigidbody m_Rigidbody;
     public HealthController m_HealthController;
-    public bool m_IsDead;
     public float m_DeathSpeed;
 
     public virtual void Start()
     {
         //default deathspeed
         m_DeathSpeed = 0.05f;
-        m_IsDead = false;
         m_Transform = GetComponent<Transform>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_HealthController = GetComponent<HealthController>();
@@ -41,7 +39,6 @@ public abstract class Enemy : MonoBehaviour
 
     public virtual void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("colision tag: " + collision.gameObject.tag);
         if(collision.gameObject.CompareTag("Terrain") || collision.gameObject.CompareTag("Enemy"))
         {
             m_HealthController.DealDamage(1);

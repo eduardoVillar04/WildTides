@@ -59,6 +59,9 @@ public class PirateController : Enemy
     {
         base.Start();
 
+        //ready to fire
+        m_ShotTimer = m_TimeBetweenShots;
+
         m_VisionSphere = GetComponent<SphereCollider>();
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
 

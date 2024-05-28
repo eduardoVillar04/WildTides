@@ -14,7 +14,7 @@ public class ExplosionController : MonoBehaviour
         Invoke("DestroyThisObject", 0.2f);
 
         //if its an enemy, it dies
-        if (other.gameObject.GetComponent<Enemy>()) other.gameObject.GetComponent<Enemy>().m_IsDead = true;
+        if (other.gameObject.GetComponent<Enemy>()) other.gameObject.GetComponent<HealthController>().m_IsDead = true;
 
         //We deal damage
         other.gameObject.GetComponent<HealthController>().DealDamage(m_DamageDealt);

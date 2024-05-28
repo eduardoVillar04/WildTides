@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DockController : MonoBehaviour
 {
-    [Header("AUDIO")]
+    [Header("DOCK NAME")]
+    public string m_DockName;
 
     [Header("NEXT DOCK")]
     public Transform m_NextDock;

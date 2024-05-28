@@ -45,8 +45,8 @@ public class CannonController : MonoBehaviour
     {
         Inputs();
 
-        //We can shoot when it isnt on cooldown, the player presses the button, and the cannon camera is active, meaning the player is in "shoot mode"
-        if(Time.time > m_ShootColdowntimer && m_ShootIsPressed /*&& m_CannonCamera.activeSelf*/)
+        //We can shoot when it isnt on cooldown and the player presses the button
+        if(Time.time > m_ShootColdowntimer && m_ShootIsPressed && Time.timeScale!=0)
         {
             m_ShootColdowntimer = Time.time + m_ShootCooldown;
             Shoot();

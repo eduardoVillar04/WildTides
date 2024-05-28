@@ -515,6 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Sails: {fileID: 3037981134147240336}
+  m_Sight: {fileID: 0}
   sensitivity: 1
   yRotationLimit: 88
 --- !u!114 &3871137828930934120
@@ -630,7 +631,6 @@ GameObject:
   - component: {fileID: 3035736378595854574}
   - component: {fileID: 8169901803110008173}
   - component: {fileID: 5359514897624062845}
-  - component: {fileID: 3621538797724051473}
   - component: {fileID: 476318094673546069}
   - component: {fileID: 3578967168179195433}
   m_Layer: 0
@@ -677,8 +677,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0383015, y: 2.5478652, z: 7.1486135}
-  m_Center: {x: -0.015070915, y: 1.6445678, z: 0.455518}
+  m_Size: {x: 2.0383015, y: 4.512136, z: 7.1486135}
+  m_Center: {x: -0.015070915, y: 2.626703, z: 0.455518}
 --- !u!114 &7629680396622188207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,21 +812,6 @@ MonoBehaviour:
   m_HealthPoints: 3
   m_IsDead: 1
   m_DamageSound: {fileID: 0}
---- !u!114 &3621538797724051473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5712579652754710955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f3756ef6204054cbc94d54cacb6296, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PlayerTransform: {fileID: 0}
-  m_Checkpoint: {x: 0, y: 0, z: 0}
-  m_HealthController: {fileID: 0}
 --- !u!33 &476318094673546069
 MeshFilter:
   m_ObjectHideFlags: 0

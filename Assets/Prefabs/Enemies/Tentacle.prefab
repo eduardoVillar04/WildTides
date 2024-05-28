@@ -117,8 +117,7 @@ MonoBehaviour:
   m_Transform: {fileID: 0}
   m_Rigidbody: {fileID: 0}
   m_HealthController: {fileID: 0}
-  m_IsDead: 0
-  m_DeathSpeed: 0
+  m_DeathSpeed: 0.2
   m_Damage: 1
   m_Patrol: {fileID: 0}
   m_PlayerInView: 0

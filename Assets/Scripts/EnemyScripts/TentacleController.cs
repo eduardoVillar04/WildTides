@@ -159,13 +159,8 @@ public class TentacleController : Enemy
         if (collision.gameObject.CompareTag("Player"))
         {
             //When the player is hit, we deal damage to it and the tentacle dies
-            base.m_IsDead = true;
+            m_HealthController.DealDamage(1);
             collision.gameObject.GetComponent<HealthController>().DealDamage(m_Damage);
         }
-    }
-
-    public void EnableNavMeshAgent()
-    {
-        m_NavMeshAgent.enabled = true;
     }
 }

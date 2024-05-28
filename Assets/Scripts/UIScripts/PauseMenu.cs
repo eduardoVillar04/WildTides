@@ -14,6 +14,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseOptionsMenu;
     public GameObject PauseMobileButton;
 
+    public GameObject deathMenu;
+
     private void Start()
     {
 #if UNITY_ANDROID
@@ -33,6 +35,7 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+        if (deathMenu.activeSelf) { gameObject.SetActive(false); }
     }
 
     public void Resume()

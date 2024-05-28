@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class DeathMenuController : MonoBehaviour
 {
     public GameObject firstButton;
+    public GameObject DeathText;
     
     // Start is called before the first frame update
     void Start()
@@ -26,11 +27,13 @@ public class DeathMenuController : MonoBehaviour
 
     public void RestartGame()
     {
+        SingletonOptions.m_Instance.m_SensitivityValue = DeathText.GetComponent<DeathTextController>().m_Sensitivity;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void GoMainMenu()
     {
+        SingletonOptions.m_Instance.m_SensitivityValue = DeathText.GetComponent<DeathTextController>().m_Sensitivity;
         SceneManager.LoadScene(0);
     }
 }

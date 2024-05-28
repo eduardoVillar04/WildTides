@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstButton: {fileID: 6255601902126436731}
+  DeathText: {fileID: 8971173282274141068}
 --- !u!1 &2487578064559497055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,3 +2152,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ScoreMenu: {fileID: 4063386553392480735}
+  m_Sensitivity: 0

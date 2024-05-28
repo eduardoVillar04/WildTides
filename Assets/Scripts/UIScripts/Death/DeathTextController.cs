@@ -8,11 +8,18 @@ public class DeathTextController : MonoBehaviour
     private bool m_EndAnimation = false;
 
     private float m_Timer;
-    
+    public float m_Sensitivity;
+
+    private void OnEnable()
+    {
+        
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_Sensitivity = SingletonOptions.m_Instance.m_SensitivityValue;
+        SingletonOptions.m_Instance.m_SensitivityValue = 0;
     }
 
     // Update is called once per frame

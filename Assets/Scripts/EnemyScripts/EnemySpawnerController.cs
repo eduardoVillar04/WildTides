@@ -7,6 +7,8 @@ public class EnemySpawnerController : MonoBehaviour
     public GameObject m_ExplosiveBarrelPrefab;
     public GameObject m_PirateEnemyPrefab;
 
+    public bool normalDistribution = false;
+
     public float m_SpawnRadius;
     
     // Start is called before the first frame update
@@ -36,20 +38,30 @@ public class EnemySpawnerController : MonoBehaviour
     void SpawnEnemy(GameObject prefab)
     {
         GameObject spawnObject = GameObject.Instantiate(prefab);
-        spawnObject.transform.position = transform.position + RandomOffsetPolar(m_SpawnRadius);
+        spawnObject.transform.position = transform.position + RandomOffsetPolar(m_SpawnRadius, normalDistribution);
     }
-    
-    Vector3 RandomOffsetPolar(float radius)
+
+    /*
+    Vector3 RandomOffsetCartesian(float radius, bool normalDistribution)
     {
-        float distance = CalculateDistance(radius);
+        Vector3 direction = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
+        direction.Normalize();
+
+        return direction * Random.Range(0f, CalculateDistance(radius, normalDistribution));
+    }
+    */
+
+    Vector3 RandomOffsetPolar(float radius, bool normalDistribution)
+    {
+        float distance = CalculateDistance(radius, normalDistribution);
         float angleDegrees = Random.Range(0.0f, 360.0f);
 
         return new Vector3(distance * Mathf.Cos(angleDegrees * Mathf.Deg2Rad), 0, distance * Mathf.Sin(angleDegrees * Mathf.Deg2Rad));
     }
 
-    float CalculateDistance(float radius)
+    float CalculateDistance(float radius, bool normalDistribution)
     {
-        return radius * Random.Range(0f, 1f);
+        return radius * Random.Range(0f, 1f) * (normalDistribution ? Random.Range(0f, 1f) : 1f);
     }
 
 }

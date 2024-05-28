@@ -180,9 +180,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 2118731892bcee94fafdee7c9a15df08, type: 2}
-  resolutionDropdown: {fileID: 9156260759589906276}
+  m_ResolutionDropdown: {fileID: 9156260759589906276}
+  m_GraphicDropdown: {fileID: 4753655676582560489}
   m_SensitivitySlider: {fileID: 4606870121559289726}
   m_VolumeSlider: {fileID: 4197866603068311259}
+  m_FullScreenToggle: {fileID: 5622615214989473897}
 --- !u!1 &558856864258157992
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +325,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3789738420387523336}
         m_TargetAssemblyTypeName: MenuSettings, Assembly-CSharp
         m_MethodName: SetQuality
         m_Mode: 0
@@ -3421,7 +3423,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3789738420387523336}
         m_TargetAssemblyTypeName: MenuSettings, Assembly-CSharp
         m_MethodName: SetFullScreen
         m_Mode: 0
@@ -5555,7 +5557,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3789738420387523336}
         m_TargetAssemblyTypeName: MenuSettings, Assembly-CSharp
         m_MethodName: SetResolution
         m_Mode: 0

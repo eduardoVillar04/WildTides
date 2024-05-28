@@ -68,5 +68,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExplosiveBarrelPrefab: {fileID: 3774355856268715829, guid: 0b5bab3cd3fcd41469418116eb79a908, type: 3}
   m_PirateEnemyPrefab: {fileID: 2759851232384120508, guid: cd614d82c7bd50842956520fa7696c80, type: 3}
+  m_TentaclePrefab: {fileID: 2323671655070106567, guid: e21fce9ee3c28e741bf85c722b221474, type: 3}
   normalDistribution: 0
   m_SpawnRadius: 0

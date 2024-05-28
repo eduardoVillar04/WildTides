@@ -18,7 +18,7 @@ public class MissionsController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //TextMision1.text = string.Format("GO TO {}", m_PortName1);
+        TextMision1.text = string.Format("GO TO PORT A");
     }
 
 

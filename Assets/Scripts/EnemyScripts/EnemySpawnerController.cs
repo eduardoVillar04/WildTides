@@ -6,6 +6,7 @@ public class EnemySpawnerController : MonoBehaviour
 {
     public GameObject m_ExplosiveBarrelPrefab;
     public GameObject m_PirateEnemyPrefab;
+    public GameObject m_TentaclePrefab;
 
     public bool normalDistribution = false;
 
@@ -32,6 +33,7 @@ public class EnemySpawnerController : MonoBehaviour
                 SpawnEnemy(m_ExplosiveBarrelPrefab);
             }
             SpawnEnemy(m_PirateEnemyPrefab);
+            SpawnEnemy(m_TentaclePrefab);
         }
     }
 

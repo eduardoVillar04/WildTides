@@ -36,9 +36,16 @@ public class DockController : MonoBehaviour
     //We disable the docks that are not the first oen
     private void Start()
     {
+        //Deactivate every non first dock
         if(!m_IsFirstDock)
         {
             gameObject.SetActive(false);
+        }
+
+        //Set the mission log text to the first dock
+        if(m_IsFirstDock)
+        {
+            m_MissionText.text = "Go to: " + m_DockName;
         }
     }
 
@@ -48,6 +55,9 @@ public class DockController : MonoBehaviour
         {
             //Select random next dock
             GameObject nextDock = getRandomDock();
+
+            //Change the name of the port in mission log
+            m_MissionText.text = "Go to: " + nextDock.GetComponent<DockController>().m_DockName;
 
             //Update compass target
             m_CompassController.objectiveObjectTransform = nextDock.transform;

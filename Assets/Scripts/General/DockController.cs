@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
 public class DockController : MonoBehaviour
@@ -54,14 +55,16 @@ public class DockController : MonoBehaviour
 
     public GameObject getRandomDock()
     {
-        GameObject dock = null;
+        GameObject dock;
     
-        while (dock!=this.gameObject)
+        while (true)
         {
             int index = UnityEngine.Random.Range(0, m_DockArray.Length);
             dock = m_DockArray[index];
+            if(dock!=this.gameObject)
+            {
+                return dock;
+            }
         }
-
-        return dock;
     }
 }

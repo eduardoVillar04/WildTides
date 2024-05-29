@@ -10,6 +10,7 @@ public class CannonController : MonoBehaviour
     [Header("SHOOT VARIABLES")]
     public GameObject m_Projectile;
     public Transform m_CannonEndPoint;
+    public Transform m_AimReferencePoint;
     public float m_ProjectileSpeed;
     public float m_RecoilFroce;
 
@@ -28,15 +29,14 @@ public class CannonController : MonoBehaviour
 
     [Header("COMPONENTS")]
     public PlayerInput m_PlayerInput;
-    public Rigidbody m_Rigidbody;
+    public Rigidbody m_ShipRigidbody;
+
 
     [Header("Audio")]
     public AudioClip m_ShootSound;
     // Start is called before the first frame update
     void Start()
     {
-        m_PlayerInput = GetComponent<PlayerInput>();
-        m_Rigidbody = GetComponent<Rigidbody>();
         m_ShootColdowntimer = Time.time + 0.1f;
     }
 
@@ -46,11 +46,17 @@ public class CannonController : MonoBehaviour
         Inputs();
 
         //We can shoot when it isnt on cooldown and the player presses the button
-        if(Time.time > m_ShootColdowntimer && m_ShootIsPressed && Time.timeScale!=0)
+        if (Time.time > m_ShootColdowntimer && m_ShootIsPressed && Time.timeScale != 0)
         {
             m_ShootColdowntimer = Time.time + m_ShootCooldown;
             Shoot();
         }
+
+        if(!m_CannonCamera.activeSelf)
+        {
+            TrackAimReference();
+        }
+
     }
 
     public void Inputs()
@@ -61,7 +67,7 @@ public class CannonController : MonoBehaviour
     public void Shoot()
     {
         //We shake both the cannon and the main camera
-        StartCoroutine(m_MainCameraShake.Shake(m_ShakeTime,m_MainCamShakeMagnitude));
+        StartCoroutine(m_MainCameraShake.Shake(m_ShakeTime, m_MainCamShakeMagnitude));
         StartCoroutine(m_CannonCameraShake.Shake(m_ShakeTime, m_CannonCamShakeMagnitude));
 
         //We instantiate the projectile
@@ -74,11 +80,18 @@ public class CannonController : MonoBehaviour
         Recoil();
     }
 
+    public void TrackAimReference()
+    {
+        //The cannon will be aiming where the player is aiming
+        Vector3 direction = new Vector3(m_AimReferencePoint.position.x, transform.position.y, m_AimReferencePoint.position.z);
+        transform.LookAt(direction);
+    }
+
     public void Recoil()
     {
         //After each attack, the boat will suffer knockback from the shot
         Vector3 direction = transform.position - m_CannonEndPoint.position;
-        m_Rigidbody.AddForce(direction * m_RecoilFroce, ForceMode.VelocityChange);
+        m_ShipRigidbody.AddForce(direction * m_RecoilFroce, ForceMode.VelocityChange);
     }
 
 }

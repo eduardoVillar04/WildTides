@@ -30,21 +30,24 @@ public class MainCameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Check which controller is being used
-        m_CurrentControlScheme = m_PlayerInput.currentControlScheme;
-
-        //Update the sensitivity selected by the player
-        m_Sensitivity = SingletonOptions.m_Instance.m_SensitivityValue;
-
-        m_CameraDirectionX = m_PlayerInput.actions["Look"].ReadValue<Vector2>().x;
-
-        //new input system values for mouse are too large compared to controller, multiplying by 0.1f gives us the old systems values
-        //we only apply this if mouse is being used
-        if (m_CurrentControlScheme == "Keyboard&Mouse")
+        if(!m_CameraShake.m_IsShaking)
         {
-            m_CameraDirectionX *= 0.1f;
-        }
+            //Check which controller is being used
+            m_CurrentControlScheme = m_PlayerInput.currentControlScheme;
 
-        m_Camera.transform.RotateAround(m_ShipTransform.position, Vector3.up, 500 * m_CameraDirectionX * m_Sensitivity * Time.deltaTime);
+            //Update the sensitivity selected by the player
+            m_Sensitivity = SingletonOptions.m_Instance.m_SensitivityValue;
+
+            m_CameraDirectionX = m_PlayerInput.actions["Look"].ReadValue<Vector2>().x;
+
+            //new input system values for mouse are too large compared to controller, multiplying by 0.1f gives us the old systems values
+            //we only apply this if mouse is being used
+            if (m_CurrentControlScheme == "Keyboard&Mouse")
+            {
+                m_CameraDirectionX *= 0.1f;
+            }
+
+            m_Camera.transform.RotateAround(m_ShipTransform.position, Vector3.up, 500 * m_CameraDirectionX * m_Sensitivity * Time.deltaTime);
+        }
     }
 }

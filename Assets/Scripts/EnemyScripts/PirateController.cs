@@ -227,15 +227,12 @@ public class PirateController : Enemy
     }
 
 
-    public override void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        base.OnTriggerEnter(other);
-
         if(other.gameObject.CompareTag("Player"))
         {
             m_CurrentState = PirateStates.PURSUING;
         }
-
     }
 
     public override void OnCollisionEnter(Collision collision)

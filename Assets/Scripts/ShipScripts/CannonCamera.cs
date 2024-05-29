@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Build.Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,6 +12,7 @@ public class CannonCamera : MonoBehaviour
     public GameObject m_Sails;
     public GameObject m_Sight;
     public CameraShake m_CameraShake;
+    public Transform m_Cannon;
     private float m_Sensitivity;
     public float m_ExtraGamepadSens;
     //Makes sure the player cant go further from specified angle
@@ -31,6 +33,9 @@ public class CannonCamera : MonoBehaviour
 
     void Update()
     {
+        //while the cannon camera is active, the canno will follow it
+        RotateCannon();
+
         if(!m_CameraShake.m_IsShaking)
         {
             //Check which controller is being used
@@ -68,8 +73,15 @@ public class CannonCamera : MonoBehaviour
 
     }
 
+    public void RotateCannon()
+    {
+        m_Cannon.rotation = transform.rotation;
+    }
+
     private void OnEnable()
     {
+        //We make sure the camera has the same rotation as the cannon
+        transform.rotation = m_Cannon.rotation;
         m_Sails.SetActive(false);
         m_Sight.SetActive(true);
     }

@@ -6,15 +6,19 @@ using UnityEngine.UIElements;
 
 public class MainCameraController : MonoBehaviour
 {
-    public Camera m_Camera;
     public float m_Sensitivity;
 
+    [Header("COMPONENTS")]
+    public Camera m_Camera;
     public Transform m_ShipTransform;
-    public float m_CameraDirection;
     public PlayerInput m_PlayerInput;
+    public string m_CurrentControlScheme;
 
+    [Header("CAMERA SHAKE")]
     public CameraShake m_CameraShake;
 
+    private float m_CameraDirectionX;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,26 +30,21 @@ public class MainCameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Check which controller is being used
+        m_CurrentControlScheme = m_PlayerInput.currentControlScheme;
+
         //Update the sensitivity selected by the player
         m_Sensitivity = SingletonOptions.m_Instance.m_SensitivityValue;
 
-        //if player isnt moving with a controller, move the camera with the mouse, else do it with the controller
-        //also, if the camera is shaking we dont allow it to move, since it causes problems
-        if (m_PlayerInput.actions["Look"].ReadValue<Vector2>().x != 0 && !m_CameraShake.m_IsShaking)
+        m_CameraDirectionX = m_PlayerInput.actions["Look"].ReadValue<Vector2>().x;
+
+        //new input system values for mouse are too large compared to controller, multiplying by 0.1f gives us the old systems values
+        //we only apply this if mouse is being used
+        if (m_CurrentControlScheme == "Keyboard&Mouse")
         {
-            
-            m_CameraDirection = m_PlayerInput.actions["Look"].ReadValue<Vector2>().x;
-
-            m_CameraDirection = Input.GetAxis("Mouse X");
-
-            //TODO ADD CONTROLLER SUPPORT
-            //We clamp the value between -1 / 1 to have consistency between platforms
-            //m_CameraDirection = Mathf.Clamp(m_CameraDirection, -1, 1);
-
-            //Debug.Log(m_CameraDirection.ToString());
-
-            m_Camera.transform.RotateAround(m_ShipTransform.position, Vector3.up, 500 * m_CameraDirection * m_Sensitivity * Time.deltaTime);
+            m_CameraDirectionX *= 0.1f;
         }
-        //m_Sensitivity = Singleton.player_Sensitivity;
+
+        m_Camera.transform.RotateAround(m_ShipTransform.position, Vector3.up, 500 * m_CameraDirectionX * m_Sensitivity * Time.deltaTime);
     }
 }

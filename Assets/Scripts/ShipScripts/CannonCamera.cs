@@ -19,7 +19,6 @@ public class CannonCamera : MonoBehaviour
     public float m_yRotationLimit = 88f;
     public string m_CurrentControlScheme;
 
-    //PRUEBAS
    
     private float m_CameraDirectionX;
     private float m_CameraDirectionY;
@@ -36,7 +35,7 @@ public class CannonCamera : MonoBehaviour
         //while the cannon camera is active, the canno will follow it
         RotateCannon();
 
-        if(!m_CameraShake.m_IsShaking)
+        if (!m_CameraShake.m_IsShaking)
         {
             //Check which controller is being used
             m_CurrentControlScheme = m_PlayerInput.currentControlScheme;
@@ -68,7 +67,8 @@ public class CannonCamera : MonoBehaviour
             var xQuat = Quaternion.AngleAxis(rotation.x, Vector3.up);
             var yQuat = Quaternion.AngleAxis(rotation.y, Vector3.left);
 
-            transform.localRotation = xQuat * yQuat; 
+            transform.localRotation = xQuat * yQuat;
+
         }
 
     }
@@ -81,7 +81,7 @@ public class CannonCamera : MonoBehaviour
     private void OnEnable()
     {
         //We make sure the camera has the same rotation as the cannon
-        transform.rotation = m_Cannon.rotation;
+        rotation = new Vector2(m_Cannon.localEulerAngles.y, 0);
         m_Sails.SetActive(false);
         m_Sight.SetActive(true);
     }

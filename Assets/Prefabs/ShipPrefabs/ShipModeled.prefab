@@ -107,12 +107,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Sensitivity: 1
-  m_MouseCameraDirectionDivider: 50
-  m_CameraDirection: 0
   m_Camera: {fileID: 3418642908101941304}
   m_ShipTransform: {fileID: 2700462362417093324}
   m_PlayerInput: {fileID: 3035736378595854574}
-  m_CameraShake: {fileID: 0}
+  m_CurrentControlScheme: 
+  m_CameraShake: {fileID: 8182969080422446591}
 --- !u!114 &8182969080422446591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,8 +517,10 @@ MonoBehaviour:
   m_PlayerInput: {fileID: 3035736378595854574}
   m_Sails: {fileID: 3037981134147240336}
   m_Sight: {fileID: 0}
-  m_MouseCameraDirectionDivider: 50
+  m_CameraShake: {fileID: 3871137828930934120}
+  m_ExtraGamepadSens: 0
   m_yRotationLimit: 88
+  m_CurrentControlScheme: 
 --- !u!114 &3871137828930934120
 MonoBehaviour:
   m_ObjectHideFlags: 0

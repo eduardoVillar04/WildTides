@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class MenuSettings : MonoBehaviour
 {
-    [Header("AUDIO")]
-    public AudioClip m_ClickSound;
 
     public AudioMixer audioMixer;
 
@@ -90,8 +88,6 @@ public class MenuSettings : MonoBehaviour
 
     public void SetFullScreen ( bool isFullScreen)
     {
-        //Audio
-        SoundEffectsManager.instance.PlaySoundFXClip(m_ClickSound, transform, 0.99f);
         SingletonOptions.m_Instance.m_IsFullScreen = isFullScreen;
         Screen.fullScreen = isFullScreen;
     }

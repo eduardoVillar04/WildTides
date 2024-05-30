@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Build.Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,12 +13,12 @@ public class CannonCamera : MonoBehaviour
     public CameraShake m_CameraShake;
     public Transform m_Cannon;
     private float m_Sensitivity;
-    public float m_ExtraGamepadSens;
+    public float m_ExtraJoystickSens;
     //Makes sure the player cant go further from specified angle
     public float m_yRotationLimit = 88f;
     public string m_CurrentControlScheme;
 
-   
+
     private float m_CameraDirectionX;
     private float m_CameraDirectionY;
     private Vector2 rotation;
@@ -27,7 +26,7 @@ public class CannonCamera : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -55,8 +54,8 @@ public class CannonCamera : MonoBehaviour
             }
             else
             {
-                //With gamepad cannonCamera moves slowly compared to mainCamera, so we add a little extra sensitivity;
-                m_Sensitivity += m_ExtraGamepadSens;
+                //With joystick cannonCamera moves slowly compared to mainCamera, so we add a little extra sensitivity;
+                m_Sensitivity += m_ExtraJoystickSens;
             }
 
             rotation.x += m_CameraDirectionX * m_Sensitivity;

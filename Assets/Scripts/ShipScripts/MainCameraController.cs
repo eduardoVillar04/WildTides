@@ -51,8 +51,7 @@ public class MainCameraController : MonoBehaviour
             {
                 m_CameraDirectionX = m_PlayerInput.actions["Look"].ReadValue<Vector2>().x;
             }
-
-            
+                        
 
             //new input system values for mouse are too large compared to controller, multiplying by 0.1f gives us the old systems values
             //we only apply this if mouse is being used

@@ -15,6 +15,8 @@ public class CameraManager : MonoBehaviour
     void Start()
     {
         m_PlayerInput = GetComponent<PlayerInput>();
+        m_MainCamera.gameObject.SetActive(true);
+        m_CannonCamera.gameObject.SetActive(false);
     }
 
     // Update is called once per frame

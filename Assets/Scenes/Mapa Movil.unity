@@ -7165,6 +7165,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 1932522046}
     m_Modifications:
     - target: {fileID: 128357864964918852, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
+      propertyPath: m_DockName
+      value: BOOM Port
+      objectReference: {fileID: 0}
+    - target: {fileID: 128357864964918852, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
+      propertyPath: m_IsFirstDock
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 128357864964918852, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_CompassController
       value: 
       objectReference: {fileID: 0}
@@ -10171,6 +10179,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 290422058}
     m_Modifications:
+    - target: {fileID: 128357864964918852, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
+      propertyPath: m_DockName
+      value: Booze Harbor
+      objectReference: {fileID: 0}
     - target: {fileID: 128357864964918852, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_CompassController
       value: 
@@ -30905,6 +30917,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 203944283}
     m_Modifications:
     - target: {fileID: 128357864964918852, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
+      propertyPath: m_DockName
+      value: Tiki Bay
+      objectReference: {fileID: 0}
+    - target: {fileID: 128357864964918852, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_CompassController
       value: 
       objectReference: {fileID: 0}
@@ -47756,7 +47772,7 @@ PrefabInstance:
     - target: {fileID: 3891457392330187226, guid: c5dae777ee66eb04f9eab40c8ac62c0d, type: 3}
       propertyPath: objectiveObjectTransform
       value: 
-      objectReference: {fileID: 1261027691}
+      objectReference: {fileID: 248279676}
     - target: {fileID: 4381061624184488219, guid: c5dae777ee66eb04f9eab40c8ac62c0d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -55279,6 +55295,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1932522046}
     m_Modifications:
+    - target: {fileID: 128357864964918852, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
+      propertyPath: m_DockName
+      value: GunPorter
+      objectReference: {fileID: 0}
     - target: {fileID: 128357864964918852, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_NextDock
       value: 

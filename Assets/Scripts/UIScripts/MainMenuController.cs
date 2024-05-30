@@ -20,7 +20,7 @@ public class MainMenuController : MonoBehaviour
 
     public void QuitGame ()
     {
-        SceneManager.LoadScene(SceneManager.sceneCount - 1);
+        SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
         Debug.Log("Quit");  
         //Application.Quit();
     }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 371109664911576120}
   m_Layer: 0
   m_Name: Cartoon explosion
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4919,7 +4919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DamageDealt: 1
-  m_BlastForce: 10
+  m_BlastForce: 25
 --- !u!135 &371109664911576120
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -45,12 +45,7 @@ public class CannonController : MonoBehaviour
     {
         Inputs();
 
-        //We can shoot when it isnt on cooldown and the player presses the button
-        if (Time.time > m_ShootColdowntimer && m_ShootIsPressed && Time.timeScale != 0)
-        {
-            m_ShootColdowntimer = Time.time + m_ShootCooldown;
-            Shoot();
-        }
+        ShootingLogic();
 
         if(!m_CannonCamera.activeSelf)
         {
@@ -61,7 +56,29 @@ public class CannonController : MonoBehaviour
 
     public void Inputs()
     {
-        m_ShootIsPressed = m_PlayerInput.actions["Shoot"].IsPressed();
+        //TODO QUITAR
+        //m_ShootIsPressed = m_PlayerInput.actions["Shoot"].IsPressed();
+    }
+
+    public void ShootingLogic()
+    {
+        //We can shoot when it isnt on cooldown and the player presses the button
+        if (Time.time > m_ShootColdowntimer && m_ShootIsPressed && Time.timeScale != 0)
+        {
+            m_ShootColdowntimer = Time.time + m_ShootCooldown;
+            Shoot();
+        }
+    }
+
+    //This method is used in the shooting button in the mobile canvas
+    public void ShootingButton()
+    {
+        //In mobile, the player isnt able to do the press action "shoot"
+        if (Time.time > m_ShootColdowntimer && Time.timeScale != 0)
+        {
+            m_ShootColdowntimer = Time.time + m_ShootCooldown;
+            Shoot();
+        }
     }
 
     public void Shoot()

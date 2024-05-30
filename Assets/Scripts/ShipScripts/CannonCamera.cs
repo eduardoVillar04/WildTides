@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.MemoryMappedFiles;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.OnScreen;
 
 public class CannonCamera : MonoBehaviour
 {
@@ -18,6 +20,9 @@ public class CannonCamera : MonoBehaviour
     public float m_yRotationLimit = 88f;
     public string m_CurrentControlScheme;
 
+    [Header("MOBILE INPUTS")]
+    public OnScreenStick m_RightStick;
+    public RectTransform m_RightJoystickRectTransform;
 
     private float m_CameraDirectionX;
     private float m_CameraDirectionY;
@@ -26,6 +31,7 @@ public class CannonCamera : MonoBehaviour
 
     private void Start()
     {
+        //TODO QUITAR
         //Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -42,8 +48,21 @@ public class CannonCamera : MonoBehaviour
             //Update the sensitivity selected by the player
             m_Sensitivity = SingletonOptions.m_Instance.m_SensitivityValue;
 
-            m_CameraDirectionX = m_PlayerInput.actions["Look"].ReadValue<Vector2>().x;
-            m_CameraDirectionY = m_PlayerInput.actions["Look"].ReadValue<Vector2>().y;
+            //Mobile Inputs: If right stick is enabled the camera direction is updated with it
+            if (m_RightStick.enabled)
+            {
+                m_CameraDirectionX = m_RightJoystickRectTransform.localPosition.x / m_RightStick.movementRange;
+                m_CameraDirectionY = m_RightJoystickRectTransform.localPosition.y / m_RightStick.movementRange;
+
+                m_Sensitivity += m_ExtraJoystickSens;
+            }
+            else
+            {
+                m_CameraDirectionX = m_PlayerInput.actions["Look"].ReadValue<Vector2>().x;
+                m_CameraDirectionY = m_PlayerInput.actions["Look"].ReadValue<Vector2>().y;
+            }
+
+            
 
             //new input system values for mouse are too large compared to controller, multiplying by 0.1f gives us the old systems values
             //we only apply this if mouse is being used

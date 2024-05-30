@@ -48,8 +48,7 @@ public class ScoreController : MonoBehaviour
     public void ShowScore()
     {
         m_ScoreText.text = 0.ToString();
-        //m_TideLevel = m_TideLevelController.m_TideLevel;
-        m_TideLevel = 50;
+        m_TideLevel = m_TideLevelController.m_TideLevel;
         m_TideLevelObject.SetActive(false);
         m_IsShowingScore = true;
         m_CurrentTimeNumber = Time.time + m_ExtraTime;

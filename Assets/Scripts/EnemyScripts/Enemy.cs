@@ -9,12 +9,15 @@ public abstract class Enemy : MonoBehaviour
     public Transform m_Transform;
     public Rigidbody m_Rigidbody;
     public HealthController m_HealthController;
+    public float m_KnockbackForce;
     public float m_DeathSpeed;
 
     public virtual void Start()
     {
         //default deathspeed
         m_DeathSpeed = 0.05f;
+        //default knockback force
+        m_KnockbackForce = 40f;
         m_Transform = GetComponent<Transform>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_HealthController = GetComponent<HealthController>();
@@ -39,15 +42,18 @@ public abstract class Enemy : MonoBehaviour
 
     public virtual void OnCollisionEnter(Collision collision)
     {
+        //Deal damage if knocked into terrain
         if(collision.gameObject.CompareTag("Terrain") || collision.gameObject.CompareTag("Enemy"))
         {
             m_HealthController.DealDamage(1);
         }
-    }
 
-    public virtual void OnTriggerEnter(Collider other)
-    {
-        
+        //Knockback player
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            Vector3 direction = collision.transform.position - transform.position;
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(direction.normalized * m_KnockbackForce, ForceMode.Impulse);
+        }
     }
 
     public void InvokeDestroy()

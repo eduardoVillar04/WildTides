@@ -141,15 +141,12 @@ public class TentacleController : Enemy
     }
 
 
-    public override void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        base.OnTriggerEnter(other);
-
         if (other.gameObject.CompareTag("Player"))
         {
             m_PlayerInView = true;
         }
-
     }
 
     public override void OnCollisionEnter(Collision collision)

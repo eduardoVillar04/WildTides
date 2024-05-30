@@ -196,6 +196,11 @@ MonoBehaviour:
   m_CameraDirection: 0
   m_PlayerInput: {fileID: 3035736378595854574}
   m_CameraShake: {fileID: 0}
+
+  m_CurrentControlScheme: 
+  m_CameraShake: {fileID: 8182969080422446591}
+  m_Cannon: {fileID: 7333265998593652694}
+  m_ReferenceVector: {fileID: 6830349861092176638}
 --- !u!114 &8182969080422446591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,6 +779,9 @@ Transform:
   - {fileID: 3274216500597245474}
   - {fileID: 9149768088388320080}
   - {fileID: 2243062319817134818}
+  - {fileID: 3274216500597245474}
+  - {fileID: 7333265998593652694}
+  - {fileID: 6830349861092176638}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8599793107513438717
@@ -980,6 +988,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6984624444344640491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6830349861092176638}
+  m_Layer: 0
+  m_Name: ReferenceVector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6830349861092176638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6984624444344640491}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2700462362417093324}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8136374847598714489
 GameObject:
   m_ObjectHideFlags: 0

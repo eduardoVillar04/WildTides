@@ -40,6 +40,11 @@ public class ShipMovement : MonoBehaviour
     private void Inputs()
     {
         m_MoveInput = m_PlayerInput.actions["Move"].ReadValue<Vector2>();
+
+        //QUITar
+        Debug.Log("Left stick X: " + m_MoveInput.x);
+        Debug.Log("Left stick Y: " + m_MoveInput.y);
+
     }
 
     private void Movement(float dt)

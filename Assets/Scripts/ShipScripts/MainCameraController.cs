@@ -38,8 +38,6 @@ public class MainCameraController : MonoBehaviour
             //Check which controller is being used
             m_CurrentControlScheme = m_PlayerInput.currentControlScheme;
 
-            Debug.Log(m_PlayerInput.currentControlScheme);
-
             //Update the sensitivity selected by the player
             m_Sensitivity = SingletonOptions.m_Instance.m_SensitivityValue;
 

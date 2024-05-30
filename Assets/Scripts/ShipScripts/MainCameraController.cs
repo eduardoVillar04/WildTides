@@ -19,8 +19,7 @@ public class MainCameraController : MonoBehaviour
     public CameraShake m_CameraShake;
 
     [Header("MOBILE INPUTS")]
-    public OnScreenStick m_RightStick;
-    public RectTransform m_RightJoystickRectTransform;
+    public VariableJoystick m_RightStick;
 
     private float m_CameraDirectionX;
 
@@ -45,7 +44,7 @@ public class MainCameraController : MonoBehaviour
             //Mobile Inputs: If right stick is enabled the camera direction is updated with it
             if (m_RightStick.enabled)
             {
-                m_CameraDirectionX = m_RightJoystickRectTransform.localPosition.x / m_RightStick.movementRange;
+                m_CameraDirectionX = m_RightStick.Horizontal;
             }
             else
             {

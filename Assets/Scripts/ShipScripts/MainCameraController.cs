@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.OnScreen;
 using UnityEngine.UIElements;
 
 public class MainCameraController : MonoBehaviour
@@ -16,6 +17,10 @@ public class MainCameraController : MonoBehaviour
 
     [Header("CAMERA SHAKE")]
     public CameraShake m_CameraShake;
+
+    [Header("MOBILE INPUTS")]
+    public OnScreenStick m_RightStick;
+    public RectTransform m_RightJoystickRectTransform;
 
     private float m_CameraDirectionX;
 
@@ -37,7 +42,16 @@ public class MainCameraController : MonoBehaviour
             //Update the sensitivity selected by the player
             m_Sensitivity = SingletonOptions.m_Instance.m_SensitivityValue;
 
-            m_CameraDirectionX = m_PlayerInput.actions["Look"].ReadValue<Vector2>().x;
+            //Mobile Inputs: If right stick is enabled the camera direction is updated with it
+            if (m_RightStick.enabled)
+            {
+                m_CameraDirectionX = m_RightJoystickRectTransform.localPosition.x / m_RightStick.movementRange;
+            }
+            else
+            {
+                m_CameraDirectionX = m_PlayerInput.actions["Look"].ReadValue<Vector2>().x;
+            }
+                        
 
             //new input system values for mouse are too large compared to controller, multiplying by 0.1f gives us the old systems values
             //we only apply this if mouse is being used

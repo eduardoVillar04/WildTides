@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.OnScreen;
 
 public class ShipMovement : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class ShipMovement : MonoBehaviour
     public float m_RotationSpeed;
     public float m_MaxRotationSpeed;
     public float m_RotationDamping;
+
+    [Header("MOBILE INPUTS")]
+    public OnScreenStick m_LeftStick;
+    public RectTransform m_LeftJoystickRectTransform;
 
     private Rigidbody m_Rigidbody;
 
@@ -39,9 +44,18 @@ public class ShipMovement : MonoBehaviour
 
     private void Inputs()
     {
-        m_MoveInput = m_PlayerInput.actions["Move"].ReadValue<Vector2>();
+        if(m_LeftStick.enabled)
+        {
+            m_MoveInput.x = m_LeftJoystickRectTransform.localPosition.x / m_LeftStick.movementRange;
+            m_MoveInput.y = m_LeftJoystickRectTransform.localPosition.y / m_LeftStick.movementRange;
+        }
+        else
+        {
+            m_MoveInput = m_PlayerInput.actions["Move"].ReadValue<Vector2>();
+        }
 
-        //QUITar
+
+        //TODO QUITAR
         Debug.Log("Left stick X: " + m_MoveInput.x);
         Debug.Log("Left stick Y: " + m_MoveInput.y);
 

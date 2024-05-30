@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6475757664691104592}
   - component: {fileID: 4313620474717808398}
   - component: {fileID: 3891457392330187226}
+  - component: {fileID: 7882256224259130205}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -135,6 +136,19 @@ MonoBehaviour:
   tideLevel: {fileID: 4130901106291630078}
   missionUI: {fileID: 2654761013869061867}
   deathMenu: {fileID: 1379792766509197435}
+--- !u!114 &7882256224259130205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5343698278301790075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a62216f7fffbddc4fbbd6b13c022589b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AndroidCanvas: {fileID: 0}
 --- !u!1 &8191454954375018231
 GameObject:
   m_ObjectHideFlags: 0

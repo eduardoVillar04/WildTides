@@ -18,7 +18,6 @@ public class UIHealthController : MonoBehaviour
     void Update()
     {
         m_Health = m_HealthController.m_HealthPoints;
-        if (Input.GetKeyUp(KeyCode.P)) { m_Health = 0; }
         switch (m_Health)
         {
             case 0:

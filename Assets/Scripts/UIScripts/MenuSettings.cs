@@ -58,7 +58,9 @@ public class MenuSettings : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         SingletonOptions.m_Instance.m_ResolutionIndex = resolutionIndex;
+#if UNITY_EDITOR_WIN
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+#endif
     }
     public void SetVolume (float volume)
     {
@@ -89,7 +91,9 @@ public class MenuSettings : MonoBehaviour
     public void SetFullScreen ( bool isFullScreen)
     {
         SingletonOptions.m_Instance.m_IsFullScreen = isFullScreen;
+#if UNITY_EDITOR_WIN
         Screen.fullScreen = isFullScreen;
+#endif
     }
 
     private void OnEnable()

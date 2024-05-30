@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2980373, g: 0.63626987, b: 0.9975857, a: 1}
+  m_IndirectSpecularColor: {r: 0.2981496, g: 0.6363111, b: 0.99758, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -34247,6 +34247,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasMobile
       objectReference: {fileID: 0}
+    - target: {fileID: 6230602635530921797, guid: 047d70d4f8437e5429eb90342879a838, type: 3}
+      propertyPath: m_TideLevelObject
+      value: 
+      objectReference: {fileID: 1975593233}
     - target: {fileID: 6475757664691104592, guid: 047d70d4f8437e5429eb90342879a838, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
@@ -36897,7 +36901,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4445827543227150196, guid: 3a32e004030c438458ccc80deb585487, type: 3}
   m_PrefabInstance: {fileID: 1975593232}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1975593233}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 429f7354cf4c4de4696ddb0c44155e09, type: 3}
@@ -64101,6 +64105,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a32e004030c438458ccc80deb585487, type: 3}
+--- !u!1 &1975593233 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7922133608341304040, guid: 3a32e004030c438458ccc80deb585487, type: 3}
+  m_PrefabInstance: {fileID: 1975593232}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1976832780 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 438830, guid: 14f268b815b67ef44b43dfd0d81145d5, type: 3}

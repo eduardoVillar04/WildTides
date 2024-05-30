@@ -48,7 +48,7 @@ public class ShipMovement : MonoBehaviour
 
         //NOT NEEDED, FRICTION DOES THE JOB
         //Make the velocity of the ship not go above maximum
-        //m_Rigidbody.velocity = Vector3.ClampMagnitude(m_Rigidbody.velocity, m_MaxSpeed);
+        //m_ShipRigidbody.velocity = Vector3.ClampMagnitude(m_ShipRigidbody.velocity, m_MaxSpeed);
         
         Vector3 movement = transform.forward * forwardMovement * m_Acceleration * dt;
         m_Rigidbody.AddForce(movement);

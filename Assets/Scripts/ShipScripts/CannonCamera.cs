@@ -21,8 +21,7 @@ public class CannonCamera : MonoBehaviour
     public string m_CurrentControlScheme;
 
     [Header("MOBILE INPUTS")]
-    public OnScreenStick m_RightStick;
-    public RectTransform m_RightJoystickRectTransform;
+    public VariableJoystick m_RightStick;
 
     private float m_CameraDirectionX;
     private float m_CameraDirectionY;
@@ -51,8 +50,8 @@ public class CannonCamera : MonoBehaviour
             //Mobile Inputs: If right stick is enabled the camera direction is updated with it
             if (m_RightStick.enabled)
             {
-                m_CameraDirectionX = m_RightJoystickRectTransform.localPosition.x / m_RightStick.movementRange;
-                m_CameraDirectionY = m_RightJoystickRectTransform.localPosition.y / m_RightStick.movementRange;
+                m_CameraDirectionX = m_RightStick.Horizontal;
+                m_CameraDirectionY = m_RightStick.Vertical;
 
                 m_Sensitivity += m_ExtraJoystickSens;
             }

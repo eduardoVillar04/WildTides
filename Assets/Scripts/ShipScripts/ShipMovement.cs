@@ -20,8 +20,7 @@ public class ShipMovement : MonoBehaviour
     public float m_RotationDamping;
 
     [Header("MOBILE INPUTS")]
-    public OnScreenStick m_LeftStick;
-    public RectTransform m_LeftJoystickRectTransform;
+    public VariableJoystick m_LeftStick;
 
     private Rigidbody m_Rigidbody;
 
@@ -44,15 +43,23 @@ public class ShipMovement : MonoBehaviour
 
     private void Inputs()
     {
-        if(m_LeftStick.enabled)
-        {
-            m_MoveInput.x = m_LeftJoystickRectTransform.localPosition.x / m_LeftStick.movementRange;
-            m_MoveInput.y = m_LeftJoystickRectTransform.localPosition.y / m_LeftStick.movementRange;
-        }
-        else
-        {
-            m_MoveInput = m_PlayerInput.actions["Move"].ReadValue<Vector2>();
-        }
+        //TODO QUITAR
+        //if (m_LeftStick.enabled && m_LeftStick != null)
+        //{
+        //    m_MoveInput.x = m_LeftStick.Horizontal;
+        //    m_MoveInput.y = m_LeftStick.Vertical;
+        //}
+        //else
+        //{
+        //    m_MoveInput = m_PlayerInput.actions["Move"].ReadValue<Vector2>();
+        //}
+
+#if UNITY_ANDROID
+            m_MoveInput.x = m_LeftStick.Horizontal;
+            m_MoveInput.y = m_LeftStick.Vertical;
+#else
+        m_MoveInput = m_PlayerInput.actions["Move"].ReadValue<Vector2>();
+#endif
     }
 
     private void Movement(float dt)

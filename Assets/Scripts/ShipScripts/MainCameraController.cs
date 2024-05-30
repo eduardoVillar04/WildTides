@@ -60,8 +60,6 @@ public class MainCameraController : MonoBehaviour
                 m_CameraDirectionX *= 0.1f;
             }
 
-            Debug.Log("Right stick x: " + m_CameraDirectionX);
-
 
             m_Camera.transform.RotateAround(m_ShipTransform.position, Vector3.up, 500 * m_CameraDirectionX * m_Sensitivity * Time.deltaTime);
         }

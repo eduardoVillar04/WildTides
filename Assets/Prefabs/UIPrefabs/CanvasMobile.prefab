@@ -710,7 +710,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4619774114253755094, guid: 0bca8b3b25275124e89d347c15a1ad7b, type: 3}
       propertyPath: m_Name
-      value: CameraJoistick
+      value: CameraJoystick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271877472697526573, guid: 0bca8b3b25275124e89d347c15a1ad7b, type: 3}
+      propertyPath: m_Name
+      value: RightJoystick
       objectReference: {fileID: 0}
     - target: {fileID: 6775782369806873361, guid: 0bca8b3b25275124e89d347c15a1ad7b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -755,13 +759,56 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5271877472697526573, guid: 0bca8b3b25275124e89d347c15a1ad7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8638104830089278549}
   m_SourcePrefab: {fileID: 100100000, guid: 0bca8b3b25275124e89d347c15a1ad7b, type: 3}
 --- !u!4 &4792987854560904394 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6775782369806873361, guid: 0bca8b3b25275124e89d347c15a1ad7b, type: 3}
   m_PrefabInstance: {fileID: 2057150132082456539}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6171355925667454710 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5271877472697526573, guid: 0bca8b3b25275124e89d347c15a1ad7b, type: 3}
+  m_PrefabInstance: {fileID: 2057150132082456539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8638104830089278549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171355925667454710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MovementRange: 50
+  m_DynamicOriginRange: 100
+  m_ControlPath: <Gamepad>/rightStick
+  m_Behaviour: 0
+  m_UseIsolatedInputActions: 0
+  m_PointerDownAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 96fcb9e7-3a2a-4f73-bb3a-e65c31ea4a44
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  m_PointerMoveAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 0dff0dd3-2ccb-4db8-9fe4-7ee50d38798f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1001 &3356971037198112448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -879,7 +926,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4619774114253755094, guid: 0bca8b3b25275124e89d347c15a1ad7b, type: 3}
       propertyPath: m_Name
-      value: MoveJoistick
+      value: MoveJoystick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271877472697526573, guid: 0bca8b3b25275124e89d347c15a1ad7b, type: 3}
+      propertyPath: m_Name
+      value: LeftJoystick
       objectReference: {fileID: 0}
     - target: {fileID: 6775782369806873361, guid: 0bca8b3b25275124e89d347c15a1ad7b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -924,13 +975,56 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5271877472697526573, guid: 0bca8b3b25275124e89d347c15a1ad7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7553352202856574717}
   m_SourcePrefab: {fileID: 100100000, guid: 0bca8b3b25275124e89d347c15a1ad7b, type: 3}
 --- !u!4 &8060232512626611353 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6775782369806873361, guid: 0bca8b3b25275124e89d347c15a1ad7b, type: 3}
   m_PrefabInstance: {fileID: 3590451825357662088}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8717456262949605029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5271877472697526573, guid: 0bca8b3b25275124e89d347c15a1ad7b, type: 3}
+  m_PrefabInstance: {fileID: 3590451825357662088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7553352202856574717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8717456262949605029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MovementRange: 50
+  m_DynamicOriginRange: 100
+  m_ControlPath: <Gamepad>/leftStick
+  m_Behaviour: 0
+  m_UseIsolatedInputActions: 0
+  m_PointerDownAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 1edae230-f5a2-469c-8cbd-6c466d4f484c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  m_PointerMoveAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 87524d40-3df7-46c2-8f28-d7590178a3f7
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1001 &3614960709306592968
 PrefabInstance:
   m_ObjectHideFlags: 0

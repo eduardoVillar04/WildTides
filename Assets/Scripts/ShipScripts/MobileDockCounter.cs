@@ -17,9 +17,10 @@ public class MobileDockCounter : MonoBehaviour
 
     private void Update()
     {
-        if(m_DocksVisited == m_DocksNeededToEnd)
+        if(m_DocksVisited >= m_DocksNeededToEnd)
         {
             Time.timeScale = 0.0f;
+            m_WinText.gameObject.SetActive(true);
         }
     }
 

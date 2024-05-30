@@ -47,25 +47,34 @@ public class CannonCamera : MonoBehaviour
             //Update the sensitivity selected by the player
             m_Sensitivity = SingletonOptions.m_Instance.m_SensitivityValue;
 
+            //TODO QUITAR
             //Mobile Inputs: If right stick is enabled the camera direction is updated with it
-            if (m_RightStick.enabled)
-            {
-                m_CameraDirectionX = m_RightStick.Horizontal;
-                m_CameraDirectionY = m_RightStick.Vertical;
+            //if (m_RightStick.enabled)
+            //{
+            //    m_CameraDirectionX = m_RightStick.Horizontal;
+            //    m_CameraDirectionY = m_RightStick.Vertical;
 
-                m_Sensitivity += m_ExtraJoystickSens;
-            }
-            else
-            {
-                m_CameraDirectionX = m_PlayerInput.actions["Look"].ReadValue<Vector2>().x;
-                m_CameraDirectionY = m_PlayerInput.actions["Look"].ReadValue<Vector2>().y;
-            }
+            //    m_Sensitivity += m_ExtraJoystickSens;
+            //}
+            //else
+            //{
+            //    m_CameraDirectionX = m_PlayerInput.actions["Look"].ReadValue<Vector2>().x;
+            //    m_CameraDirectionY = m_PlayerInput.actions["Look"].ReadValue<Vector2>().y;
+            //}
 
-            
+#if UNITY_ANDROID
+            m_CameraDirectionX = m_RightStick.Horizontal;
+            m_CameraDirectionY = m_RightStick.Vertical;
+
+            m_Sensitivity += m_ExtraJoystickSens;
+#else
+            m_CameraDirectionX = m_PlayerInput.actions["Look"].ReadValue<Vector2>().x;
+            m_CameraDirectionY = m_PlayerInput.actions["Look"].ReadValue<Vector2>().y;
+#endif
 
             //new input system values for mouse are too large compared to controller, multiplying by 0.1f gives us the old systems values
             //we only apply this if mouse is being used
-            if (m_CurrentControlScheme == "Keyboard&Mouse")
+            if (m_CurrentControlScheme == "Keyboard&Mouse" || m_CurrentControlScheme == null)
             {
                 m_CameraDirectionX *= 0.1f;
                 m_CameraDirectionY *= 0.1f;

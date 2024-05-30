@@ -56,8 +56,7 @@ public class CannonController : MonoBehaviour
 
     public void Inputs()
     {
-        //TODO QUITAR
-        //m_ShootIsPressed = m_PlayerInput.actions["Shoot"].IsPressed();
+        m_ShootIsPressed = m_PlayerInput.actions["Shoot"].IsPressed();
     }
 
     public void ShootingLogic()

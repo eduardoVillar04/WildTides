@@ -197,6 +197,8 @@ MonoBehaviour:
   m_PlayerInput: {fileID: 3035736378595854574}
   m_CurrentControlScheme: 
   m_CameraShake: {fileID: 0}
+  m_RightStick: {fileID: 0}
+  m_RightJoystickRectTransform: {fileID: 0}
 --- !u!114 &8182969080422446591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,9 +698,11 @@ MonoBehaviour:
   m_Sight: {fileID: 0}
   m_CameraShake: {fileID: 3871137828930934120}
   m_Cannon: {fileID: 50255492488087715}
-  m_ExtraGamepadSens: 1
+  m_ExtraJoystickSens: 0
   m_yRotationLimit: 88
   m_CurrentControlScheme: 
+  m_RightStick: {fileID: 0}
+  m_RightJoystickRectTransform: {fileID: 0}
 --- !u!114 &3871137828930934120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,7 +814,6 @@ GameObject:
   - component: {fileID: 3266356147236359890}
   - component: {fileID: 5799403987175713701}
   - component: {fileID: 3035736378595854574}
-  - component: {fileID: 8169901803110008173}
   - component: {fileID: 5359514897624062845}
   - component: {fileID: 476318094673546069}
   - component: {fileID: 3578967168179195433}
@@ -882,6 +885,8 @@ MonoBehaviour:
   m_RotationSpeed: 300
   m_MaxRotationSpeed: 30
   m_RotationDamping: 1.5
+  m_LeftStick: {fileID: 0}
+  m_LeftJoystickRectTransform: {fileID: 0}
 --- !u!54 &3266356147236359890
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -954,34 +959,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &8169901803110008173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5712579652754710955}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c83a88d8db420e46adadbeaf67606e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Projectile: {fileID: 1311559214229084, guid: 702757b078e992d489b434ed18e58ba6, type: 3}
-  m_CannonEndPoint: {fileID: 8091340993787663213}
-  m_AimReferencePoint: {fileID: 0}
-  m_ProjectileSpeed: 25
-  m_RecoilFroce: 75
-  m_MainCameraShake: {fileID: 8182969080422446591}
-  m_CannonCameraShake: {fileID: 3871137828930934120}
-  m_ShakeTime: 0.1
-  m_MainCamShakeMagnitude: 1
-  m_CannonCamShakeMagnitude: 0.1
-  m_ShootCooldown: 1
-  m_ShootIsPressed: 0
-  m_CannonCamera: {fileID: 4880667654920429035}
-  m_PlayerInput: {fileID: 0}
-  m_ShipRigidbody: {fileID: 0}
-  m_ShootSound: {fileID: 8300000, guid: c6d774aa61abdd64ea30b97940a9a3f2, type: 3}
 --- !u!114 &5359514897624062845
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -34307,7 +34307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6475757664691104592, guid: 047d70d4f8437e5429eb90342879a838, type: 3}
       propertyPath: m_ScreenMatchMode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6596837241726672476, guid: 047d70d4f8437e5429eb90342879a838, type: 3}
       propertyPath: m_Pivot.x

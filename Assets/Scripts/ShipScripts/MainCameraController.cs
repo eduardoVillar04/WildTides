@@ -18,8 +18,7 @@ public class MainCameraController : MonoBehaviour
     public CameraShake m_CameraShake;
 
     private float m_CameraDirectionX;
-    
-    // Start is called before the first frame update
+
     void Start()
     {
         m_Camera = GetComponent<Camera>();
@@ -30,7 +29,7 @@ public class MainCameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!m_CameraShake.m_IsShaking)
+        if (!m_CameraShake.m_IsShaking)
         {
             //Check which controller is being used
             m_CurrentControlScheme = m_PlayerInput.currentControlScheme;

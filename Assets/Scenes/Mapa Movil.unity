@@ -1547,6 +1547,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 16145cd87e3945145b08174f9fa80c62, type: 3}
   m_PrefabInstance: {fileID: 43879276}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &44296275 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4615371682353641278, guid: 047d70d4f8437e5429eb90342879a838, type: 3}
+  m_PrefabInstance: {fileID: 1103840845}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &44952127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25938,6 +25949,7 @@ GameObject:
   - component: {fileID: 939964377}
   - component: {fileID: 939964376}
   - component: {fileID: 939964374}
+  - component: {fileID: 939964379}
   m_Layer: 0
   m_Name: NavMeshSurface
   m_TagString: Untagged
@@ -25974,7 +25986,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 1
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 1433b23081179954c9ca924118d81df9, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 91ad59e546eb63b47ae29f3a7857a8ac, type: 2}
   m_BuildHeightMesh: 0
 --- !u!23 &939964376
 MeshRenderer:
@@ -26041,6 +26053,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &939964379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939964373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -334000983
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 0f88454919f8b6741bd229e55686cc5e, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &940088050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58064,7 +58107,7 @@ PrefabInstance:
     - target: {fileID: 4445827543227150196, guid: 3a32e004030c438458ccc80deb585487, type: 3}
       propertyPath: m_TideLevelText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 44296275}
     - target: {fileID: 5499610333724210255, guid: 3a32e004030c438458ccc80deb585487, type: 3}
       propertyPath: m_LocalPosition.x
       value: 103.20453

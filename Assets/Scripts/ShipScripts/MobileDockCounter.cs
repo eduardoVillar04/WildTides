@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MobileDockCounter : MonoBehaviour
 {
@@ -19,9 +20,14 @@ public class MobileDockCounter : MonoBehaviour
     {
         if(m_DocksVisited >= m_DocksNeededToEnd)
         {
-            Time.timeScale = 0.0f;
             m_WinText.gameObject.SetActive(true);
+            Invoke("ChangeToCreditScene", 5f);
         }
+    }
+
+    public void ChangeToCreditScene()
+    {
+        SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings-1);
     }
 
     private void OnTriggerEnter(Collider other)

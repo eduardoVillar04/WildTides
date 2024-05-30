@@ -22,7 +22,10 @@ public class CompassController : MonoBehaviour
     public GameObject tideLevel;
     public GameObject missionUI;
     public GameObject deathMenu;
-    
+
+    public Canvas canvas;
+
+
     void Update()
     {
         SetMarkerPosition(objectiveMarkerTransform, objectiveObjectTransform.position);

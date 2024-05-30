@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject deathMenu;
 
+    public PlayerInput m_PlayerInput;
+
     private void Start()
     {
 #if UNITY_ANDROID
@@ -25,7 +28,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (m_PlayerInput.actions["Pause"].WasPressedThisFrame())
         {
             if (gameIsPaused)
             {

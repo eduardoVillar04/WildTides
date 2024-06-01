@@ -53,3 +53,4 @@ MonoBehaviour:
   m_NumOfBarrelsPerTL: 5
   m_NumOfPiratesPerTL: 2
   m_NumOfTentaclesPerTL: 1
+  m_MaxSpawnDistance: 0.2

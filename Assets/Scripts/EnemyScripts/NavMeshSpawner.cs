@@ -92,30 +92,19 @@ public class NavMeshSpawner : MonoBehaviour
             Vector3 randPos = Vector3.zero;
             for (int j = 0; j < m_NumOfPiratesPerTL; j++)
             {
-                do
-                {
-                    randPos = GetRandPos();
-                } while (!CheckIfPathIsValid(randPos, m_Player.position));
-
+                randPos = GetValidSpawnPoint();
                 GameObject.Instantiate(m_PiratePrefab, randPos, Quaternion.identity);
             }
             for (int j = 0; j < m_NumOfTentaclesPerTL; j++)
             {
-                do
-                {
-                    randPos = GetRandPos();
-                } while (!CheckIfPathIsValid(randPos, m_Player.position)) ;
-
+                randPos = GetValidSpawnPoint();
                 GameObject.Instantiate(m_TentaclePrefab, randPos, Quaternion.identity);
             }
             for (int j = 0; j < m_NumOfBarrelsPerTL; j++)
             {
-                do
-                {
-                    randPos = GetRandPos();
-                } while (!CheckIfPathIsValid(randPos, m_Player.position));
-
-                GameObject.Instantiate(m_BarrelPrefab, randPos, Quaternion.identity);
+                randPos = GetValidSpawnPoint();
+                //The barrels need to be rotated
+                GameObject.Instantiate(m_BarrelPrefab, randPos, Quaternion.Euler(-90, 0, 90));
             }
         }
 

@@ -21,7 +21,7 @@ public class EnemySpawnerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.Space)) { GenerateEnemies(5); }
+        //if(Input.GetKeyUp(KeyCode.Space)) { GenerateEnemies(5); }
     }
     
     public void GenerateEnemies(int TideLevel)

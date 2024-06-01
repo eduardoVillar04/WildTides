@@ -20,6 +20,9 @@ public class DockController : MonoBehaviour
     [Header("TIDE LEVEL CONTROLLER")]
     public TideLevelController m_TideLevelController;
 
+    [Header("SPAWNER")]
+    public NavMeshSpawner m_NavMeshSpawner;
+
     [Header("MISSION LOG TEXT")]
     public TextMeshProUGUI m_MissionText;
 
@@ -32,6 +35,7 @@ public class DockController : MonoBehaviour
     private void Awake()
     {
         m_DockArray = GameObject.FindGameObjectsWithTag("Dock");
+        m_NavMeshSpawner = GameObject.Find("NavMeshSpawner").GetComponent<NavMeshSpawner>();
     }
 
     //We disable the docks that are not the first oen
@@ -71,6 +75,9 @@ public class DockController : MonoBehaviour
 
             nextDock.SetActive(true);
             gameObject.SetActive(false);
+
+            m_NavMeshSpawner.DestroyAllEnemies();
+            m_NavMeshSpawner.GenerateEnemies(m_TideLevelController.m_TideLevel);
         }
 
     }

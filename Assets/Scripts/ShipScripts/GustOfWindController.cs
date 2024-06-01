@@ -21,9 +21,12 @@ public class GustOfWindController : MonoBehaviour
             Rigidbody m_EnemyRB = other.GetComponent<Rigidbody>();
             
             //If the target is a pirate, we make it pursue the player no matter the distance
+            //We also activate the pirate-terrain collider, so that if they are pushed into terrain the pirate dies
             if (other.gameObject.GetComponent<PirateController>())
             {
-                other.gameObject.GetComponent<PirateController>().m_CurrentState = PirateController.PirateStates.PURSUING;
+                PirateController pirateController = other.gameObject.GetComponent<PirateController>();
+                pirateController.m_CurrentState = PirateController.PirateStates.PURSUING;
+                pirateController.m_TerrainCollider.SetActive(true);
             }
             
             //We use impulse to add more or less force depending on mass of the object

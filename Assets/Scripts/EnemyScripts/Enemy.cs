@@ -37,6 +37,10 @@ public abstract class Enemy : MonoBehaviour
     {
         //We make the enemy sink
         m_Transform.position -= new Vector3(0, m_DeathSpeed, 0);
+
+        //TODO QUITAR
+        Debug.Log("Enemy dies");
+        
         Invoke("InvokeDestroy",2f);
     }
 

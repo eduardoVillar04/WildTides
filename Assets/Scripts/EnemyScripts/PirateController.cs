@@ -42,6 +42,7 @@ public class PirateController : Enemy
     public SphereCollider m_VisionSphere;
     public NavMeshAgent m_NavMeshAgent;
     public Transform m_PlayerTransform;
+    public GameObject m_TerrainCollider;
 
     [Header("Audio")]
     public AudioClip m_ShootSound;

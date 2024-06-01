@@ -35,7 +35,11 @@ public class DockController : MonoBehaviour
     private void Awake()
     {
         m_DockArray = GameObject.FindGameObjectsWithTag("Dock");
-        m_NavMeshSpawner = GameObject.Find("NavMeshSpawner").GetComponent<NavMeshSpawner>();
+        //TODO QUITAR
+        //m_NavMeshSpawner = GameObject.Find("NavMeshSpawner").GetComponent<NavMeshSpawner>();
+        m_NavMeshSpawner = FindObjectOfType<NavMeshSpawner>();
+        m_TideLevelController =  FindObjectOfType<TideLevelController>();
+        m_CompassController = FindObjectOfType<CompassController>();
     }
 
     //We disable the docks that are not the first oen

@@ -136,6 +136,7 @@ MonoBehaviour:
   tideLevel: {fileID: 4130901106291630078}
   missionUI: {fileID: 2654761013869061867}
   deathMenu: {fileID: 1379792766509197435}
+  canvas: {fileID: 0}
 --- !u!114 &7882256224259130205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,6 +812,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6596837241726672476}
     m_Modifications:
+    - target: {fileID: 3940841413489144225, guid: 21a9bf2d89637f4469d086b5c6bb719d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 87
+      objectReference: {fileID: 0}
+    - target: {fileID: 3940841413489144225, guid: 21a9bf2d89637f4469d086b5c6bb719d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -13
+      objectReference: {fileID: 0}
     - target: {fileID: 6258732676431505584, guid: 21a9bf2d89637f4469d086b5c6bb719d, type: 3}
       propertyPath: m_Name
       value: MisionUI

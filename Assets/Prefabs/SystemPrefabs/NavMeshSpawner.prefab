@@ -52,5 +52,5 @@ MonoBehaviour:
   m_TentaclePrefab: {fileID: 2323671655070106567, guid: e21fce9ee3c28e741bf85c722b221474, type: 3}
   m_NumOfBarrelsPerTL: 5
   m_NumOfPiratesPerTL: 2
-  m_NumOfTentaclesPerTL: 1
+  m_NumOfTentaclesPerTL: 3
   m_MaxSpawnDistance: 0.2

@@ -24,8 +24,10 @@ public class NavMeshSpawner : MonoBehaviour
 
     [Header("SPAWN VARIABLES")]
     public float m_MaxSpawnDistance;
+    public Renderer m_SpawnSurface;
 
-    private Transform m_Player;
+    public Transform m_Player;
+    
 
     private void Start()
     {
@@ -33,6 +35,7 @@ public class NavMeshSpawner : MonoBehaviour
 
         //Generate initial enemies
         GenerateEnemies(1);
+
     }
 
 
@@ -45,26 +48,6 @@ public class NavMeshSpawner : MonoBehaviour
         }
     }
 
-    //TODO QUITAR (OLD)
-    //private bool GetRandomPosition (out Vector3 result)
-    //{
-    //    for (int i = 0; i < 100; i++)
-    //    {
-    //        float rx = Random.Range(-380, 380);
-    //        float rz = Random.Range(-470, 470);
-    //        Vector3 v3 = new Vector3(rx, -0.5f, rz);
-    //        NavMeshHit hit;
-    //        if (NavMesh.SamplePosition(v3, out hit, m_MaxSpawnDistance, NavMesh.AllAreas))
-    //        {
-    //            num++;
-    //            result = hit.position;
-    //            return true;
-    //        }
-    //    }
-    //    result = Vector3.zero;
-    //    return false;
-    //}
-
     /// <summary>
     /// Returns random position from navmesh
     /// </summary>
@@ -76,10 +59,11 @@ public class NavMeshSpawner : MonoBehaviour
         
         do
         {
-            float rx = Random.Range(-380, 380);
-            float rz = Random.Range(-470, 470);
+            //The position coordinates must be inside the spawn surface
+            float rx = Random.Range(m_SpawnSurface.bounds.min.x, m_SpawnSurface.bounds.max.x);
+            float rz = Random.Range(m_SpawnSurface.bounds.min.z, m_SpawnSurface.bounds.max.x);
             Vector3 v3 = new Vector3(rx, -0.5f, rz);
-            pointFound = NavMesh.SamplePosition(v3, out hit, 10f, NavMesh.AllAreas);
+            pointFound = NavMesh.SamplePosition(v3, out hit, m_MaxSpawnDistance, NavMesh.AllAreas);
         } while (!pointFound);
 
         return hit.position;
@@ -114,22 +98,46 @@ public class NavMeshSpawner : MonoBehaviour
     public Vector3 GetValidSpawnPoint()
     {
         Vector3 spawnPos;
+        //Security meassure against infinite loop
+        int i = 0;
         do
         {
+            i++;
             spawnPos = GetRandPos();
-        } while (!CheckIfPathIsValid(spawnPos, m_Player.position));
+        } while (!CheckIfPathIsValid(spawnPos, m_Player.position) && i<10);
 
         return spawnPos;
     }
 
+
     public bool CheckIfPathIsValid(Vector3 initialPos, Vector3 endPos) 
     {
-        return NavMesh.CalculatePath(initialPos, endPos, NavMesh.AllAreas, new NavMeshPath());
+        NavMeshPath path = new NavMeshPath();
+        NavMesh.CalculatePath(initialPos, endPos, NavMesh.AllAreas, path);
+
+        if (path.status == NavMeshPathStatus.PathComplete)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
+
     public void DestroyAllEnemies()
     {
         foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy")){
-            Destroy(enemy);
+            
+            if(enemy.GetComponent<Enemy>())
+            {
+                enemy.GetComponent<Enemy>().Die();
+            }
+            else
+            {
+                Destroy(enemy);
+            }
+            
         }
     }
 }

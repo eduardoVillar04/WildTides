@@ -14,10 +14,6 @@ public abstract class Enemy : MonoBehaviour
 
     public virtual void Start()
     {
-        //default deathspeed
-        m_DeathSpeed = 0.05f;
-        //default knockback force
-        m_KnockbackForce = 40f;
         m_Transform = GetComponent<Transform>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_HealthController = GetComponent<HealthController>();
@@ -37,6 +33,7 @@ public abstract class Enemy : MonoBehaviour
     {
         //We make the enemy sink
         m_Transform.position -= new Vector3(0, m_DeathSpeed, 0);
+        
         Invoke("InvokeDestroy",2f);
     }
 

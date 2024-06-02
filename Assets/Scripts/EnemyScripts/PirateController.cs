@@ -42,6 +42,7 @@ public class PirateController : Enemy
     public SphereCollider m_VisionSphere;
     public NavMeshAgent m_NavMeshAgent;
     public Transform m_PlayerTransform;
+    public GameObject m_TerrainCollider;
 
     [Header("Audio")]
     public AudioClip m_ShootSound;
@@ -61,8 +62,8 @@ public class PirateController : Enemy
     {
         base.Start();
 
-        //ready to fire
-        m_ShotTimer = m_TimeBetweenShots;
+        //almost ready to fire
+        m_ShotTimer = m_TimeBetweenShots - 0.5f;
 
         m_VisionSphere = GetComponent<SphereCollider>();
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
@@ -200,7 +201,7 @@ public class PirateController : Enemy
         GameObject cannonBullet = Instantiate(m_BulletPrefab, m_BulletSpawnPoint.position, Quaternion.identity);
         Rigidbody cbRB = cannonBullet.GetComponent<Rigidbody>();
         Vector3 direction = m_PlayerTransform.position - m_BulletSpawnPoint.position;
-        cbRB.AddForce(direction * m_BulletSpeed, ForceMode.VelocityChange);
+        cbRB.AddForce(direction.normalized * m_BulletSpeed, ForceMode.VelocityChange);
         //Audio
         SoundEffectsManager.instance.PlaySoundFXClip(m_ShootSound, transform, 0.6f);
     }

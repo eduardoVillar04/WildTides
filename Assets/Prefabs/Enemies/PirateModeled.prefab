@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7977558906993608993
 Transform:
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a9180d5d5cc1c8049bf936db99461006, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.9
+      value: -360
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a9180d5d5cc1c8049bf936db99461006, type: 3}
       propertyPath: m_LocalPosition.y
@@ -103,7 +103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a9180d5d5cc1c8049bf936db99461006, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 39.9
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a9180d5d5cc1c8049bf936db99461006, type: 3}
       propertyPath: m_LocalRotation.w
@@ -265,8 +265,8 @@ MonoBehaviour:
   m_Transform: {fileID: 0}
   m_Rigidbody: {fileID: 0}
   m_HealthController: {fileID: 0}
-  m_KnockbackForce: 0
-  m_DeathSpeed: 0
+  m_KnockbackForce: 10
+  m_DeathSpeed: 0.1
   m_Damage: 1
   m_Patrol: {fileID: 0}
   m_PursuitSpeed: 10
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_CannonTransform: {fileID: 7805837849225910352}
   m_CannonRotationSpeed: 5
   m_BulletPrefab: {fileID: 45345387307393872, guid: dace832d1ea0697429aacdbb48c84670, type: 3}
-  m_BulletSpeed: 1
+  m_BulletSpeed: 10
   m_TimeBetweenShots: 3
   m_ShotTimer: 0
   m_ReturnPoint: {x: 0, y: 0, z: 0}
@@ -289,6 +289,7 @@ MonoBehaviour:
   m_VisionSphere: {fileID: 8366058206738451633}
   m_NavMeshAgent: {fileID: 0}
   m_PlayerTransform: {fileID: 0}
+  m_TerrainCollider: {fileID: 3082316551666737382}
   m_ShootSound: {fileID: 8300000, guid: 9a2b096d1b59ae94a986d10c8a798304, type: 3}
   m_CurrentState: 1
 --- !u!195 &9021407239776746262

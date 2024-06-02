@@ -20,11 +20,17 @@ public class DockController : MonoBehaviour
     [Header("TIDE LEVEL CONTROLLER")]
     public TideLevelController m_TideLevelController;
 
+    [Header("SPAWNER")]
+    public NavMeshSpawner m_NavMeshSpawner;
+
     [Header("MISSION LOG TEXT")]
     public TextMeshProUGUI m_MissionText;
 
     [Header("COMPASS CONTROLLER")]
     public CompassController m_CompassController;
+
+    [Header("SHIP DOCK SCORE")]
+    public DockScore m_DockScore;
 
     [Header("AUDIO")]
     public AudioClip m_ArrivingSound;
@@ -32,6 +38,10 @@ public class DockController : MonoBehaviour
     private void Awake()
     {
         m_DockArray = GameObject.FindGameObjectsWithTag("Dock");
+        m_NavMeshSpawner = FindObjectOfType<NavMeshSpawner>();
+        m_TideLevelController =  FindObjectOfType<TideLevelController>();
+        m_CompassController = FindObjectOfType<CompassController>();
+        m_DockScore = FindObjectOfType<DockScore>();
     }
 
     //We disable the docks that are not the first oen
@@ -41,12 +51,6 @@ public class DockController : MonoBehaviour
         if(!m_IsFirstDock)
         {
             gameObject.SetActive(false);
-        }
-
-        //Set the mission log text to the first dock
-        if(m_IsFirstDock)
-        {
-            m_MissionText.text = "Go to: " + m_DockName;
         }
     }
 
@@ -63,6 +67,9 @@ public class DockController : MonoBehaviour
             //Update compass target
             m_CompassController.objectiveObjectTransform = nextDock.transform;
 
+            //Update dock visited count
+            m_DockScore.m_NumDocksVisited++;
+
             //Audio
             SoundEffectsManager.instance.PlaySoundFXClip(m_ArrivingSound, transform, 0.6f);
 
@@ -71,6 +78,9 @@ public class DockController : MonoBehaviour
 
             nextDock.SetActive(true);
             gameObject.SetActive(false);
+
+            m_NavMeshSpawner.DestroyAllEnemies();
+            m_NavMeshSpawner.GenerateEnemies(m_TideLevelController.m_TideLevel);
         }
 
     }

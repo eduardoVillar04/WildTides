@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.29799232, g: 0.6362746, b: 0.9975882, a: 1}
+  m_IndirectSpecularColor: {r: 0.2980373, g: 0.63626987, b: 0.9975857, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -49134,7 +49134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_TagString
@@ -76577,7 +76577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2700462362417093324, guid: 6618b5580e8b96342be0520c68f9b2c4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2700462362417093324, guid: 6618b5580e8b96342be0520c68f9b2c4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -83477,9 +83477,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6a6df342b52d24092cf6bbb590c535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveHeight: 0.7
+  waveHeight: 0.6
   waveFrequency: 0.5
-  waveLength: 1.5
+  waveLength: 1
   waveOriginPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1888670665
 MeshRenderer:

@@ -42,7 +42,6 @@ public class TentacleController : Enemy
     {
         base.Start();
 
-        m_DeathSpeed = 0.1f;
         m_VisionSphere = GetComponent<SphereCollider>();
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
 

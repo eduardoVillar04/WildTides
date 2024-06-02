@@ -127,17 +127,9 @@ public class NavMeshSpawner : MonoBehaviour
 
     public void DestroyAllEnemies()
     {
-        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy")){
-            
-            if(enemy.GetComponent<Enemy>())
-            {
-                enemy.GetComponent<Enemy>().Die();
-            }
-            else
-            {
-                Destroy(enemy);
-            }
-            
+        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+        {
+            Destroy(enemy);   
         }
     }
 }

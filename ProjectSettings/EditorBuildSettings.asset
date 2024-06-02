@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PrincipalMenu.unity
     guid: 36f2664ec1f883340b53bd319f9aef4a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Mapa Movil.unity
     guid: 5ec72f0e12671a84c9e6aca8bfc57e4a
   - enabled: 0
     path: Assets/Scenes/MapaPC_Consolas.unity
     guid: d509d8093278f2041a03c6e633341ca3
+  - enabled: 1
+    path: Assets/Scenes/Map.unity
+    guid: 1ff357115f1048d418028fd6f87cf24e
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: b3bfcc395c76d5e4fa449ccb2ea935e1

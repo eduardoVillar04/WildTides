@@ -7,6 +7,8 @@ public class ReturnToMainMenu : MonoBehaviour
 {
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(0);
+        Debug.Log("Quit");
+        Application.Quit();
     }
 }

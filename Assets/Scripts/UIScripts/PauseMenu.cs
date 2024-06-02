@@ -69,13 +69,16 @@ public class PauseMenu : MonoBehaviour
         }
         else
         {
-            Pause();
+            Pause();    
         }
     }
 
     public void QuitGame()
     {
+        gameIsPaused = false;
+        Time.timeScale = 1f;
         Debug.Log("Quit");
-        SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
+        SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
     }
 }

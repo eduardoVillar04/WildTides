@@ -265,8 +265,8 @@ MonoBehaviour:
   m_Transform: {fileID: 0}
   m_Rigidbody: {fileID: 0}
   m_HealthController: {fileID: 0}
-  m_KnockbackForce: 0
-  m_DeathSpeed: 0
+  m_KnockbackForce: 10
+  m_DeathSpeed: 0.1
   m_Damage: 1
   m_Patrol: {fileID: 0}
   m_PursuitSpeed: 10
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_CannonTransform: {fileID: 7805837849225910352}
   m_CannonRotationSpeed: 5
   m_BulletPrefab: {fileID: 45345387307393872, guid: dace832d1ea0697429aacdbb48c84670, type: 3}
-  m_BulletSpeed: 1
+  m_BulletSpeed: 10
   m_TimeBetweenShots: 3
   m_ShotTimer: 0
   m_ReturnPoint: {x: 0, y: 0, z: 0}

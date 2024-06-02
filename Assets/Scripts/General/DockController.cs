@@ -29,17 +29,19 @@ public class DockController : MonoBehaviour
     [Header("COMPASS CONTROLLER")]
     public CompassController m_CompassController;
 
+    [Header("SHIP DOCK SCORE")]
+    public DockScore m_DockScore;
+
     [Header("AUDIO")]
     public AudioClip m_ArrivingSound;
     //In the awake, when the docks are still al active, we get their references
     private void Awake()
     {
         m_DockArray = GameObject.FindGameObjectsWithTag("Dock");
-        //TODO QUITAR
-        //m_NavMeshSpawner = GameObject.Find("NavMeshSpawner").GetComponent<NavMeshSpawner>();
         m_NavMeshSpawner = FindObjectOfType<NavMeshSpawner>();
         m_TideLevelController =  FindObjectOfType<TideLevelController>();
         m_CompassController = FindObjectOfType<CompassController>();
+        m_DockScore = FindObjectOfType<DockScore>();
     }
 
     //We disable the docks that are not the first oen
@@ -49,12 +51,6 @@ public class DockController : MonoBehaviour
         if(!m_IsFirstDock)
         {
             gameObject.SetActive(false);
-        }
-
-        //Set the mission log text to the first dock
-        if(m_IsFirstDock)
-        {
-            m_MissionText.text = "Go to: " + m_DockName;
         }
     }
 
@@ -70,6 +66,9 @@ public class DockController : MonoBehaviour
 
             //Update compass target
             m_CompassController.objectiveObjectTransform = nextDock.transform;
+
+            //Update dock visited count
+            m_DockScore.m_NumDocksVisited++;
 
             //Audio
             SoundEffectsManager.instance.PlaySoundFXClip(m_ArrivingSound, transform, 0.6f);

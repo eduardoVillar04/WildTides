@@ -12,21 +12,35 @@ public class CannonBulletController : MonoBehaviour
         Invoke("DestroyThisObject", 5f);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
         //If a player is hit, the cannon ball deals damage and is destroyed
 
-        if(other.gameObject.CompareTag("Player") && !other.isTrigger)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            other.GetComponent<HealthController>().DealDamage(m_Damage);
+            collision.gameObject.GetComponent<HealthController>().DealDamage(m_Damage);
             Destroy(gameObject);
         }
 
-        if (other.gameObject.CompareTag("Terrain")) Destroy(this.gameObject);
-
-        //TODO: friendly fire?
+        if (collision.gameObject.CompareTag("Terrain")) Destroy(this.gameObject);
 
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    //If a player is hit, the cannon ball deals damage and is destroyed
+
+    //    if(other.gameObject.CompareTag("Player") && !other.isTrigger)
+    //    {
+    //        other.GetComponent<HealthController>().DealDamage(m_Damage);
+    //        Destroy(gameObject);
+    //    }
+
+    //    if (other.gameObject.CompareTag("Terrain")) Destroy(this.gameObject);
+
+    //    //TODO: friendly fire?
+
+    //}
 
     public void DestroyThisObject()
     {

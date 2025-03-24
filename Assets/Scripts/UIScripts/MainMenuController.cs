@@ -7,7 +7,22 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
     public GameObject firstButton;
+    public GameObject m_HardModeOnImage;
+    public GameObject m_HardModeOffImage;
 
+    private void Start()
+    {
+        if (SingletonOptions.m_Instance.m_HardModeOn)
+        {
+            m_HardModeOffImage.SetActive(false);
+            m_HardModeOnImage.SetActive(true);
+        }
+        else
+        {
+            m_HardModeOffImage.SetActive(true);
+            m_HardModeOnImage.SetActive(false);
+        }
+    }
     private void OnEnable()
     {
         EventSystem.current.SetSelectedGameObject(firstButton);
@@ -23,5 +38,17 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
         Debug.Log("Quit");  
         //Application.Quit();
+    }
+    public void ChangeDifficulty()
+    {
+        SingletonOptions.m_Instance.m_HardModeOn = !SingletonOptions.m_Instance.m_HardModeOn;
+        if (SingletonOptions.m_Instance.m_HardModeOn)
+        {
+            m_HardModeOffImage.SetActive(false);
+            m_HardModeOnImage.SetActive(true);
+            return;
+        }
+        m_HardModeOffImage.SetActive(true);
+        m_HardModeOnImage.SetActive(false);
     }
 }

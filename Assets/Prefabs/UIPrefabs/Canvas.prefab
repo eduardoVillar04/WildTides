@@ -812,13 +812,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6596837241726672476}
     m_Modifications:
+    - target: {fileID: 1293144993285447971, guid: 21a9bf2d89637f4469d086b5c6bb719d, type: 3}
+      propertyPath: m_text
+      value: "Go to: \tDock"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293144993285447971, guid: 21a9bf2d89637f4469d086b5c6bb719d, type: 3}
+      propertyPath: m_fontSize
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293144993285447971, guid: 21a9bf2d89637f4469d086b5c6bb719d, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d6472d212c94b74a8b421251e88204d, type: 2}
+    - target: {fileID: 1293144993285447971, guid: 21a9bf2d89637f4469d086b5c6bb719d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293144993285447971, guid: 21a9bf2d89637f4469d086b5c6bb719d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -332915414913007466, guid: 5d6472d212c94b74a8b421251e88204d, type: 2}
+    - target: {fileID: 1293144993285447971, guid: 21a9bf2d89637f4469d086b5c6bb719d, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3940841413489144225, guid: 21a9bf2d89637f4469d086b5c6bb719d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 87
+      value: 93.4
       objectReference: {fileID: 0}
     - target: {fileID: 3940841413489144225, guid: 21a9bf2d89637f4469d086b5c6bb719d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -13
+      value: -3.1
       objectReference: {fileID: 0}
     - target: {fileID: 6258732676431505584, guid: 21a9bf2d89637f4469d086b5c6bb719d, type: 3}
       propertyPath: m_Name

@@ -76,6 +76,11 @@ public class DockController : MonoBehaviour
             //Update tide level
             m_TideLevelController.AddTideLevel();
 
+            if(!SingletonOptions.m_Instance.m_HardModeOn)
+            {
+                other.GetComponent<HealthController>().heal(1);
+            }
+
             nextDock.SetActive(true);
             gameObject.SetActive(false);
 

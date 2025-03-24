@@ -211,6 +211,7 @@ public class PirateController : Enemy
         ////Audio
         //SoundEffectsManager.instance.PlaySoundFXClip(m_ShootSound, transform, 0.6f);
 
+
         //NEW SHOOTING BEHAVIOUR
 
         //Might have to not take into account the Y component of the vector to get better results, these formulas are for objects in the same altitude
@@ -230,6 +231,10 @@ public class PirateController : Enemy
 
         //We change the collider state from trigger to not trigger after spawning the bullet so that it doesnt destroy the enemy that shoots it
         StartCoroutine(ChangeColliderState(newBullet.GetComponent<Collider>()));
+
+        //Audio
+        SoundEffectsManager.instance.PlaySoundFXClip(m_ShootSound, transform, 0.6f);
+
     }
 
     private Vector3 CalculateInitialLinearVelocity(float distanceToTarget)

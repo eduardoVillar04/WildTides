@@ -11910,7 +11910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_Name
-      value: DockArea (1)
+      value: Dock_BOOMPort
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_Layer
@@ -16100,7 +16100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_Name
-      value: DockArea (2)
+      value: Dock_BoozeHarbor
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_Layer
@@ -49130,7 +49130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_Name
-      value: DockArea (3)
+      value: Dock_Tikibay
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_Layer
@@ -49138,7 +49138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_TagString
@@ -83726,7 +83726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_Name
-      value: DockArea
+      value: Dock_GunPorter
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_Layer

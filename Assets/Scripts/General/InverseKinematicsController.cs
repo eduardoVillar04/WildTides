@@ -16,6 +16,9 @@ public class InverseKinematicsController : MonoBehaviour
 
     [SerializeField]
     Transform targetPostion;
+    public Transform Position1;
+    public Transform Position2;
+    public bool goingRight = false;
 
 
     //public AnimationCurve x;
@@ -37,12 +40,15 @@ public class InverseKinematicsController : MonoBehaviour
                 bonesLength[i] = 0f;
             }
         }
+
+        goingRight = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         SolveIK();
+        MoveSphere();
     }
 
     void SolveIK()
@@ -118,45 +124,31 @@ public class InverseKinematicsController : MonoBehaviour
         return forwardPostions;
     }
 
-    /*x
-    private void OnTriggerEnter(Collider other)
+    private void MoveSphere()
     {
-        if (other.tag == "Player")
+        if(goingRight)
         {
-            Debug.Log("other");
-
-            StartCoroutine(PullObject(other));
-        } else
+            if (targetPostion.position.x > Position2.position.x)
+            {
+                goingRight = false;
+            }
+            else
+            {
+                targetPostion.position = new Vector3(targetPostion.position.x + 0.1f, targetPostion.position.y, targetPostion.position.z);
+            }
+        }
+        else
         {
-            Debug.Log("other");
+            if (targetPostion.position.x < Position1.position.x)
+            {
+                goingRight = true;
+            }
+            else
+            {
+                targetPostion.position = new Vector3(targetPostion.position.x - 0.1f, targetPostion.position.y, targetPostion.position.z);
+            }
 
         }
+            
     }
-
-    IEnumerator PullObject(Collider collider)
-    {
-        Vector3 directionToCenter = TwisterFocus.position - collider.transform.position;
-        if (this.GetComponent<Collider>().bounds.Contains(collider.transform.position))
-        {
-            collider.GetComponent<Rigidbody>().AddForce(
-              Time.fixedDeltaTime * ForceMagnitude *
-              (
-                Vector3.Cross(transform.up, directionToCenter).normalized +
-                40.0f * directionToCenter.normalized +
-                15.0f * transform.up)
-              );
-        }
-        //yield return null;
-        yield return new WaitForFixedUpdate();
-        StartCoroutine(PullObject(collider));
-    }
-
-    // ATTRIBUTES
-    public Transform TwisterFocus = null;
-    public float ForceMagnitude = 0.0f;
-
-    public AudioClip primaryTwisterAudioClip = null;
-    public AudioClip secondaryTwisterAudioClip = null;
-
-    */
 }

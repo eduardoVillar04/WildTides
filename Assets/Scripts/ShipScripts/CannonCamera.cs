@@ -9,6 +9,7 @@ using UnityEngine.InputSystem.OnScreen;
 public class CannonCamera : MonoBehaviour
 {
     [Header("COMPONENTS")]
+    public Transform m_ShipTransform;
     public PlayerInput m_PlayerInput;
     public GameObject m_Sails;
     public GameObject m_Sight;
@@ -27,15 +28,20 @@ public class CannonCamera : MonoBehaviour
     private float m_CameraDirectionY;
     private Vector2 rotation;
 
+    //Mantain relative pos to ship
+    private Vector3 m_RelativeVectorToShip = Vector3.zero;
+    private float m_InitialShipPosY = 0.0f;
 
     private void Start()
     {
-        //TODO QUITAR
-        //Cursor.lockState = CursorLockMode.Locked;
+        m_RelativeVectorToShip = transform.position - m_ShipTransform.position;
+        m_InitialShipPosY = m_ShipTransform.position.y;
     }
 
     void Update()
     {
+        MantainRelativePositionToShip();
+
         //while the cannon camera is active, the canno will follow it
         RotateCannon();
 
@@ -46,21 +52,6 @@ public class CannonCamera : MonoBehaviour
 
             //Update the sensitivity selected by the player
             m_Sensitivity = SingletonOptions.m_Instance.m_SensitivityValue;
-
-            //TODO QUITAR
-            //Mobile Inputs: If right stick is enabled the camera direction is updated with it
-            //if (m_RightStick.enabled)
-            //{
-            //    m_CameraDirectionX = m_RightStick.Horizontal;
-            //    m_CameraDirectionY = m_RightStick.Vertical;
-
-            //    m_Sensitivity += m_ExtraJoystickSens;
-            //}
-            //else
-            //{
-            //    m_CameraDirectionX = m_PlayerInput.actions["Look"].ReadValue<Vector2>().x;
-            //    m_CameraDirectionY = m_PlayerInput.actions["Look"].ReadValue<Vector2>().y;
-            //}
 
 #if UNITY_ANDROID
             m_CameraDirectionX = m_RightStick.Horizontal;
@@ -116,6 +107,21 @@ public class CannonCamera : MonoBehaviour
     {
         m_Sails.SetActive(true);
         m_Sight.SetActive(false);
+    }
+
+    private void MantainRelativePositionToShip()
+    {
+        //Mantain a stedy position, if the current Ypos of the ship is larger than the initial, use it for updating the camera pos
+        //if not use the initial distance between the camera and the ship
+        if (m_InitialShipPosY >= m_ShipTransform.position.y)
+        {
+            Vector3 AdjustedShipPos = new Vector3(m_ShipTransform.position.x, m_InitialShipPosY, m_ShipTransform.position.z);
+            transform.position = AdjustedShipPos + m_RelativeVectorToShip;
+        }
+        else
+        {
+            transform.position = m_ShipTransform.position + m_RelativeVectorToShip;
+        }
     }
 
 

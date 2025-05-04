@@ -5,9 +5,12 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour
 {
     public bool m_IsShaking;
+    public Transform m_ShipTransform;
+
     public IEnumerator Shake(float duration, float magnitude)
     {
-        Vector3 originalPos = transform.localPosition;
+        Vector3 originalPos = transform.position;
+        Vector3 originalShipPos = m_ShipTransform.position;
 
         m_IsShaking = true;
 
@@ -30,6 +33,7 @@ public class CameraShake : MonoBehaviour
 
         m_IsShaking = false;
 
-        transform.localPosition = originalPos;
+        //To maintain relative position to ship adjust position in relation to how much the ship has moved
+        transform.position = originalPos + (m_ShipTransform.position - originalShipPos);
     }
 }

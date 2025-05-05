@@ -23,17 +23,19 @@ public class CameraShake : MonoBehaviour
             float yOffset = Random.Range(-1f, 1f) * magnitude;
 
             //Shake the camera position
-            transform.localPosition += new Vector3(xOffset, yOffset, 0);
+            transform.position += new Vector3(xOffset, yOffset, 0);
 
             //Update the elpased time
             timeElapsed += Time.deltaTime;
+
+
             yield return null;
         }
 
+        //To maintain relative position to ship adjust position in relation to how much the ship has moved
+        transform.position = originalPos + (m_ShipTransform.position - originalShipPos);
 
         m_IsShaking = false;
 
-        //To maintain relative position to ship adjust position in relation to how much the ship has moved
-        transform.position = originalPos + (m_ShipTransform.position - originalShipPos);
     }
 }

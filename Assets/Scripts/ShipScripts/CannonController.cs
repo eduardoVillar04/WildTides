@@ -82,10 +82,15 @@ public class CannonController : MonoBehaviour
 
     public void Shoot()
     {
-        //We shake both the cannon and the main camera
-
-        StartCoroutine(m_MainCameraShake.Shake(m_ShakeTime, m_MainCamShakeMagnitude));
-        StartCoroutine(m_CannonCameraShake.Shake(m_ShakeTime, m_CannonCamShakeMagnitude));
+        //We shake the corresponding camera
+        if(m_MainCameraShake.isActiveAndEnabled)
+        {
+            StartCoroutine(m_MainCameraShake.Shake(m_ShakeTime, m_MainCamShakeMagnitude));
+        }
+        else
+        {
+            StartCoroutine(m_CannonCameraShake.Shake(m_ShakeTime, m_CannonCamShakeMagnitude));
+        }
 
         //We instantiate the projectile
         GameObject projectile = Instantiate(m_Projectile, m_CannonEndPoint.position, m_CannonEndPoint.rotation);

@@ -15,6 +15,7 @@ public class MainCameraController : MonoBehaviour
     public Transform m_ShipTransform;
     public PlayerInput m_PlayerInput;
     public string m_CurrentControlScheme;
+    public Transform m_Cannon;
 
     [Header("CAMERA SHAKE")]
     public CameraShake m_CameraShake;
@@ -100,4 +101,5 @@ public class MainCameraController : MonoBehaviour
     {
         m_LastShipPos = m_ShipTransform.position;
     }
+
 }

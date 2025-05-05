@@ -76615,6 +76615,10 @@ PrefabInstance:
       propertyPath: m_Sight
       value: 
       objectReference: {fileID: 1224478308}
+    - target: {fileID: 4040679585076886862, guid: 6618b5580e8b96342be0520c68f9b2c4, type: 3}
+      propertyPath: m_Cannon
+      value: 
+      objectReference: {fileID: 2017575609}
     - target: {fileID: 5712579652754710955, guid: 6618b5580e8b96342be0520c68f9b2c4, type: 3}
       propertyPath: m_Name
       value: ShipModeled
@@ -90268,6 +90272,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5648318650180866189, guid: ec1fdaabbc0025c4b9b929094a3bee24, type: 3}
+--- !u!4 &2017575609 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 50255492488087715, guid: 6618b5580e8b96342be0520c68f9b2c4, type: 3}
+  m_PrefabInstance: {fileID: 1723940669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2018312152
 PrefabInstance:
   m_ObjectHideFlags: 0

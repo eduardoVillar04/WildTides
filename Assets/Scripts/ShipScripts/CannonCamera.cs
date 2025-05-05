@@ -32,7 +32,7 @@ public class CannonCamera : MonoBehaviour
     private Vector3 m_RelativeVectorToShip = Vector3.zero;
     private float m_InitialShipPosY = 0.0f;
 
-    private void Start()
+    private void Awake()
     {
         m_RelativeVectorToShip = transform.position - m_ShipTransform.position;
         m_InitialShipPosY = m_ShipTransform.position.y;

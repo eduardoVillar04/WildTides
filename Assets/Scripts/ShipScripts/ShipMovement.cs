@@ -12,7 +12,6 @@ public class ShipMovement : MonoBehaviour
 
     [Header("VELOCITY VARIABLES")]
     public float m_Acceleration;
-    public float m_MaxSpeed;
 
     [Header("ROTATION VARIABLES")]
     public float m_RotationSpeed;
@@ -43,17 +42,6 @@ public class ShipMovement : MonoBehaviour
 
     private void Inputs()
     {
-        //TODO QUITAR
-        //if (m_LeftStick.enabled && m_LeftStick != null)
-        //{
-        //    m_MoveInput.x = m_LeftStick.Horizontal;
-        //    m_MoveInput.y = m_LeftStick.Vertical;
-        //}
-        //else
-        //{
-        //    m_MoveInput = m_PlayerInput.actions["Move"].ReadValue<Vector2>();
-        //}
-
 #if UNITY_ANDROID
             m_MoveInput.x = m_LeftStick.Horizontal;
             m_MoveInput.y = m_LeftStick.Vertical;
@@ -66,13 +54,8 @@ public class ShipMovement : MonoBehaviour
     {
         float forwardMovement = m_MoveInput.y;
 
-        //NOT NEEDED, FRICTION DOES THE JOB
-        //Make the velocity of the ship not go above maximum
-        //m_ShipRigidbody.velocity = Vector3.ClampMagnitude(m_ShipRigidbody.velocity, m_MaxSpeed);
-        
         Vector3 movement = transform.forward * forwardMovement * m_Acceleration * dt;
         m_Rigidbody.AddForce(movement);
-
     }
 
     private void Rotation(float dt)

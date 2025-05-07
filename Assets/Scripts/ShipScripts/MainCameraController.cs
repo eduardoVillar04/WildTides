@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.OnScreen;
+using UnityEngine.Timeline;
 using UnityEngine.UIElements;
 
 public class MainCameraController : MonoBehaviour
@@ -15,6 +16,7 @@ public class MainCameraController : MonoBehaviour
     public Transform m_ShipTransform;
     public PlayerInput m_PlayerInput;
     public string m_CurrentControlScheme;
+    public Transform m_Cannon;
 
     [Header("CAMERA SHAKE")]
     public CameraShake m_CameraShake;
@@ -22,18 +24,26 @@ public class MainCameraController : MonoBehaviour
     [Header("MOBILE INPUTS")]
     public VariableJoystick m_RightStick;
 
+    //Rotating vars
     private float m_CameraDirectionX;
+    private float m_InitialShipYPos;
+
+    //Mantain pos relative to ship vars
+    private Vector3 m_LastShipPos = Vector3.zero;
 
     void Start()
     {
         m_Camera = GetComponent<Camera>();
-        m_PlayerInput = GetComponentInParent<PlayerInput>();
-        m_CameraShake = GetComponentInParent<CameraShake>();
+        m_CameraShake = GetComponent<CameraShake>();
+        m_LastShipPos = m_ShipTransform.position;
+        m_InitialShipYPos = m_ShipTransform.position.y;
     }
 
     // Update is called once per frame
     void Update()
     {
+        MantainRelativePositionToShip();
+
         if (!m_CameraShake.m_IsShaking)
         {
             //Check which controller is being used
@@ -68,8 +78,29 @@ public class MainCameraController : MonoBehaviour
                 m_CameraDirectionX *= 0.1f;
             }
 
+            RotateCamera();
 
-            m_Camera.transform.RotateAround(m_ShipTransform.position, Vector3.up, 500 * m_CameraDirectionX * m_Sensitivity * Time.deltaTime);
         }
     }
+
+    private void RotateCamera()
+    {
+        //Rotate the camera using the initial yPos of the ship, to not cause wobbling
+        Vector3 rotationPos = new Vector3(m_ShipTransform.position.x, m_InitialShipYPos, m_ShipTransform.position.z);
+        m_Camera.transform.RotateAround(rotationPos, Vector3.up, 500 * m_CameraDirectionX * m_Sensitivity * Time.deltaTime);
+    }
+
+    private void MantainRelativePositionToShip()
+    {
+        Vector3 shipMovement = m_ShipTransform.position - m_LastShipPos;
+        transform.position += shipMovement;
+        m_LastShipPos = m_ShipTransform.position;
+    }
+
+    //Save the position of the ship when the camera is disabled as the last position, so that it moves to the correst position when enabled
+    private void OnDisable()
+    {
+        m_LastShipPos = m_ShipTransform.position;
+    }
+
 }

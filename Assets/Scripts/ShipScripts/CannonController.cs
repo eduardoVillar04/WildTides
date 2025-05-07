@@ -81,11 +81,17 @@ public class CannonController : MonoBehaviour
 
     public void Shoot()
     {
-        m_ShootColdowntimer = Time.time + m_ShootCooldown;
+        //We shake the corresponding camera
+        if(m_MainCameraShake.isActiveAndEnabled)
+        {
+            StartCoroutine(m_MainCameraShake.Shake(m_ShakeTime, m_MainCamShakeMagnitude));
+        }
+        else
+        {
+            StartCoroutine(m_CannonCameraShake.Shake(m_ShakeTime, m_CannonCamShakeMagnitude));
+        }
 
-        //We shake both the cannon and the main camera
-        StartCoroutine(m_MainCameraShake.Shake(m_ShakeTime, m_MainCamShakeMagnitude));
-        StartCoroutine(m_CannonCameraShake.Shake(m_ShakeTime, m_CannonCamShakeMagnitude));
+        m_ShootColdowntimer = Time.time + m_ShootCooldown;
 
         //We instantiate the projectile
         GameObject projectile = Instantiate(m_Projectile, m_CannonEndPoint.position, m_CannonEndPoint.rotation);
@@ -107,8 +113,12 @@ public class CannonController : MonoBehaviour
     public void Recoil()
     {
         //After each attack, the boat will suffer knockback from the shot
-        Vector3 direction = transform.position - m_CannonEndPoint.position;
-        m_ShipRigidbody.AddForce(direction * m_RecoilFroce, ForceMode.VelocityChange);
+        Vector3 forceDirection = transform.position - m_CannonEndPoint.position;
+
+        //We restrict the force direction so that it doesnt make the boat change Y pos
+        Vector3 restrainedForceDirection = new Vector3(forceDirection.x, 0.0f, forceDirection.z);
+
+        m_ShipRigidbody.AddForce(restrainedForceDirection * m_RecoilFroce, ForceMode.VelocityChange);
     }
 
 }

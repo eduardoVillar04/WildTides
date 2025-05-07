@@ -91,6 +91,7 @@ public class CannonController : MonoBehaviour
             StartCoroutine(m_CannonCameraShake.Shake(m_ShakeTime, m_CannonCamShakeMagnitude));
         }
 
+        m_ShootColdowntimer = Time.time + m_ShootCooldown;
 
         //We instantiate the projectile
         GameObject projectile = Instantiate(m_Projectile, m_CannonEndPoint.position, m_CannonEndPoint.rotation);

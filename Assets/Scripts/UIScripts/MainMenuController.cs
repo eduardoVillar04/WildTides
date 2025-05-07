@@ -10,6 +10,8 @@ public class MainMenuController : MonoBehaviour
     public GameObject m_HardModeOnImage;
     public GameObject m_HardModeOffImage;
 
+    public GameObject m_LoadingBanner;
+
     private void Start()
     {
         if (SingletonOptions.m_Instance.m_HardModeOn)
@@ -30,6 +32,8 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayGame ()
     {
+        m_LoadingBanner.SetActive(true);
+        this.transform.parent.gameObject.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

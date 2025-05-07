@@ -282,9 +282,9 @@ MonoBehaviour:
   m_CannonTransform: {fileID: 7805837849225910352}
   m_CannonRotationSpeed: 5
   m_BulletPrefab: {fileID: 45345387307393872, guid: dace832d1ea0697429aacdbb48c84670, type: 3}
-  m_BulletSpeed: 10
   m_TimeBetweenShots: 3
   m_ShotTimer: 0
+  m_ShootingAngle: 45
   m_ReturnPoint: {x: 0, y: 0, z: 0}
   m_TimeBetweenSetDestination: 0.2
   m_VisionSphere: {fileID: 8366058206738451633}

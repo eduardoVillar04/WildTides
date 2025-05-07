@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Purchasing.Extension;
 using UnityEngine.Rendering;
+using static UnityEngine.GraphicsBuffer;
 
 public class PirateController : Enemy
 {
@@ -29,9 +30,13 @@ public class PirateController : Enemy
     public Transform m_CannonTransform;
     public float m_CannonRotationSpeed;
     public GameObject m_BulletPrefab;
-    public float m_BulletSpeed;
     public float m_TimeBetweenShots;
     public float m_ShotTimer;
+    public float m_ShootingAngle = 45.0f;
+
+    //Deprecated
+    //public float m_BulletSpeed;
+
 
     [Header("NAVIGATION VARIABLES")]
     public Vector3 m_ReturnPoint;
@@ -198,12 +203,48 @@ public class PirateController : Enemy
 
     public void Shoot()
     {
-        GameObject cannonBullet = Instantiate(m_BulletPrefab, m_BulletSpawnPoint.position, Quaternion.identity);
-        Rigidbody cbRB = cannonBullet.GetComponent<Rigidbody>();
-        Vector3 direction = m_PlayerTransform.position - m_BulletSpawnPoint.position;
-        cbRB.AddForce(direction.normalized * m_BulletSpeed, ForceMode.VelocityChange);
-        //Audio
-        SoundEffectsManager.instance.PlaySoundFXClip(m_ShootSound, transform, 0.6f);
+        //OLD SHOOTING BEHAVIOUR
+        //GameObject cannonBullet = Instantiate(m_BulletPrefab, m_BulletSpawnPoint.position, Quaternion.identity);
+        //Rigidbody cbRB = cannonBullet.GetComponent<Rigidbody>();
+        //Vector3 direction = m_PlayerTransform.position - m_BulletSpawnPoint.position;
+        //cbRB.AddForce(direction.normalized * m_BulletSpeed, ForceMode.VelocityChange);
+        ////Audio
+        //SoundEffectsManager.instance.PlaySoundFXClip(m_ShootSound, transform, 0.6f);
+
+        //NEW SHOOTING BEHAVIOUR
+
+        //Might have to not take into account the Y component of the vector to get better results, these formulas are for objects in the same altitude
+
+        Vector3 targetPos = new Vector3(m_PlayerTransform.position.x, m_BulletSpawnPoint.position.y, m_PlayerTransform.position.z);
+        Vector3 directionVector = targetPos - m_BulletSpawnPoint.position;
+        float distanceToTarget = directionVector.magnitude;
+
+        //Instantiate the bullet so its forward vector is towards the target
+        GameObject newBullet = Instantiate(m_BulletPrefab, m_BulletSpawnPoint.position, Quaternion.LookRotation(directionVector));
+        Rigidbody bulletRb = newBullet.GetComponent<Rigidbody>();
+        Transform bulletTransform = newBullet.GetComponent<Transform>();
+
+        Vector3 initialLinearVelocity = CalculateInitialLinearVelocity(distanceToTarget);
+        bulletRb.AddForce(initialLinearVelocity.z * bulletTransform.forward, ForceMode.VelocityChange);
+        bulletRb.AddForce(initialLinearVelocity.y * bulletTransform.up, ForceMode.VelocityChange);
+
+        //We change the collider state from trigger to not trigger after spawning the bullet so that it doesnt destroy the enemy that shoots it
+        StartCoroutine(ChangeColliderState(newBullet.GetComponent<Collider>()));
+    }
+
+    private Vector3 CalculateInitialLinearVelocity(float distanceToTarget)
+    {
+        ////Formulas in page 121 of physics for game developers
+
+        float velocityMagnitude = Mathf.Sqrt((distanceToTarget * Physics.gravity.magnitude) / (2 * Mathf.Sin(m_ShootingAngle) * Mathf.Cos(m_ShootingAngle)));
+        Vector3 initialVelocity = new Vector3(0, velocityMagnitude * Mathf.Cos(m_ShootingAngle), velocityMagnitude * Mathf.Sin(m_ShootingAngle));
+        return initialVelocity;
+    }
+
+    private IEnumerator ChangeColliderState(Collider objCollider)
+    {
+        yield return new WaitForSeconds(0.3f);
+        objCollider.isTrigger = !objCollider.isTrigger;
     }
 
 

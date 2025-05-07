@@ -64,7 +64,6 @@ public class CannonController : MonoBehaviour
         //We can shoot when it isnt on cooldown and the player presses the button
         if (Time.time > m_ShootColdowntimer && m_ShootIsPressed && Time.timeScale != 0)
         {
-            m_ShootColdowntimer = Time.time + m_ShootCooldown;
             Shoot();
         }
     }
@@ -91,6 +90,7 @@ public class CannonController : MonoBehaviour
         {
             StartCoroutine(m_CannonCameraShake.Shake(m_ShakeTime, m_CannonCamShakeMagnitude));
         }
+
 
         //We instantiate the projectile
         GameObject projectile = Instantiate(m_Projectile, m_CannonEndPoint.position, m_CannonEndPoint.rotation);

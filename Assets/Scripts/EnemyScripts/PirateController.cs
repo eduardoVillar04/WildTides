@@ -48,6 +48,7 @@ public class PirateController : Enemy
     public NavMeshAgent m_NavMeshAgent;
     public Transform m_PlayerTransform;
     public GameObject m_TerrainCollider;
+    public GameObject m_Floaters;
 
     [Header("Audio")]
     public AudioClip m_ShootSound;
@@ -60,18 +61,24 @@ public class PirateController : Enemy
         RETURN_TO_POINT
     }
 
-    public PirateStates m_CurrentState = PirateStates.CHECKING_FOR_PLAYER;
+    public PirateStates m_CurrentState = PirateStates.NONE;
+    private PirateStates m_LastState = PirateStates.NONE;
 
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
+        m_CurrentState = PirateStates.CHECKING_FOR_PLAYER;
+        m_LastState = m_CurrentState;
 
         //almost ready to fire
         m_ShotTimer = m_TimeBetweenShots - 0.5f;
 
         m_VisionSphere = GetComponent<SphereCollider>();
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
+
+        //Navmeshagent starts disabled so that the pirate floats initially
+        m_NavMeshAgent.enabled = false;
 
         //We find the player transforms by searching it with the tag
         m_PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -106,6 +113,8 @@ public class PirateController : Enemy
     {
         base.Update();
 
+        OnStateChanged();
+
         switch (m_CurrentState)
         {
             case PirateStates.GO_TO_NEXT_POINT:
@@ -124,7 +133,23 @@ public class PirateController : Enemy
                 break;
         }
 
+        m_LastState = m_CurrentState;
     }
+
+    private void OnStateChanged()
+    {
+        if(m_LastState != m_CurrentState)
+        {
+            //Switch if navMeshAgent is enabled if pirate entered or left checking for players
+            //When in checking for players the pirate has the navmeshagent component disabled so that floaters work, when it leaves the navmesh is enabled again
+            if(m_LastState == PirateStates.CHECKING_FOR_PLAYER || m_CurrentState == PirateStates.CHECKING_FOR_PLAYER)
+            {
+                m_Floaters.SetActive(!m_Floaters.activeSelf);
+                m_NavMeshAgent.enabled = !m_NavMeshAgent.enabled;
+            }
+        }
+    }
+
     public void CheckingForPlayer()
     {
         //We activate autobraking so the patroling pirates dont go past the patrol point

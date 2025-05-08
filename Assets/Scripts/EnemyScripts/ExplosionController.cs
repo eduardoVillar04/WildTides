@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ExplosionController : MonoBehaviour
 {
     public int m_DamageDealt;
     public float m_BlastForce;
+    public ParticleSystem m_ParticleSystem;
 
+    private void Start()
+    {
+        m_ParticleSystem = GetComponent<ParticleSystem>();
+        //After 0.2s, we destroy the explosion
+        StartCoroutine(DestroyThisObject(m_ParticleSystem.main.duration));
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        //After 0.2s, we destroy the explosion
-        Invoke("DestroyThisObject", 0.2f);
-
         //if its an enemy, it dies
         if (other.gameObject.GetComponent<Enemy>()) other.gameObject.GetComponent<HealthController>().m_IsDead = true;
 
@@ -24,10 +29,11 @@ public class ExplosionController : MonoBehaviour
         other.GetComponent<Rigidbody>().AddForce(direction.normalized * m_BlastForce, ForceMode.Impulse);
     }
 
-    private void DestroyThisObject()
+    public IEnumerator DestroyThisObject(float timeBeforeDestruction)
     {
+        yield return new WaitForSeconds(timeBeforeDestruction);
         Destroy(gameObject);
     }
 
-    
+
 }

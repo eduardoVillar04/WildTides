@@ -203,15 +203,6 @@ public class PirateController : Enemy
 
     public void Shoot()
     {
-        //OLD SHOOTING BEHAVIOUR
-        //GameObject cannonBullet = Instantiate(m_BulletPrefab, m_BulletSpawnPoint.position, Quaternion.identity);
-        //Rigidbody cbRB = cannonBullet.GetComponent<Rigidbody>();
-        //Vector3 direction = m_PlayerTransform.position - m_BulletSpawnPoint.position;
-        //cbRB.AddForce(direction.normalized * m_BulletSpeed, ForceMode.VelocityChange);
-        ////Audio
-        //SoundEffectsManager.instance.PlaySoundFXClip(m_ShootSound, transform, 0.6f);
-
-
         //NEW SHOOTING BEHAVIOUR
 
         //Might have to not take into account the Y component of the vector to get better results, these formulas are for objects in the same altitude

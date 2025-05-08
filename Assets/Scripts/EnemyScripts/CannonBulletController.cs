@@ -6,6 +6,8 @@ using UnityEngine.Rendering;
 public class CannonBulletController : MonoBehaviour
 {
     public int m_Damage;
+    public GameObject m_Explosion = null;
+    [SerializeField] private AudioClip m_ExplosionSound;
 
     private void Start()
     {
@@ -14,33 +16,25 @@ public class CannonBulletController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //If a player is hit, the cannon ball deals damage and is destroyed
+        //If a player or enemy is hit, the cannon ball deals damage, creates and explosion and is destroyed
 
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy"))
         {
+            //Damage
             collision.gameObject.GetComponent<HealthController>().DealDamage(m_Damage);
+
+            //Explosion
+            Instantiate(m_Explosion, transform.position, Quaternion.identity);
+            //Disable the sphereCollider so that it doesnt damage the player or enemies
+            m_Explosion.GetComponent<SphereCollider>().enabled = false;
+            SoundEffectsManager.instance.PlaySoundFXClip(m_ExplosionSound, transform, 1f);
+            
             Destroy(gameObject);
         }
 
         if (collision.gameObject.CompareTag("Terrain")) Destroy(this.gameObject);
 
     }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    //If a player is hit, the cannon ball deals damage and is destroyed
-
-    //    if(other.gameObject.CompareTag("Player") && !other.isTrigger)
-    //    {
-    //        other.GetComponent<HealthController>().DealDamage(m_Damage);
-    //        Destroy(gameObject);
-    //    }
-
-    //    if (other.gameObject.CompareTag("Terrain")) Destroy(this.gameObject);
-
-    //    //TODO: friendly fire?
-
-    //}
 
     public void DestroyThisObject()
     {

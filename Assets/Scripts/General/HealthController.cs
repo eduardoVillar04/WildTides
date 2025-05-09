@@ -27,10 +27,13 @@ public class HealthController : MonoBehaviour
 
     public void DealDamage(int damageDealt)
     {
-        m_HealthPoints -= damageDealt;
-        if(m_DamageSound != null)
+        if(!m_IsDead)
         {
-            SoundEffectsManager.instance.PlaySoundFXClip(m_DamageSound, transform, 0.8f);
+            m_HealthPoints -= damageDealt;
+            if (m_DamageSound != null)
+            {
+                SoundEffectsManager.instance.PlaySoundFXClip(m_DamageSound, transform, 0.8f);
+            }
         }
     }
 

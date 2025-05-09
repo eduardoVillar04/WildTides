@@ -6469,7 +6469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &135374450
 Transform:
   m_ObjectHideFlags: 0
@@ -6492,7 +6492,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135374449}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -7798,6 +7798,10 @@ PrefabInstance:
     - target: {fileID: 1296610832561171489, guid: 4f0440569c60db748b84ebc526bdf142, type: 3}
       propertyPath: m_Name
       value: NavMeshSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296610832561171489, guid: 4f0440569c60db748b84ebc526bdf142, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4308337815211569209, guid: 4f0440569c60db748b84ebc526bdf142, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11906,7 +11910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_Name
-      value: DockArea (1)
+      value: Dock_BOOMPort
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_Layer
@@ -16096,7 +16100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_Name
-      value: DockArea (2)
+      value: Dock_BoozeHarbor
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_Layer
@@ -34779,7 +34783,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.33333334
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 22fc8a3aa1498ac478e425decfc40636, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 959ee59b72c557943ab029ce4e7058e5, type: 2}
   m_BuildHeightMesh: 0
 --- !u!114 &764668442
 MonoBehaviour:
@@ -34810,7 +34814,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 1
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: e387713a45bb66642bdf4f03978c5c0a, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 5ca8e39b5f35ac14c86d2148b5874748, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1001 &766840101
 PrefabInstance:
@@ -49126,7 +49130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_Name
-      value: DockArea (3)
+      value: Dock_Tikibay
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_Layer
@@ -49134,7 +49138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_TagString
@@ -76611,10 +76615,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3266356147236359890, guid: 6618b5580e8b96342be0520c68f9b2c4, type: 3}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
     - target: {fileID: 3554260372931708521, guid: 6618b5580e8b96342be0520c68f9b2c4, type: 3}
       propertyPath: m_Sight
       value: 
       objectReference: {fileID: 1224478308}
+    - target: {fileID: 4040679585076886862, guid: 6618b5580e8b96342be0520c68f9b2c4, type: 3}
+      propertyPath: m_Cannon
+      value: 
+      objectReference: {fileID: 2017575609}
     - target: {fileID: 5712579652754710955, guid: 6618b5580e8b96342be0520c68f9b2c4, type: 3}
       propertyPath: m_Name
       value: ShipModeled
@@ -83618,7 +83630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_Name
-      value: DockArea
+      value: Dock_GunPorter
       objectReference: {fileID: 0}
     - target: {fileID: 1945032049029855921, guid: 40de45abb4dbf75479c79a605c3cb6d4, type: 3}
       propertyPath: m_Layer
@@ -90268,6 +90280,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5648318650180866189, guid: ec1fdaabbc0025c4b9b929094a3bee24, type: 3}
+--- !u!4 &2017575609 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 50255492488087715, guid: 6618b5580e8b96342be0520c68f9b2c4, type: 3}
+  m_PrefabInstance: {fileID: 1723940669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2018312152
 PrefabInstance:
   m_ObjectHideFlags: 0

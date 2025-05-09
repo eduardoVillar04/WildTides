@@ -118,8 +118,9 @@ public class CannonController : MonoBehaviour
         //We restrict the force direction so that it doesnt make the boat change Y pos
         Vector3 restrainedForceDirection = new Vector3(forceDirection.x, 0.0f, forceDirection.z);
 
+        //Change in the forces position, so that the ship moves better when shooting
         m_ShipRigidbody.AddForceAtPosition(restrainedForceDirection * m_RecoilFroce,
-            new Vector3(m_ShipRigidbody.transform.position.x, m_ShipRigidbody.transform.position.y + 1, m_ShipRigidbody.transform.position.z), ForceMode.VelocityChange);
+            new Vector3(m_ShipRigidbody.transform.position.x, (1/10) + m_ShipRigidbody.transform.position.y, m_ShipRigidbody.transform.position.z), ForceMode.VelocityChange);
     }
 
 }

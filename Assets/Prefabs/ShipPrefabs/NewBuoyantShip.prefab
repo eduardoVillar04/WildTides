@@ -289,7 +289,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6909513733906977463}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &2906243400887563679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +408,10 @@ PrefabInstance:
       propertyPath: displacementAmount
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5230740180514702170, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
+      propertyPath: m_DamageSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 86518dc0ce5fe5a44aca0db9f7e984a9, type: 3}
     - target: {fileID: 5598160090720598412, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
       propertyPath: m_Name
       value: BuoyantShip

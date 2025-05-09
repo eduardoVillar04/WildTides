@@ -1233,9 +1233,25 @@ PrefabInstance:
       propertyPath: m_Sight
       value: 
       objectReference: {fileID: 708072989}
+    - target: {fileID: 3500583602863330213, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+      propertyPath: waterAngularDrag
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4441252516145393822, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
       propertyPath: m_Name
       value: NewBuoyantShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287855037569755896, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+      propertyPath: waterAngularDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951588876752028864, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.055
+      objectReference: {fileID: 0}
+    - target: {fileID: 6536488579818137445, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+      propertyPath: waterAngularDrag
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6964294714843473197, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1280,6 +1296,14 @@ PrefabInstance:
     - target: {fileID: 7049718514724581552, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890642757387304903, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+      propertyPath: waterAngularDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8598279474130556591, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

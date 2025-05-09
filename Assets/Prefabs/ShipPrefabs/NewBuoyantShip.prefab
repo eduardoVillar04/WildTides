@@ -356,6 +356,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1771888752327178732, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
+      propertyPath: waterDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771888752327178732, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
+      propertyPath: waterAngularDrag
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771888752327178732, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
+      propertyPath: displacementAmount
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2192769829948370388, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -400,11 +412,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3431873886287405390, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
+      propertyPath: waterDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431873886287405390, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
+      propertyPath: waterAngularDrag
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431873886287405390, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
+      propertyPath: displacementAmount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432848476664567541, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
+      propertyPath: m_ImplicitCom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432848476664567541, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
+      propertyPath: m_CenterOfMass.y
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3721315684730101326, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
       propertyPath: m_Sight
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4356122705418153171, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
+      propertyPath: waterDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356122705418153171, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
+      propertyPath: waterAngularDrag
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356122705418153171, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
+      propertyPath: displacementAmount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008742326648264078, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
+      propertyPath: waterDrag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008742326648264078, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
+      propertyPath: waterAngularDrag
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008742326648264078, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
       propertyPath: displacementAmount
       value: 3
       objectReference: {fileID: 0}

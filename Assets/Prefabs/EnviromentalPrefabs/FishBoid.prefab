@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishBoid
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 206cfe78df27d13459d286a4897f4cf9, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 206cfe78df27d13459d286a4897f4cf9, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -62,6 +70,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 206cfe78df27d13459d286a4897f4cf9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5327417812661121288}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 206cfe78df27d13459d286a4897f4cf9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7929919951519066699}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 206cfe78df27d13459d286a4897f4cf9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3794095712472752996}
   m_SourcePrefab: {fileID: 100100000, guid: 206cfe78df27d13459d286a4897f4cf9, type: 3}
 --- !u!1 &5026519715421558544 stripped
 GameObject:
@@ -102,11 +116,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fda501768d38df84eb2a024db63f5fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linearVelocityMagnitude: 7
-  separationFactor: 28
-  cohesionFactor: 30
-  alignmentFactor: 29
-  separationTerrainFactor: 58
-  boatAttractionFactor: 96
-  queryRadius: 50
-  terrainQueryRadius: 15
+  m_LinearVelocityMagnitude: 10
+  m_SeparationFactor: 40
+  m_CohesionFactor: 41
+  m_AlignmentFactor: 59
+  m_SeparationTerrainFactor: 46
+  m_BoatAttractionFactor: 100
+  m_QueryRadius: 52
+  m_TerrainQueryRadius: 5
+  m_SphereCollider: {fileID: 7929919951519066699}
+  m_Rigidbody: {fileID: -3794095712472752996}
+  m_ShipTransform: {fileID: 0}
+  m_ShipMovement: {fileID: 0}
+  m_ShipRb: {fileID: 0}
+  m_SpeedMultInRelationToShip: 2
+  m_ChaseTime: 5
+  m_FleeingTime: 5
+  m_ChaseTimerActive: 0
+  m_IsFleeingFromPlayer: 0
+  m_Timer: 0
+  m_AccelerationBuff: 100
+--- !u!135 &7929919951519066699
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5026519715421558544}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 5
+  m_Center: {x: -0.000000011175871, y: -0.03918491, z: -0.049935997}
+--- !u!54 &-3794095712472752996
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5026519715421558544}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

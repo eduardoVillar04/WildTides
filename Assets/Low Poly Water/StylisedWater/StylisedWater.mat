@@ -134,7 +134,7 @@ Material:
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _LightFoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _WaterColor: {r: 0.20784307, g: 0.6431373, b: 1, a: 1}
+    - _WaterColor: {r: 0.20784307, g: 0.6431373, b: 1, a: 0.99607843}
   m_BuildTextureStacks: []
 --- !u!114 &525813983808830983
 MonoBehaviour:

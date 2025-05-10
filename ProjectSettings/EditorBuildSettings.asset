@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MapaPC_Consolas.unity
     guid: d509d8093278f2041a03c6e633341ca3
   - enabled: 1
-    path: Assets/Scenes/Map.unity
+    path: Assets/Props/Map.unity
     guid: 1ff357115f1048d418028fd6f87cf24e
   - enabled: 1
     path: Assets/Scenes/UIScenes/Credits.unity

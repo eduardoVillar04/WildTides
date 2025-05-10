@@ -42,7 +42,6 @@ public class BoidFishController : MonoBehaviour
         vectorXZ.y = 0;
 
         transform.position += Time.deltaTime * linearVelocityMagnitude * vectorXZ;
-        
     }
 
     void UpdateSeparation()

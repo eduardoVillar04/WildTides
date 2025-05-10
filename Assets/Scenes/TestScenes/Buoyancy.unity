@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -789,7 +789,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1797970290}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
       propertyPath: m_LocalScale.x
@@ -805,15 +805,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.3
+      value: -48.198627
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 112.50798
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 90.3198
+      value: -22.524109
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
       propertyPath: m_LocalRotation.w
@@ -821,7 +821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
       propertyPath: m_LocalRotation.y
@@ -851,11 +851,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: 00_Island_2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
+--- !u!4 &333314841 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
+  m_PrefabInstance: {fileID: 333314840}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &605816152
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,11 +970,11 @@ GameObject:
   - component: {fileID: 627200232}
   m_Layer: 3
   m_Name: NavMeshSurface
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &627200232
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1240,6 +1249,10 @@ PrefabInstance:
     - target: {fileID: 4441252516145393822, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
       propertyPath: m_Name
       value: NewBuoyantShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441252516145393822, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5287855037569755896, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
       propertyPath: waterAngularDrag
@@ -1908,7 +1921,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1797970290}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
       propertyPath: m_LocalScale.x
@@ -1924,15 +1937,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 67.5
+      value: 10.001373
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 112.50798
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 45.1
+      value: -67.74391
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1940,7 +1953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1970,11 +1983,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: 00_Island_2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
+--- !u!4 &1206420471 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 539835f5aa8affc4da8041d192cff277, type: 3}
+  m_PrefabInstance: {fileID: 1206420470}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1222425476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,7 +2154,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 119
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -2143,7 +2165,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.33333334
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 22fc8a3aa1498ac478e425decfc40636, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: a3288ded61c79bf4b9db6db9926adbba, type: 2}
   m_BuildHeightMesh: 0
 --- !u!114 &1327323055
 MonoBehaviour:
@@ -2163,7 +2185,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 119
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -2174,7 +2196,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 1
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: e387713a45bb66642bdf4f03978c5c0a, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 7d1e3b2458236dc43b953517f6c378bd, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1001 &1353177099
 PrefabInstance:
@@ -2227,6 +2249,10 @@ PrefabInstance:
     - target: {fileID: 3277943230478287996, guid: 906eaf4e367244b4d9978bb46abce030, type: 3}
       propertyPath: m_Name
       value: BuoyantPirate
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277943230478287996, guid: 906eaf4e367244b4d9978bb46abce030, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5041551849850861923, guid: 906eaf4e367244b4d9978bb46abce030, type: 3}
       propertyPath: m_IsActive
@@ -3735,6 +3761,39 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.008001626, y: -0.68638587, z: 0.349976}
     m_Extent: {x: 1.0781343, y: 0.7326753, z: 0.34656549}
   m_DirtyAABB: 0
+--- !u!1 &1797970289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1797970290}
+  m_Layer: 0
+  m_Name: Terrain
+  m_TagString: Terrain
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1797970290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797970289}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 57.498627, y: -112.50798, z: 112.84391}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 333314841}
+  - {fileID: 1206420471}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1834551691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3804,9 +3863,8 @@ SceneRoots:
   - {fileID: 605816155}
   - {fileID: 1492874856}
   - {fileID: 1406159959}
-  - {fileID: 333314840}
-  - {fileID: 1206420470}
   - {fileID: 995670033}
   - {fileID: 1353177099}
   - {fileID: 692118788}
   - {fileID: 1222425477}
+  - {fileID: 1797970290}

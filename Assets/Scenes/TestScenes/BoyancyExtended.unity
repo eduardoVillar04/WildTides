@@ -1681,6 +1681,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d15017d5b13131648adba8fa91367264, type: 3}
   m_PrefabInstance: {fileID: 22876061}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &29019445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4082119813248843687, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+  m_PrefabInstance: {fileID: 836360289}
+  m_PrefabAsset: {fileID: 0}
+--- !u!81 &29019456
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29019445}
+  m_Enabled: 1
 --- !u!1001 &29359816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39033,6 +39046,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3019194930914753600, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155914049494877033, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4441252516145393822, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
       propertyPath: m_Name
       value: NewBuoyantShip
@@ -39080,7 +39101,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4082119813248843687, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 29019456}
   m_SourcePrefab: {fileID: 100100000, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
 --- !u!1001 &837038417
 PrefabInstance:
@@ -72986,7 +73010,8 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7882256224259130205, guid: c5dae777ee66eb04f9eab40c8ac62c0d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -96275,7 +96300,7 @@ PrefabInstance:
     - target: {fileID: 5448258407383654561, guid: 95930859f89c6d546969a6fbfafe28a9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3ae9c6c8d047d3246b7ea5cb3ca1de19, type: 2}
+      objectReference: {fileID: 2100000, guid: 40fbe03d0d6b078419776da0539a280a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

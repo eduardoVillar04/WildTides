@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2399309622245144366}
   - component: {fileID: 5448258407383654561}
   - component: {fileID: 708571205804797842}
-  - component: {fileID: 5185575105719376674}
   m_Layer: 0
   m_Name: Ocean1
   m_TagString: Untagged
@@ -63,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8538bd626cb3e80478f62e319f75e337, type: 2}
+  - {fileID: 2100000, guid: 3ae9c6c8d047d3246b7ea5cb3ca1de19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -101,20 +100,3 @@ MonoBehaviour:
   waveFrequency: 0.5
   waveLength: 0.75
   waveOriginPosition: {x: 0, y: 0, z: 0}
---- !u!114 &5185575105719376674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4284681052984501376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f59a754cb0b5e0439ebf8343a1108df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waveOriginPosition: {x: 0, y: 0, z: 0}
-  waveHeight: 0.25
-  waveLength: 0.75
-  waveFrequency: 0.5
-  offset: 0

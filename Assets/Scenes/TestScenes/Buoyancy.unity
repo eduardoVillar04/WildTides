@@ -1110,9 +1110,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 708571205804797842, guid: 95930859f89c6d546969a6fbfafe28a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4284681052984501376, guid: 95930859f89c6d546969a6fbfafe28a9, type: 3}
       propertyPath: m_Name
       value: Ocean1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284681052984501376, guid: 95930859f89c6d546969a6fbfafe28a9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4734649698034720570, guid: 95930859f89c6d546969a6fbfafe28a9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1153,6 +1161,10 @@ PrefabInstance:
     - target: {fileID: 4734649698034720570, guid: 95930859f89c6d546969a6fbfafe28a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448258407383654561, guid: 95930859f89c6d546969a6fbfafe28a9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1272,7 +1284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6964294714843473197, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.0550003
+      value: 4.04
       objectReference: {fileID: 0}
     - target: {fileID: 6964294714843473197, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
       propertyPath: m_LocalPosition.z

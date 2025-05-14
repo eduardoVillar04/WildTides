@@ -26,7 +26,7 @@ public class CannonCamera : MonoBehaviour
 
     private float m_CameraDirectionX;
     private float m_CameraDirectionY;
-    private Vector2 rotation;
+    public Vector2 rotation;
 
     //Mantain relative pos to ship
     private Vector3 m_RelativeVectorToShip = Vector3.zero;
@@ -104,7 +104,12 @@ public class CannonCamera : MonoBehaviour
     private void OnEnable()
     {
         //We make sure the camera has the same rotation as the cannon
-        rotation = new Vector2(m_CannonTransform.localEulerAngles.y, 0);
+
+        transform.rotation = m_CannonTransform.rotation;
+
+        Vector3 euler = transform.eulerAngles;
+        rotation = new Vector2(euler.y, -euler.x); // el signo depende de tu orden de rotaciones y ejes
+
         m_Sails.SetActive(false);
         m_Sight.SetActive(true);
     }

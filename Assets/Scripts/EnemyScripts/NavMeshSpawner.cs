@@ -16,11 +16,13 @@ public class NavMeshSpawner : MonoBehaviour
     public GameObject m_BarrelPrefab;
     public GameObject m_PiratePrefab;
     public GameObject m_TentaclePrefab;
+    public GameObject m_FishBank;
 
     [Header("NUMBER OF SPAWNS")]
     public int m_NumOfBarrelsPerTL;
     public int m_NumOfPiratesPerTL;
     public int m_NumOfTentaclesPerTL;
+    public int m_NumOfFishBank;
 
     [Header("SPAWN VARIABLES")]
     public float m_MaxSpawnDistance;
@@ -36,16 +38,6 @@ public class NavMeshSpawner : MonoBehaviour
         //Generate initial enemies
         GenerateEnemies(1);
 
-    }
-
-
-    private void Update()
-    {
-        //TODO QUITAR (DEBUG)
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            GenerateEnemies(5);
-        }
     }
 
     /// <summary>

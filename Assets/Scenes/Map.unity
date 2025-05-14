@@ -51885,6 +51885,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd24e2db351b23d4394bf6b5203c87a9, type: 3}
+--- !u!4 &1177139795 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8598279474130556591, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+  m_PrefabInstance: {fileID: 1673568510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1180359757 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 499542, guid: a704f1dd0e466044580391690af7f112, type: 3}
@@ -73757,13 +73762,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2251751205845380671, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+      propertyPath: m_CannonTransform
+      value: 
+      objectReference: {fileID: 1177139795}
     - target: {fileID: 3019194930914753600, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4155914049494877033, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4441252516145393822, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
       propertyPath: m_Name

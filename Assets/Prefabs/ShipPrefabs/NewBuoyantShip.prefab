@@ -4972,7 +4972,7 @@ MonoBehaviour:
   m_Sails: {fileID: 6757828280259780508}
   m_Sight: {fileID: 0}
   m_CameraShake: {fileID: 84434413083145151}
-  m_Cannon: {fileID: 8598279474130556591}
+  m_CannonTransform: {fileID: 8598279474130556591}
   m_ExtraJoystickSens: 0
   m_yRotationLimit: 88
   m_CurrentControlScheme: 
@@ -15045,7 +15045,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5598160090720598412, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4011188918504122196}
+      addedObject: {fileID: 7336549178804783429}
     - targetCorrespondingSourceObject: {fileID: 1731371902294433452, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4428459126044872034}
@@ -15064,7 +15064,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5598160090720598412, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
   m_PrefabInstance: {fileID: 8436986643229738539}
   m_PrefabAsset: {fileID: 0}
---- !u!81 &4011188918504122196
+--- !u!81 &7336549178804783429
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

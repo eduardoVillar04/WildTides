@@ -111,6 +111,7 @@ public class BoidFishController : MonoBehaviour
             {
                 //Check for terrain so the boid can flee from its direction
                 ++terrainCount;
+                Debug.Log(terrainCount);
                 //Remove Y component from terrain position
                 Vector3 colliderPos = new Vector3(collider.transform.position.x, transform.position.y, collider.transform.position.z);
                 directionTerrainSeparation += transform.position - collider.transform.position;

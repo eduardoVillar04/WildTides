@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 206cfe78df27d13459d286a4897f4cf9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 284830dd46ce77c4696ef63853c7cf5e, type: 2}
     - target: {fileID: 919132149155446097, guid: 206cfe78df27d13459d286a4897f4cf9, type: 3}
       propertyPath: m_Name
       value: FishBoid
@@ -97,11 +101,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -219359140288533205, guid: 206cfe78df27d13459d286a4897f4cf9, type: 3}
 --- !u!114 &5327417812661121288
@@ -123,7 +127,7 @@ MonoBehaviour:
   m_SeparationTerrainFactor: 46
   m_BoatAttractionFactor: 100
   m_QueryRadius: 52
-  m_TerrainQueryRadius: 5
+  m_TerrainQueryRadius: 40
   m_SphereCollider: {fileID: 7929919951519066699}
   m_Rigidbody: {fileID: -3794095712472752996}
   m_ShipTransform: {fileID: 0}

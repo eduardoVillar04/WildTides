@@ -37,6 +37,18 @@ public class NavMeshSpawner : MonoBehaviour
 
         //Generate initial enemies
         GenerateEnemies(1);
+    }
+
+    private void Update()
+    {
+
+#if UNITY_EDITOR
+        //DEBUG GENERATE ENEMIES
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GenerateEnemies(5);
+        }
+#endif
 
     }
 

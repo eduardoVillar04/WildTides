@@ -132,7 +132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5880400644557437328
 Transform:
   m_ObjectHideFlags: 0
@@ -163,7 +163,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8643726676396877691}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -364,6 +364,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8820428073231963537, guid: 4f0440569c60db748b84ebc526bdf142, type: 3}
+      propertyPath: m_FishBank
+      value: 
+      objectReference: {fileID: 8653398771057382415, guid: 96f653177a5706c4392121eedf38a431, type: 3}
+    - target: {fileID: 8820428073231963537, guid: 4f0440569c60db748b84ebc526bdf142, type: 3}
+      propertyPath: m_PiratePrefab
+      value: 
+      objectReference: {fileID: 5502663374000410136, guid: 7f781bc687f7714409872c68b6538d6e, type: 3}
+    - target: {fileID: 8820428073231963537, guid: 4f0440569c60db748b84ebc526bdf142, type: 3}
       propertyPath: m_SpawnSurface
       value: 
       objectReference: {fileID: 6385239333046485421}
@@ -417,7 +425,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 4294967295
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -428,7 +436,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 1
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 5ca8e39b5f35ac14c86d2148b5874748, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 193739593b28db94e9b2bfab464e8e5f, type: 2}
   m_BuildHeightMesh: 0
 --- !u!114 &3394655530935391504
 MonoBehaviour:
@@ -448,7 +456,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 119
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -459,7 +467,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.33333334
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 959ee59b72c557943ab029ce4e7058e5, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: fb9ce546b93103241859e939b7264120, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &3403586873797777013 stripped
 Transform:

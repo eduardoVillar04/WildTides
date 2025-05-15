@@ -95818,6 +95818,14 @@ PrefabInstance:
       propertyPath: m_MissionText
       value: 
       objectReference: {fileID: 1317435483}
+    - target: {fileID: 7969619584366457821, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
+      propertyPath: m_FishBank
+      value: 
+      objectReference: {fileID: 8653398771057382415, guid: 96f653177a5706c4392121eedf38a431, type: 3}
+    - target: {fileID: 7969619584366457821, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
+      propertyPath: m_PiratePrefab
+      value: 
+      objectReference: {fileID: 5502663374000410136, guid: 7f781bc687f7714409872c68b6538d6e, type: 3}
     - target: {fileID: 8643726676396877691, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_IsActive
       value: 0

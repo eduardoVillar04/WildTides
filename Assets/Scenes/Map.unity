@@ -28574,7 +28574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4284681052984501376, guid: 95930859f89c6d546969a6fbfafe28a9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4734649698034720570, guid: 95930859f89c6d546969a6fbfafe28a9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -73317,6 +73317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewBuoyantShip
       objectReference: {fileID: 0}
+    - target: {fileID: 4441252516145393822, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6964294714843473197, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.33
@@ -95797,15 +95801,15 @@ PrefabInstance:
     - target: {fileID: 3394655530935391504, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: fb9ce546b93103241859e939b7264120, type: 2}
+      objectReference: {fileID: 23800000, guid: a747ec84955d6444e895593cbf5acb98, type: 2}
     - target: {fileID: 3394655530935391504, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_LayerMask.m_Bits
-      value: 119
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4155969150629136631, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: 193739593b28db94e9b2bfab464e8e5f, type: 2}
+      objectReference: {fileID: 23800000, guid: 875e3d5d482355e4c846ec7905f18fca, type: 2}
     - target: {fileID: 4155969150629136631, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_LayerMask.m_Bits
       value: 4294967295
@@ -95828,7 +95832,7 @@ PrefabInstance:
       objectReference: {fileID: 5502663374000410136, guid: 7f781bc687f7714409872c68b6538d6e, type: 3}
     - target: {fileID: 8643726676396877691, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9102141646123788534, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_Name

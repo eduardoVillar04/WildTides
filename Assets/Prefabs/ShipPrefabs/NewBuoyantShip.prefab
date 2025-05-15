@@ -147,6 +147,7 @@ MonoBehaviour:
   m_yRotationLimit: 88
   m_CurrentControlScheme: 
   m_RightStick: {fileID: 0}
+  rotation: {x: 0, y: 0}
 --- !u!114 &84434413083145151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9920,7 +9921,7 @@ GameObject:
   - component: {fileID: 7542825765946662663}
   m_Layer: 0
   m_Name: MainCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10277,7 +10278,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5598160090720598412, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7336549178804783429}
+      addedObject: {fileID: 6958747189479659047}
     - targetCorrespondingSourceObject: {fileID: 1731371902294433452, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4428459126044872034}
@@ -10296,7 +10297,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5598160090720598412, guid: e6df603ad555a5e4da80ecb39f33135a, type: 3}
   m_PrefabInstance: {fileID: 8436986643229738539}
   m_PrefabAsset: {fileID: 0}
---- !u!81 &7336549178804783429
+--- !u!81 &6958747189479659047
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

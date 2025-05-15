@@ -25,6 +25,11 @@ public class CompassController : MonoBehaviour
 
     public Canvas canvas;
 
+    private void Start()
+    {
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        cameraObjectTransform = mainCam.transform;
+    }
 
     void Update()
     {

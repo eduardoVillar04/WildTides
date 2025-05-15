@@ -8,10 +8,6 @@ using UnityEngine.Purchasing;
 
 public class NavMeshSpawner : MonoBehaviour
 {
-    public Vector3 m_Position;
-    public bool m_R;
-    public int num;
-
     [Header("ENEMY PREFABS")]
     public GameObject m_BarrelPrefab;
     public GameObject m_PiratePrefab;
@@ -29,7 +25,6 @@ public class NavMeshSpawner : MonoBehaviour
     public Renderer m_SpawnSurface;
 
     public Transform m_Player;
-    
 
     private void Start()
     {

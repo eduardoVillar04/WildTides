@@ -6366,6 +6366,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d8d00dcc561d357479ac4f7c86916888, type: 3}
   m_PrefabInstance: {fileID: 133487503}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &134093102 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8191454954375018231, guid: c5dae777ee66eb04f9eab40c8ac62c0d, type: 3}
+  m_PrefabInstance: {fileID: 1640650049}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &134638747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43627,6 +43632,17 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977746161}
   m_Enabled: 1
+--- !u!114 &977746177 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4431930013425436017, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+  m_PrefabInstance: {fileID: 1673568510}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977746161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54a50f7a35575db47a39aea8166cd374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &979913831 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 464160, guid: 0eba33735703d6b49a1773d1396db4b8, type: 3}
@@ -63701,6 +63717,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 408244, guid: 9b07d3f75bc828a419183410854772fb, type: 3}
   m_PrefabInstance: {fileID: 1458579386}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1460173475 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6810978516840483579, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+  m_PrefabInstance: {fileID: 1673568510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1460173479 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4506222976559156320, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+  m_PrefabInstance: {fileID: 1673568510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1460254375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72688,7 +72714,7 @@ PrefabInstance:
     - target: {fileID: 3628223611687783107, guid: c5dae777ee66eb04f9eab40c8ac62c0d, type: 3}
       propertyPath: m_HealthController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 977746177}
     - target: {fileID: 3783511263471357386, guid: c5dae777ee66eb04f9eab40c8ac62c0d, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -72720,11 +72746,11 @@ PrefabInstance:
     - target: {fileID: 3891457392330187226, guid: c5dae777ee66eb04f9eab40c8ac62c0d, type: 3}
       propertyPath: mainCam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1460173479}
     - target: {fileID: 3891457392330187226, guid: c5dae777ee66eb04f9eab40c8ac62c0d, type: 3}
       propertyPath: cameraObjectTransform
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1460173475}
     - target: {fileID: 3891457392330187226, guid: c5dae777ee66eb04f9eab40c8ac62c0d, type: 3}
       propertyPath: objectiveObjectTransform
       value: 
@@ -73757,13 +73783,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2251751205845380671, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
+      propertyPath: m_Sight
+      value: 
+      objectReference: {fileID: 134093102}
     - target: {fileID: 3019194930914753600, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4155914049494877033, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4441252516145393822, guid: 37813e8f1aa01a24690e2aca8bde9c64, type: 3}
       propertyPath: m_Name

@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public abstract class Enemy : MonoBehaviour
 {
+    [Header("BASE ENEMY PARAMETERS")]
     public Transform m_Transform;
     public Rigidbody m_Rigidbody;
     public HealthController m_HealthController;

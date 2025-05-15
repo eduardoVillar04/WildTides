@@ -16,11 +16,13 @@ public class NavMeshSpawner : MonoBehaviour
     public GameObject m_BarrelPrefab;
     public GameObject m_PiratePrefab;
     public GameObject m_TentaclePrefab;
+    public GameObject m_FishBank;
 
     [Header("NUMBER OF SPAWNS")]
     public int m_NumOfBarrelsPerTL;
     public int m_NumOfPiratesPerTL;
     public int m_NumOfTentaclesPerTL;
+    public int m_NumOfFishBankPerTL;
 
     [Header("SPAWN VARIABLES")]
     public float m_MaxSpawnDistance;
@@ -35,17 +37,19 @@ public class NavMeshSpawner : MonoBehaviour
 
         //Generate initial enemies
         GenerateEnemies(1);
-
     }
-
 
     private void Update()
     {
-        //TODO QUITAR (DEBUG)
-        if(Input.GetKeyDown(KeyCode.Space))
+
+#if UNITY_EDITOR
+        //DEBUG GENERATE ENEMIES
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             GenerateEnemies(5);
         }
+#endif
+
     }
 
     /// <summary>
@@ -90,8 +94,12 @@ public class NavMeshSpawner : MonoBehaviour
                 //The barrels need to be rotated
                 GameObject.Instantiate(m_BarrelPrefab, randPos, Quaternion.Euler(-90, 0, 90));
             }
+            for (int j = 0; j < m_NumOfFishBankPerTL; j++)
+            {
+                randPos = GetValidSpawnPoint();
+                GameObject.Instantiate(m_FishBank, randPos, Quaternion.identity);
+            }
         }
-
     }
 
     //Gets random positions until there is a valid one and returns it
@@ -105,6 +113,8 @@ public class NavMeshSpawner : MonoBehaviour
             i++;
             spawnPos = GetRandPos();
         } while (!CheckIfPathIsValid(spawnPos, m_Player.position) && i<10);
+
+        Debug.Log(i);
 
         return spawnPos;
     }

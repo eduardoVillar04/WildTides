@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    Transform LeftDoor = null;
-    Transform RightDoor = null;
+    public Transform LeftDoor = null;
+    public Transform RightDoor = null;
 
-    HingeJoint LeftDoorJoint = null;
-    HingeJoint RightDoorJoint = null;
+    public HingeJoint LeftDoorJoint = null;
+    public HingeJoint RightDoorJoint = null;
 
-    //JointMotor LeftDoorMotor = ;
-
-    //JointMotor LeftDoorMotor = null;
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -29,13 +28,27 @@ public class DoorController : MonoBehaviour
 
         RightDoorJoint.useMotor = true;
         RightDoorJoint.useLimits = true;
+
+        JointLimits LeftDoorLimits = LeftDoorJoint.limits;
+        LeftDoorLimits.max = 0f;
+        LeftDoorLimits.min = -90f;
+        LeftDoorJoint.limits = LeftDoorLimits;
+
+        JointLimits RightDoorLimits = RightDoorJoint.limits;
+        RightDoorLimits.max = 90f;
+        RightDoorLimits.min = 0f;
+        RightDoorJoint.limits = RightDoorLimits;
+
+        //se ralla porque la puerta derecha es la izquierda flipeada en z, pero los límites miran para el mismo lado de antes
+
+        
     }
 
-    // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
+            
             RotateInwards();
         }
     }
@@ -50,12 +63,35 @@ public class DoorController : MonoBehaviour
 
     public void RotateInwards()
     {
+        JointMotor LeftDoorMotor = LeftDoorJoint.motor;
+        LeftDoorMotor.targetVelocity = -20;
+        LeftDoorMotor.force = 20;
+
+        LeftDoorJoint.motor = LeftDoorMotor;
+
+        JointMotor RightDoorMotor = RightDoorJoint.motor;
+        RightDoorMotor.targetVelocity = 20;
+        RightDoorMotor.force = 20;
+
+        RightDoorJoint.motor = RightDoorMotor;
+
+
         //LeftDoorJoint.motor.targetVelocity = -20;
         //LeftDoorJoint.
     }
 
     public void RotateOutwards()
     {
+        JointMotor LeftDoorMotor = LeftDoorJoint.motor;
+        LeftDoorMotor.targetVelocity = 20;
+        LeftDoorMotor.force = 20;
 
+        LeftDoorJoint.motor = LeftDoorMotor;
+
+        JointMotor RightDoorMotor = RightDoorJoint.motor;
+        RightDoorMotor.targetVelocity = -20;
+        RightDoorMotor.force = 20;
+
+        RightDoorJoint.motor = RightDoorMotor;
     }
 }

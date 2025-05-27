@@ -27,12 +27,13 @@ public class SailsController : MonoBehaviour
     {
         m_ShipRigidBody = GetComponent<Rigidbody>();
 
-        //If its a pirate, also get the pirate controller to calculate velocity
+        //If its a pirate, also get the pirate controller to calculate velocity  
         if (GetComponent<PirateController>() != null)
         {
             m_PirateController = GetComponent<PirateController>();
         }
     }
+
 
 
     // Update is called once per frame

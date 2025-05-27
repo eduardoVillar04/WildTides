@@ -6035,6 +6035,7 @@ GameObject:
   - component: {fileID: 7531865933791762592}
   - component: {fileID: 5803667112111238344}
   - component: {fileID: 1790809471613563674}
+  - component: {fileID: 513040281815799273}
   m_Layer: 0
   m_Name: BuoyantShip
   m_TagString: Player
@@ -6099,7 +6100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerInput: {fileID: 0}
   m_MoveInput: {x: 0, y: 0}
-  m_Acceleration: 500
+  m_Acceleration: 1000
   m_RotationSpeed: 300
   m_MaxRotationSpeed: 30
   m_RotationDamping: 1.5
@@ -6263,6 +6264,26 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5356595535704704301}
   m_Enabled: 1
+--- !u!114 &513040281815799273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5356595535704704301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4eba43ac3a39f5478af890b5bf77c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SailsList:
+  - {fileID: 8538208443997317289}
+  - {fileID: 340972462633422918}
+  m_CurrentExternalAccelerationMagnitude: 0
+  m_MaxExternalAccelerationMagnitude: 50
+  m_CurrentShipSpeed: 0
+  m_MaxShipSpeedMagnitude: 10
+  m_RandomFactor: 0.5
 --- !u!1 &5590291868433466973
 GameObject:
   m_ObjectHideFlags: 0

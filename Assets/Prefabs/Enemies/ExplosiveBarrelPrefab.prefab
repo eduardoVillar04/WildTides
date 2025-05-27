@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8450d6824fb55354a8e9869b8be0693f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 4634030981141107860}
-  depthBeforeSubmerged: 2
-  displacementAmount: 2
+  rigidBody: {fileID: 0}
+  depthBeforeSubmerged: 1
+  displacementAmount: 1
   floaterCount: 4
-  waterDrag: 0.99
+  waterDrag: 0.2
   waterAngularDrag: 0.5
 --- !u!1 &6059921463105717754
 GameObject:
@@ -94,11 +94,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8450d6824fb55354a8e9869b8be0693f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 4634030981141107860}
-  depthBeforeSubmerged: 2
-  displacementAmount: 2
+  rigidBody: {fileID: 0}
+  depthBeforeSubmerged: 1
+  displacementAmount: 1
   floaterCount: 4
-  waterDrag: 0.99
+  waterDrag: 0.2
   waterAngularDrag: 0.5
 --- !u!1 &6463384662996260621
 GameObject:
@@ -330,11 +330,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8450d6824fb55354a8e9869b8be0693f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 4634030981141107860}
-  depthBeforeSubmerged: 2
-  displacementAmount: 2
+  rigidBody: {fileID: 0}
+  depthBeforeSubmerged: 1
+  displacementAmount: 1
   floaterCount: 4
-  waterDrag: 0.99
+  waterDrag: 0.2
   waterAngularDrag: 0.5
 --- !u!1 &8620101415208994398
 GameObject:
@@ -380,9 +380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8450d6824fb55354a8e9869b8be0693f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 4634030981141107860}
-  depthBeforeSubmerged: 2
-  displacementAmount: 2
+  rigidBody: {fileID: 0}
+  depthBeforeSubmerged: 1
+  displacementAmount: 1
   floaterCount: 4
-  waterDrag: 0.99
+  waterDrag: 0.2
   waterAngularDrag: 0.5

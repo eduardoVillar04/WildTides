@@ -8,8 +8,8 @@ using UnityEngine.AI;
 //This class teleports fishbanks to designated points in the map if they go too far out of bounds
 public class FishBankDistanceController : MonoBehaviour
 {
-    [SerializeField] private List<Transform> m_TpPositionList = new List<Transform>();
-    List<Transform> m_ChildTransforms = new List<Transform>(); //References to the children (fish)
+    private List<Transform> m_TpPositionList = new List<Transform>();
+    private List<Transform> m_ChildTransforms = new List<Transform>(); //References to the children (fish)
     private Bounds m_MapBounds = new Bounds();
 
     [Header("CONTROL PARAMS")]
@@ -49,10 +49,8 @@ public class FishBankDistanceController : MonoBehaviour
 
     private void CheckIfBankOutOfBounds()
     {
-        Debug.LogWarning("Checking");
         if (!m_MapBounds.Contains(m_ChildTransforms[0].position)) //We check the position of one of the childs since the parent does not move
         {
-            Debug.LogWarning("[Teleporting]");
             ResetTransformToBeInChild();
             int randomIndex = Random.Range(0, m_TpPositionList.Count - 1);
             transform.position = m_TpPositionList[randomIndex].position;

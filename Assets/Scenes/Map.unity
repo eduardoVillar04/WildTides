@@ -5124,7 +5124,7 @@ Transform:
   m_GameObject: {fileID: 116216335}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -177, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38456,7 +38456,7 @@ Transform:
   m_GameObject: {fileID: 892299333}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 148, y: 0, z: -111}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38581,7 +38581,7 @@ Transform:
   m_GameObject: {fileID: 903661943}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 212}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -58471,9 +58471,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1428159409}
+  - component: {fileID: 1428159410}
   m_Layer: 0
   m_Name: FishBankRespawnPoints
-  m_TagString: Untagged
+  m_TagString: BoidsRespawnPoints
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58498,6 +58499,27 @@ Transform:
   - {fileID: 1767979498}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1428159410
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428159408}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 693.9745, y: 119.27333, z: 896.9285}
+  m_Center: {x: -11.300415, y: 5.990753, z: 13.702789}
 --- !u!1001 &1432157403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59164,7 +59186,7 @@ Transform:
   m_GameObject: {fileID: 1440854392}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -28.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -74019,7 +74041,7 @@ Transform:
   m_GameObject: {fileID: 1767979497}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 11.9, y: 0, z: -277.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -91014,6 +91036,10 @@ PrefabInstance:
       propertyPath: m_LayerMask.m_Bits
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6385239333046485421, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6966188958956045309, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_MissionText
       value: 
@@ -91036,7 +91062,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8643726676396877691, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643726676396877691, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 9102141646123788534, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_Name

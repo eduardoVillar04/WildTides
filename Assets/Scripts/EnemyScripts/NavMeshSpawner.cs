@@ -41,7 +41,7 @@ public class NavMeshSpawner : MonoBehaviour
         //DEBUG GENERATE ENEMIES
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GenerateEnemies(5);
+            GenerateEnemies(10);
         }
 #endif
 
@@ -126,9 +126,13 @@ public class NavMeshSpawner : MonoBehaviour
             }
             for (int j = 0; j < m_NumOfFishBankPerTL; j++)
             {
-                randPos = GetValidSpawnPoint();
-                GameObject newEntity = EntitiesPoolManager.instance.GetEntityFromPool(EntityType.FISH_BANK);
-                newEntity.transform.position = randPos;
+                if((i * m_NumOfFishBankPerTL) <= EntitiesPoolManager.instance.m_MaxNumOfFishBanks) //Make sure there are not more than the allow num of banks
+                {
+                    randPos = GetValidSpawnPoint();
+                    GameObject newEntity = EntitiesPoolManager.instance.GetEntityFromPool(EntityType.FISH_BANK);
+                    newEntity.transform.position = randPos;
+
+                }
             }
         }
     }

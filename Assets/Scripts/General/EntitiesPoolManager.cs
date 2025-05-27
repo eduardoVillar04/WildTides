@@ -20,6 +20,9 @@ public class EntitiesPoolManager : MonoBehaviour
     public int m_ExplosiveBarrelPoolSize = 0;
     public int m_FishBankPoolSize = 0;
 
+    [Header("CONTROL PARAMS")]
+    public int m_MaxNumOfFishBanks = 0; //Never spawn more that these number of banks, for performance
+
     //Pools
     public List<GameObject> m_PiratePool = new List<GameObject>();
     public List<GameObject> m_TentaclePool = new List<GameObject>();

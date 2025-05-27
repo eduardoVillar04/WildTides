@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8789366875639370248}
+  - component: {fileID: 7669368063377998540}
   m_Layer: 0
   m_Name: FishBank
   m_TagString: Untagged
@@ -36,6 +37,19 @@ Transform:
   - {fileID: 54049736090414762}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7669368063377998540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8653398771057382415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 662fc405d2e9dde4ba1763a48250aec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TimeBetweenChecks: 5
 --- !u!1001 &885967358318401572
 PrefabInstance:
   m_ObjectHideFlags: 0

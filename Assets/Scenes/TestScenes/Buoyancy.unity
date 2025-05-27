@@ -191,62 +191,11 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!1 &294247530
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 294247531}
-  - component: {fileID: 294247532}
-  m_Layer: 0
-  m_Name: EntitiesPoolManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &294247531
+--- !u!4 &294247531 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3044536712215452817, guid: c313a088ac6b9824c890afc6a49b97cf, type: 3}
+  m_PrefabInstance: {fileID: 7298380153764539599}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294247530}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 250.09766, y: 118.50014, z: -92.73807}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1222425477}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &294247532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294247530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96efd3734d68e7e4aad3765bcf29e597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PiratePrefab: {fileID: 1162730983126845569, guid: dca6ebecc46dfa942bc0099c6a393fbb, type: 3}
-  m_TentaclePrefab: {fileID: 2323671655070106567, guid: e21fce9ee3c28e741bf85c722b221474, type: 3}
-  m_ExplosiveBarrelPrefab: {fileID: 6844570500305753267, guid: 0ba4313457477fc4d95f8064da4d7d58, type: 3}
-  m_FishBankPrefab: {fileID: 8653398771057382415, guid: 96f653177a5706c4392121eedf38a431, type: 3}
-  m_PiratesPoolSize: 20
-  m_TentaclesPoolSize: 20
-  m_ExplosiveBarrelPoolSize: 20
-  m_FishBankPoolSize: 5
-  m_PiratePool: []
-  m_TentaclePool: []
-  m_ExplosiveBarrelPool: []
-  m_FishBankPool: []
 --- !u!1001 &307261180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1665,6 +1614,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96f653177a5706c4392121eedf38a431, type: 3}
+--- !u!1001 &7298380153764539599
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1222425477}
+    m_Modifications:
+    - target: {fileID: 2381931258391611714, guid: c313a088ac6b9824c890afc6a49b97cf, type: 3}
+      propertyPath: m_Name
+      value: EntitiesPoolManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044536712215452817, guid: c313a088ac6b9824c890afc6a49b97cf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 250.09766
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044536712215452817, guid: c313a088ac6b9824c890afc6a49b97cf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 118.50014
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044536712215452817, guid: c313a088ac6b9824c890afc6a49b97cf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -92.73807
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044536712215452817, guid: c313a088ac6b9824c890afc6a49b97cf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044536712215452817, guid: c313a088ac6b9824c890afc6a49b97cf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044536712215452817, guid: c313a088ac6b9824c890afc6a49b97cf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044536712215452817, guid: c313a088ac6b9824c890afc6a49b97cf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044536712215452817, guid: c313a088ac6b9824c890afc6a49b97cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044536712215452817, guid: c313a088ac6b9824c890afc6a49b97cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044536712215452817, guid: c313a088ac6b9824c890afc6a49b97cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c313a088ac6b9824c890afc6a49b97cf, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

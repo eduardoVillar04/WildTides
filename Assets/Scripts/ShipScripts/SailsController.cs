@@ -55,10 +55,9 @@ public class SailsController : MonoBehaviour
 
         foreach (Cloth cloth in m_SailsList)
         {
-            //Since the externalAcceleration is applied in world space, transform the velociy forward vector to world space
             if (m_ShipRigidBody.velocity.normalized != Vector3.zero)
             {
-                cloth.externalAcceleration = transform.TransformVector(m_ShipRigidBody.velocity.normalized) * m_CurrentExternalAccelerationMagnitude;
+                cloth.externalAcceleration = m_ShipRigidBody.velocity.normalized * m_CurrentExternalAccelerationMagnitude;
             }
             //If the rb velocity vector is 0 and its a pirate ship
             //(which can be the case for the pirate since it uses the navmesh component to move), use the vector that faces the player from the pirate

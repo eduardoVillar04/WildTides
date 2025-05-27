@@ -1616,10 +1616,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5356595535704704301, guid: 5245f5a065eba3f488ff54c3ef4676f2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 684568831}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5245f5a065eba3f488ff54c3ef4676f2, type: 3}
 --- !u!1 &353091292
 GameObject:
@@ -3838,31 +3835,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1589342648}
   m_LocalEulerAnglesHint: {x: 0, y: -28.44, z: 0}
---- !u!1 &684568819 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5356595535704704301, guid: 5245f5a065eba3f488ff54c3ef4676f2, type: 3}
-  m_PrefabInstance: {fileID: 341026403}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &684568831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684568819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4eba43ac3a39f5478af890b5bf77c19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SailsList:
-  - {fileID: 1986750944}
-  - {fileID: 1035766374}
-  m_CurrentExternalAccelerationMagnitude: 0
-  m_MaxExternalAccelerationMagnitude: 50
-  m_CurrentShipSpeed: 0
-  m_MaxShipSpeedMagnitude: 10
-  m_RandomFactor: 0.5
 --- !u!1 &747834866
 GameObject:
   m_ObjectHideFlags: 0
@@ -5018,11 +4990,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1589342648}
   m_LocalEulerAnglesHint: {x: 0, y: -28.44, z: 0}
---- !u!183 &1035766374 stripped
-Cloth:
-  m_CorrespondingSourceObject: {fileID: 340972462633422918, guid: 5245f5a065eba3f488ff54c3ef4676f2, type: 3}
-  m_PrefabInstance: {fileID: 341026403}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1039304151
 GameObject:
   m_ObjectHideFlags: 0
@@ -9465,11 +9432,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1589342648}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!183 &1986750944 stripped
-Cloth:
-  m_CorrespondingSourceObject: {fileID: 8538208443997317289, guid: 5245f5a065eba3f488ff54c3ef4676f2, type: 3}
-  m_PrefabInstance: {fileID: 341026403}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2013661596
 GameObject:
   m_ObjectHideFlags: 0

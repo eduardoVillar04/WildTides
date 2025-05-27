@@ -125,7 +125,7 @@ MonoBehaviour:
   m_CohesionFactor: 41
   m_AlignmentFactor: 59
   m_SeparationTerrainFactor: 46
-  m_BoatAttractionFactor: 100
+  m_BoatAttractionFactor: 150
   m_QueryRadius: 52
   m_TerrainQueryRadius: 40
   m_SphereCollider: {fileID: 7929919951519066699}
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_ChaseTimerActive: 0
   m_IsFleeingFromPlayer: 0
   m_Timer: 0
-  m_AccelerationBuff: 100
+  m_AccelerationBuff: 300
 --- !u!135 &7929919951519066699
 SphereCollider:
   m_ObjectHideFlags: 0

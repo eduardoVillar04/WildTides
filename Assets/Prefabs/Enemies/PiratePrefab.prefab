@@ -815,6 +815,7 @@ GameObject:
   - component: {fileID: 8754973665773224751}
   - component: {fileID: 3499998106784769128}
   - component: {fileID: 8888618359085963890}
+  - component: {fileID: 8420116193919747716}
   m_Layer: 0
   m_Name: PiratePrefab
   m_TagString: Enemy
@@ -976,13 +977,8 @@ MonoBehaviour:
   m_KnockbackForce: 10
   m_DeathSpeed: 0.1
   m_Damage: 1
-  m_Patrol: {fileID: 0}
   m_PursuitSpeed: 10
   m_StoppingDistance: 20
-  m_AllTargetPoints: []
-  m_CurrentTargetPointIndex: 0
-  m_CurrentTargetPoint: {fileID: 0}
-  m_IsPatrolingEnemy: 0
   m_SpeedWhileShooting: 5
   m_ShootingDistance: 30
   m_BulletSpawnPoint: {fileID: 4220641645834334031}
@@ -992,8 +988,8 @@ MonoBehaviour:
   m_TimeBetweenShots: 3
   m_ShotTimer: 0
   m_ShootingAngle: 45
-  m_ReturnPoint: {x: 0, y: 0, z: 0}
-  m_TimeBetweenSetDestination: 0.2
+  m_SecsBulletIsIntangibleAfterShooting: 0.3
+  m_TimeBetweenRerouting: 0
   m_VisionSphere: {fileID: 3499998106784769128}
   m_NavMeshAgent: {fileID: 0}
   m_PlayerTransform: {fileID: 0}
@@ -1057,6 +1053,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SailsList: []
+  m_CurrentExternalAccelerationMagnitude: 0
+  m_MaxExternalAccelerationMagnitude: 50
+  m_CurrentShipSpeed: 0
+  m_MaxShipSpeedMagnitude: 10
+  m_RandomFactor: 0.5
+--- !u!114 &8420116193919747716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162730983126845569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4eba43ac3a39f5478af890b5bf77c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SailsList:
+  - {fileID: 6840547996327766138}
+  - {fileID: 1278661915969683125}
+  - {fileID: 5196031704611603506}
+  - {fileID: 4252679029367470069}
   m_CurrentExternalAccelerationMagnitude: 0
   m_MaxExternalAccelerationMagnitude: 50
   m_CurrentShipSpeed: 0

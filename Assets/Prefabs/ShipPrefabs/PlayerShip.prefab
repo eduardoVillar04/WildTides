@@ -294,11 +294,12 @@ MonoBehaviour:
   m_Sails: {fileID: 6856667596430462535}
   m_Sight: {fileID: 0}
   m_CameraShake: {fileID: 3316370273354571908}
-  m_Cannon: {fileID: 1747564638850325836}
+  m_CannonTransform: {fileID: 1747564638850325836}
   m_ExtraJoystickSens: 0
   m_yRotationLimit: 88
   m_CurrentControlScheme: 
   m_RightStick: {fileID: 0}
+  rotation: {x: 0, y: 0}
 --- !u!114 &3316370273354571908
 MonoBehaviour:
   m_ObjectHideFlags: 0

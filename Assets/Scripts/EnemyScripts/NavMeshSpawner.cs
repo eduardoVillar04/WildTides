@@ -67,32 +67,68 @@ public class NavMeshSpawner : MonoBehaviour
 
         return hit.position;
     }
-    
+
+    //OLD GENERATENEMIES
+
+    //public void GenerateEnemies(int tideLevel)
+    //{    
+    //    for (int i = 0; i < tideLevel;i++)
+    //    {
+    //        Vector3 randPos = Vector3.zero;
+    //        for (int j = 0; j < m_NumOfPiratesPerTL; j++)
+    //        {
+    //            randPos = GetValidSpawnPoint();
+    //            GameObject.Instantiate(m_PiratePrefab, randPos, Quaternion.identity);
+    //        }
+    //        for (int j = 0; j < m_NumOfTentaclesPerTL; j++)
+    //        {
+    //            randPos = GetValidSpawnPoint();
+    //            GameObject.Instantiate(m_TentaclePrefab, randPos, Quaternion.identity);
+    //        }
+    //        for (int j = 0; j < m_NumOfBarrelsPerTL; j++)
+    //        {
+    //            randPos = GetValidSpawnPoint();
+    //            //The barrels need to be rotated
+    //            GameObject.Instantiate(m_BarrelPrefab, randPos, Quaternion.Euler(-90, 0, 90));
+    //        }
+    //        for (int j = 0; j < m_NumOfFishBankPerTL; j++)
+    //        {
+    //            randPos = GetValidSpawnPoint();
+    //            GameObject.Instantiate(m_FishBank, randPos, Quaternion.identity);
+    //        }
+    //    }
+    //}
+
     public void GenerateEnemies(int tideLevel)
-    {    
-        for (int i = 0; i < tideLevel;i++)
+    {
+        for (int i = 0; i < tideLevel; i++)
         {
             Vector3 randPos = Vector3.zero;
             for (int j = 0; j < m_NumOfPiratesPerTL; j++)
             {
                 randPos = GetValidSpawnPoint();
-                GameObject.Instantiate(m_PiratePrefab, randPos, Quaternion.identity);
+                GameObject newEntity = EntitiesPoolManager.instance.GetEntityFromPool(EntityType.PIRATE);
+                newEntity.transform.position = randPos;
             }
             for (int j = 0; j < m_NumOfTentaclesPerTL; j++)
             {
                 randPos = GetValidSpawnPoint();
-                GameObject.Instantiate(m_TentaclePrefab, randPos, Quaternion.identity);
+                GameObject newEntity = EntitiesPoolManager.instance.GetEntityFromPool(EntityType.TENTACLE);
+                newEntity.transform.position = randPos;
             }
             for (int j = 0; j < m_NumOfBarrelsPerTL; j++)
             {
                 randPos = GetValidSpawnPoint();
+                GameObject newEntity = EntitiesPoolManager.instance.GetEntityFromPool(EntityType.EXPLOSIVE_BARREL);
+                newEntity.transform.position = randPos;
                 //The barrels need to be rotated
-                GameObject.Instantiate(m_BarrelPrefab, randPos, Quaternion.Euler(-90, 0, 90));
+                newEntity.transform.rotation = Quaternion.Euler(-90, 0, 90);
             }
             for (int j = 0; j < m_NumOfFishBankPerTL; j++)
             {
                 randPos = GetValidSpawnPoint();
-                GameObject.Instantiate(m_FishBank, randPos, Quaternion.identity);
+                GameObject newEntity = EntitiesPoolManager.instance.GetEntityFromPool(EntityType.FISH_BANK);
+                newEntity.transform.position = randPos;
             }
         }
     }

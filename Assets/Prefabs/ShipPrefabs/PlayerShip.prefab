@@ -177,9 +177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8450d6824fb55354a8e9869b8be0693f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 8711064336668947016}
-  depthBeforeSubmerged: 2
-  displacementAmount: 3
+  rigidBody: {fileID: 0}
+  depthBeforeSubmerged: 4
+  displacementAmount: 2
   floaterCount: 4
   waterDrag: 0.8
   waterAngularDrag: 0.3
@@ -457,9 +457,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8450d6824fb55354a8e9869b8be0693f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 8711064336668947016}
-  depthBeforeSubmerged: 2
-  displacementAmount: 3
+  rigidBody: {fileID: 0}
+  depthBeforeSubmerged: 4
+  displacementAmount: 2
   floaterCount: 4
   waterDrag: 0.8
   waterAngularDrag: 0.3
@@ -11727,9 +11727,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8450d6824fb55354a8e9869b8be0693f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 8711064336668947016}
-  depthBeforeSubmerged: 2
-  displacementAmount: 3
+  rigidBody: {fileID: 0}
+  depthBeforeSubmerged: 4
+  displacementAmount: 2
   floaterCount: 4
   waterDrag: 0.8
   waterAngularDrag: 0.3
@@ -17513,9 +17513,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8450d6824fb55354a8e9869b8be0693f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 8711064336668947016}
-  depthBeforeSubmerged: 2
-  displacementAmount: 3
+  rigidBody: {fileID: 0}
+  depthBeforeSubmerged: 4
+  displacementAmount: 2
   floaterCount: 4
   waterDrag: 0.8
   waterAngularDrag: 0.3

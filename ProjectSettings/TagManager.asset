@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - Terrain
   - Dock
+  - BoidsRespawnPoints
   layers:
   - Default
   - TransparentFX

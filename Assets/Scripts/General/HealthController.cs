@@ -24,7 +24,6 @@ public class HealthController : MonoBehaviour
         }
     }
 
-
     public void DealDamage(int damageDealt)
     {
         if(!m_IsDead)

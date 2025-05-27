@@ -13,6 +13,8 @@ public abstract class Enemy : MonoBehaviour
     public float m_KnockbackForce;
     public float m_DeathSpeed;
 
+    private bool m_AlreadyDied = false;
+
     public virtual void Start()
     {
         m_Transform = GetComponent<Transform>();
@@ -26,16 +28,21 @@ public abstract class Enemy : MonoBehaviour
         {
             //if it has a navmesh agent we disable it so the object can sink
             if(GetComponent<NavMeshAgent>()) gameObject.GetComponent<NavMeshAgent>().enabled = false;
-            Die();
+            
+            Sink();
+
+            if (!m_AlreadyDied)
+            {
+                Invoke("ReturnToPool", 2f);
+                m_AlreadyDied = true;
+            }
         }
     }
 
-    public void Die()
+    public void Sink()
     {
         //We make the enemy sink
         m_Transform.position -= new Vector3(0, m_DeathSpeed, 0);
-        
-        Invoke("InvokeDestroy",2f);
     }
 
     public virtual void OnCollisionEnter(Collision collision)
@@ -54,8 +61,8 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    public void InvokeDestroy()
+    public void ReturnToPool()
     {
-        Destroy(this.gameObject);
+        EntitiesPoolManager.instance.ReturnEntityToPool(this.gameObject);
     }
 }

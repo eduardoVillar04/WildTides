@@ -6,7 +6,7 @@ public class EntitiesPoolManager : MonoBehaviour
 {
     public static EntitiesPoolManager instance;
 
-    [Header("ENTITTIES PREFABS")]
+    [Header("ENTITIES PREFABS")]
     public GameObject m_PiratePrefab = null;
     public GameObject m_TentaclePrefab = null;
     public GameObject m_ExplosiveBarrelPrefab = null;

@@ -34,7 +34,8 @@ public abstract class Enemy : MonoBehaviour
 
             m_DespawnTimer -= Time.deltaTime;
 
-            if(m_DespawnTimer < 0)
+            //The enemy despawns when the timer ends and they are below the sea
+            if(m_DespawnTimer < 0 && transform.position.y < -3f) 
             {
                 EntitiesPoolManager.instance.ReturnEntityToPool(this.gameObject);
             }

@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.OnScreen;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class CannonCamera : MonoBehaviour
 {
@@ -104,11 +105,15 @@ public class CannonCamera : MonoBehaviour
     private void OnEnable()
     {
         //We make sure the camera has the same rotation as the cannon
-
         transform.rotation = m_CannonTransform.rotation;
 
+        //Correct from [0, 360] to [-180, 180]1 
         Vector3 euler = transform.eulerAngles;
-        rotation = new Vector2(euler.y, -euler.x); // el signo depende de tu orden de rotaciones y ejes
+        float x = euler.x;
+        float y = euler.y;
+        if (x > 180f) x -= 360f;
+        if (y > 180f) y -= 360f;
+        rotation = new Vector2(y, -x);
 
         m_Sails.SetActive(false);
         m_Sight.SetActive(true);

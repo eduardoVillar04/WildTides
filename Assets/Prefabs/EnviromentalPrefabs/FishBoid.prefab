@@ -139,7 +139,7 @@ MonoBehaviour:
   m_ChaseTimerActive: 0
   m_IsFleeingFromPlayer: 0
   m_Timer: 0
-  m_AccelerationBuff: 300
+  m_AccelerationBuff: 150
 --- !u!135 &7929919951519066699
 SphereCollider:
   m_ObjectHideFlags: 0

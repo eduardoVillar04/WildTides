@@ -130,16 +130,17 @@ public class EntitiesPoolManager : MonoBehaviour
 
     public List<GameObject> CheckPoolOfEntity(GameObject entity)
     {
+        Debug.LogWarning("CHECKING POOL OF: [" +  entity.name + "]");
         //Check which entity type it is by finding their base components
-        if (entity.TryGetComponent<PirateController>(out _))
+        if (entity.GetComponent<PirateController>())
         {
             return m_PiratePool;
         }
-        if (entity.TryGetComponent<TentacleController>(out _))
+        if (entity.GetComponent<TentacleController>())
         {
             return m_TentaclePool;
         }
-        if (entity.TryGetComponent<ExplosiveBarrelController>(out _))
+        if (entity.GetComponent<ExplosiveBarrelController>())
         {
             return m_ExplosiveBarrelPool;
         }

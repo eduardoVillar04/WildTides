@@ -34,6 +34,9 @@ public class DockController : MonoBehaviour
 
     [Header("AUDIO")]
     public AudioClip m_ArrivingSound;
+
+    [Header("CRANE")]
+    public CCDControl m_CraneController;
     //In the awake, when the docks are still al active, we get their references
     private void Awake()
     {
@@ -58,34 +61,9 @@ public class DockController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            //Select random next dock
-            GameObject nextDock = getRandomDock();
-
-            //Change the name of the port in mission log
-            m_MissionText.text = "Go to: " + nextDock.GetComponent<DockController>().m_DockName;
-
-            //Update compass target
-            m_CompassController.objectiveObjectTransform = nextDock.transform;
-
-            //Update dock visited count
-            m_DockScore.m_NumDocksVisited++;
-
-            //Audio
-            SoundEffectsManager.instance.PlaySoundFXClip(m_ArrivingSound, transform, 0.6f);
-
-            //Update tide level
-            m_TideLevelController.AddTideLevel();
-
-            if(!SingletonOptions.m_Instance.m_HardModeOn)
-            {
-                other.GetComponent<HealthController>().heal(1);
-            }
-
-            nextDock.SetActive(true);
-            gameObject.SetActive(false);
-
-            m_NavMeshSpawner.DestroyAllEnemies();
-            m_NavMeshSpawner.GenerateEnemies(m_TideLevelController.m_TideLevel);
+            if (m_CraneController != null) { return; } // If the dock has a crane, the change in the dock in controlled in the crane
+            
+            ChangeDock(other.gameObject);
         }
 
     }
@@ -103,5 +81,37 @@ public class DockController : MonoBehaviour
                 return dock;
             }
         }
+    }
+
+    public void ChangeDock(GameObject ship)
+    {
+        //Select random next dock
+        GameObject nextDock = getRandomDock();
+
+        //Change the name of the port in mission log
+        m_MissionText.text = "Go to: " + nextDock.GetComponent<DockController>().m_DockName;
+
+        //Update compass target
+        m_CompassController.objectiveObjectTransform = nextDock.transform;
+
+        //Update dock visited count
+        m_DockScore.m_NumDocksVisited++;
+
+        //Audio
+        SoundEffectsManager.instance.PlaySoundFXClip(m_ArrivingSound, transform, 0.6f);
+
+        //Update tide level
+        m_TideLevelController.AddTideLevel();
+
+        if (!SingletonOptions.m_Instance.m_HardModeOn)
+        {
+            ship.GetComponent<HealthController>().heal(1);
+        }
+
+        nextDock.SetActive(true);
+        gameObject.SetActive(false);
+
+        m_NavMeshSpawner.DestroyAllEnemies();
+        m_NavMeshSpawner.GenerateEnemies(m_TideLevelController.m_TideLevel);
     }
 }

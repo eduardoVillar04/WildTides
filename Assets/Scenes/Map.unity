@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 3
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 3
     agentHeight: 2
-    agentSlope: 45
+    agentSlope: 11.3
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 1
     manualTileSize: 0
     tileSize: 256
     buildHeightMesh: 0
@@ -91533,6 +91533,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4155969150629136631, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155969150629136631, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 23800000, guid: 520c5aabb2a922c4e825f62bee7f00b2, type: 2}
@@ -91545,6 +91549,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6385239333046485421, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385239333046485421, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_Materials.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -91552,6 +91560,10 @@ PrefabInstance:
       propertyPath: m_MissionText
       value: 
       objectReference: {fileID: 1317435483}
+    - target: {fileID: 7969619584366457821, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7969619584366457821, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_BarrelPrefab
       value: 
@@ -91569,8 +91581,12 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8643726676396877691, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643726676396877691, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8643726676396877691, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_TagString

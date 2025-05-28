@@ -7,15 +7,8 @@ public class TentacleController : Enemy
 {
     public int m_Damage;
 
-    [Header("PATROL")]
-    public Transform m_Patrol;
-
     [Header("PURSUIT VARIABLES")]
     public bool m_PlayerInView;
-    public Transform[] m_AllTargetPoints;
-    public int m_CurrentTargetPointIndex = 0;
-    public Transform m_CurrentTargetPoint;
-    public bool m_IsPatrolingEnemy;
 
     [Header("NAVIGATION VARIABLES")]
     public Vector3 m_ReturnPoint;
@@ -47,30 +40,6 @@ public class TentacleController : Enemy
 
         //We find the player transforms by searching it with the tag
         m_PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-
-        //The return point for the pirate will be wherever it spawns
-
-        //If the patrol transform is null, an exception will be thrown
-        try
-        {
-            //We put all the patrol points into a list
-            m_AllTargetPoints = new Transform[m_Patrol.childCount];
-            for (int i = 0; i < m_AllTargetPoints.Length; i++)
-            {
-                m_AllTargetPoints[i] = m_Patrol.GetChild(i);
-            }
-            m_CurrentTargetPoint = m_AllTargetPoints[m_CurrentTargetPointIndex];
-            m_IsPatrolingEnemy = true;
-            m_CurrentState = TentacleStates.GO_TO_NEXT_POINT;
-            m_CurrentTargetPointIndex = -1;
-        }
-        catch (System.Exception)
-        {
-            m_IsPatrolingEnemy = false;
-            m_ReturnPoint = transform.position;
-            m_CurrentState = TentacleStates.CHECKING_FOR_PLAYER;
-        }
-
     }
 
     // Update is called once per frame
@@ -80,9 +49,6 @@ public class TentacleController : Enemy
 
         switch (m_CurrentState)
         {
-            case TentacleStates.GO_TO_NEXT_POINT:
-                GoToNextPoint();
-                break;
             case TentacleStates.CHECKING_FOR_PLAYER:
                 CheckingForPlayer();
                 break;
@@ -98,32 +64,12 @@ public class TentacleController : Enemy
     {
         //We activate autobraking so the patroling pirates dont go past the patrol point
         m_NavMeshAgent.autoBraking = true;
-        if (!m_IsPatrolingEnemy) m_NavMeshAgent.isStopped = true;
 
-        if (m_IsPatrolingEnemy && m_NavMeshAgent.remainingDistance < 0.1f)
-        {
-            m_CurrentState = TentacleStates.GO_TO_NEXT_POINT;
-        }
+        m_NavMeshAgent.isStopped = true;
 
         if (m_PlayerInView) m_CurrentState = TentacleStates.PURSUING;
-
     }
 
-    public void GoToNextPoint()
-    {
-        //We add the aproppiate amount to the index, and we send the pirate to the next patrol point
-        m_CurrentTargetPointIndex++;
-        if (m_CurrentTargetPointIndex >= m_AllTargetPoints.Length)
-        {
-            m_CurrentTargetPointIndex = 0;
-        }
-        m_CurrentTargetPoint = m_AllTargetPoints[m_CurrentTargetPointIndex];
-
-        m_NavMeshAgent.SetDestination(m_CurrentTargetPoint.position);
-        m_NavMeshAgent.isStopped = false;
-
-        m_CurrentState = TentacleStates.CHECKING_FOR_PLAYER;
-    }
 
     public void Pursuit()
     {

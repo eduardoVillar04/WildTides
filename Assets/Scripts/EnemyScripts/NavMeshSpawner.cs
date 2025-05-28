@@ -23,6 +23,7 @@ public class NavMeshSpawner : MonoBehaviour
     [Header("SPAWN VARIABLES")]
     public float m_MaxSpawnDistance;
     public Renderer m_SpawnSurface;
+    public float m_SpawningYpos = 0;
 
     public Transform m_Player;
 
@@ -41,7 +42,7 @@ public class NavMeshSpawner : MonoBehaviour
         //DEBUG GENERATE ENEMIES
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GenerateEnemies(10);
+            GenerateEnemies(3);
         }
 #endif
 
@@ -60,44 +61,14 @@ public class NavMeshSpawner : MonoBehaviour
         {
             //The position coordinates must be inside the spawn surface
             float rx = Random.Range(m_SpawnSurface.bounds.min.x, m_SpawnSurface.bounds.max.x);
-            float rz = Random.Range(m_SpawnSurface.bounds.min.z, m_SpawnSurface.bounds.max.x);
-            Vector3 v3 = new Vector3(rx, -0.5f, rz);
+            float rz = Random.Range(m_SpawnSurface.bounds.min.z, m_SpawnSurface.bounds.max.z);
+            Vector3 v3 = new Vector3(rx, m_SpawningYpos, rz);
             pointFound = NavMesh.SamplePosition(v3, out hit, m_MaxSpawnDistance, NavMesh.AllAreas);
         } while (!pointFound);
 
         return hit.position;
     }
 
-    //OLD GENERATENEMIES
-
-    //public void GenerateEnemies(int tideLevel)
-    //{    
-    //    for (int i = 0; i < tideLevel;i++)
-    //    {
-    //        Vector3 randPos = Vector3.zero;
-    //        for (int j = 0; j < m_NumOfPiratesPerTL; j++)
-    //        {
-    //            randPos = GetValidSpawnPoint();
-    //            GameObject.Instantiate(m_PiratePrefab, randPos, Quaternion.identity);
-    //        }
-    //        for (int j = 0; j < m_NumOfTentaclesPerTL; j++)
-    //        {
-    //            randPos = GetValidSpawnPoint();
-    //            GameObject.Instantiate(m_TentaclePrefab, randPos, Quaternion.identity);
-    //        }
-    //        for (int j = 0; j < m_NumOfBarrelsPerTL; j++)
-    //        {
-    //            randPos = GetValidSpawnPoint();
-    //            //The barrels need to be rotated
-    //            GameObject.Instantiate(m_BarrelPrefab, randPos, Quaternion.Euler(-90, 0, 90));
-    //        }
-    //        for (int j = 0; j < m_NumOfFishBankPerTL; j++)
-    //        {
-    //            randPos = GetValidSpawnPoint();
-    //            GameObject.Instantiate(m_FishBank, randPos, Quaternion.identity);
-    //        }
-    //    }
-    //}
 
     public void GenerateEnemies(int tideLevel)
     {

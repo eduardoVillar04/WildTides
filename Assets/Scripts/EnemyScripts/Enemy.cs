@@ -13,7 +13,7 @@ public abstract class Enemy : MonoBehaviour
     public float m_KnockbackForce;
     public float m_DeathSpeed;
 
-    private bool m_AlreadyDied = false;
+    [SerializeField] private bool m_AlreadyDied = false;
 
     public virtual void Start()
     {

@@ -13,6 +13,9 @@ public class ExplosiveBarrelController : MonoBehaviour
         {
             //If an enemy or the player collides with the barrel, it creates and explosion and dies
             Instantiate(m_Explosion, transform.position, Quaternion.identity);
+
+            collision.gameObject.GetComponent<HealthController>().DealDamage(1);
+
             SoundEffectsManager.instance.PlaySoundFXClip(m_ExplosionSound, transform, 1f);
             EntitiesPoolManager.instance.ReturnEntityToPool(this.gameObject);
         }

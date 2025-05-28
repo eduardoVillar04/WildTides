@@ -5,9 +5,9 @@ using UnityEngine;
 public class HealthController : MonoBehaviour
 {
     //something
-    public int m_MaxHealthPoints;
-    public int m_HealthPoints;
-    public bool m_IsDead;
+    public int m_MaxHealthPoints = 1;
+    public int m_HealthPoints = 1;
+    public bool m_IsDead = false;
 
     [Header("Audio")]
     public AudioClip m_DamageSound;
@@ -22,6 +22,13 @@ public class HealthController : MonoBehaviour
         {
             m_IsDead = false;
         }
+    }
+
+    //Do this every time the enemy is enabled (spawns from a pool)
+    private void OnEnable()
+    {
+        m_HealthPoints = m_MaxHealthPoints;
+        m_IsDead = false;
     }
 
     public void DealDamage(int damageDealt)

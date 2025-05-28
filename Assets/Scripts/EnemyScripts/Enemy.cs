@@ -12,8 +12,8 @@ public abstract class Enemy : MonoBehaviour
     public HealthController m_HealthController;
     public float m_KnockbackForce;
     public float m_DeathSpeed;
-    public float m_SecondsBeforeDespawn = 5f;
-    private float m_DespawnTimer = 5f;
+    public float m_SecondsBeforeDespawn = 3f;
+    private float m_DespawnTimer = 3f;
 
     public virtual void Start()
     {
@@ -53,6 +53,9 @@ public abstract class Enemy : MonoBehaviour
         //Deal damage if knocked into terrain
         if(collision.gameObject.CompareTag("Terrain") || collision.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("[" + this.gameObject.name + "]" + " HIT BY: " + collision.gameObject.name);
+            if (collision.gameObject == this.gameObject) Debug.LogError("HIT BY MYSELF"); 
+            
             m_HealthController.DealDamage(1);
         }
 

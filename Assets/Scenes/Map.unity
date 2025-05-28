@@ -91508,10 +91508,26 @@ PrefabInstance:
       propertyPath: m_MaxNumOfFishBanks
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 659687117197371274, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
+      propertyPath: m_TentaclesPoolSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 659687117197371274, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
+      propertyPath: m_ExplosiveBarrelPoolSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394655530935391504, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394655530935391504, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
+      propertyPath: m_VoxelSize
+      value: 0.6666667
+      objectReference: {fileID: 0}
     - target: {fileID: 3394655530935391504, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: 520c5aabb2a922c4e825f62bee7f00b2, type: 2}
+      objectReference: {fileID: 23800000, guid: ab56942cc80c2c24287f22ce86a7ce45, type: 2}
     - target: {fileID: 3394655530935391504, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_LayerMask.m_Bits
       value: 8
@@ -91519,7 +91535,7 @@ PrefabInstance:
     - target: {fileID: 4155969150629136631, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: ab56942cc80c2c24287f22ce86a7ce45, type: 2}
+      objectReference: {fileID: 23800000, guid: 520c5aabb2a922c4e825f62bee7f00b2, type: 2}
     - target: {fileID: 4155969150629136631, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_LayerMask.m_Bits
       value: 8
@@ -91554,11 +91570,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8643726676396877691, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8643726676396877691, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 9102141646123788534, guid: 4bc35dd7591a72c498f8b52ecf644986, type: 3}
       propertyPath: m_Name

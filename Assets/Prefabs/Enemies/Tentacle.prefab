@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -360
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
       propertyPath: m_LocalRotation.w
@@ -71,6 +71,22 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5666261585234168772, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5666261585234168772, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5666261585234168772, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700725330082129686, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -122,6 +138,7 @@ MonoBehaviour:
   m_HealthController: {fileID: 0}
   m_KnockbackForce: 10
   m_DeathSpeed: 0.2
+  m_SecondsBeforeDespawn: 3
   m_Damage: 1
   m_Patrol: {fileID: 0}
   m_PlayerInView: 0
@@ -175,10 +192,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 7.2458363
+  m_Radius: 3.76731
   m_Height: 26.6503
   m_Direction: 1
-  m_Center: {x: 0, y: 12.825151, z: 0}
+  m_Center: {x: 0, y: 12.825151, z: -3.4785264}
 --- !u!54 &6082791120290048073
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -240,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a50f7a35575db47a39aea8166cd374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxHealthPoints: 0
+  m_MaxHealthPoints: 1
   m_HealthPoints: 1
   m_IsDead: 0
   m_DamageSound: {fileID: 8300000, guid: 67d565f66f83fad4f939effe8d3c4e83, type: 3}
@@ -300,6 +317,10 @@ PrefabInstance:
     - target: {fileID: 2081426786221262528, guid: 32100619244cc714aa60bf80d22a7dda, type: 3}
       propertyPath: m_Name
       value: FoamTrailParticleSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081426786221262528, guid: 32100619244cc714aa60bf80d22a7dda, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6356947719360296667, guid: 32100619244cc714aa60bf80d22a7dda, type: 3}
       propertyPath: InitialModule.startSize.scalar

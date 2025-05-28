@@ -92,8 +92,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.014112651, y: -1.2021285, z: 0.5242312}
-    m_Extent: {x: 1.9015315, y: 1.2213436, z: 0.49769187}
+    m_Center: {x: 0.007623434, y: -1.2043178, z: 0.4826403}
+    m_Extent: {x: 1.9080207, y: 1.2235329, z: 0.45610097}
   m_DirtyAABB: 0
 --- !u!183 &6840547996327766138
 Cloth:
@@ -814,7 +814,6 @@ GameObject:
   - component: {fileID: 8295826830841936419}
   - component: {fileID: 8754973665773224751}
   - component: {fileID: 3499998106784769128}
-  - component: {fileID: 8888618359085963890}
   - component: {fileID: 8420116193919747716}
   m_Layer: 0
   m_Name: PiratePrefab
@@ -955,7 +954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a50f7a35575db47a39aea8166cd374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxHealthPoints: 0
+  m_MaxHealthPoints: 1
   m_HealthPoints: 1
   m_IsDead: 0
   m_DamageSound: {fileID: 8300000, guid: 86518dc0ce5fe5a44aca0db9f7e984a9, type: 3}
@@ -976,6 +975,7 @@ MonoBehaviour:
   m_HealthController: {fileID: 0}
   m_KnockbackForce: 10
   m_DeathSpeed: 0.1
+  m_SecondsBeforeDespawn: 3
   m_Damage: 1
   m_PursuitSpeed: 10
   m_StoppingDistance: 20
@@ -1040,24 +1040,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 40
   m_Center: {x: -1.4687725e-23, y: 1.3718895, z: 0.92055905}
---- !u!114 &8888618359085963890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162730983126845569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4eba43ac3a39f5478af890b5bf77c19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SailsList: []
-  m_CurrentExternalAccelerationMagnitude: 0
-  m_MaxExternalAccelerationMagnitude: 50
-  m_CurrentShipSpeed: 0
-  m_MaxShipSpeedMagnitude: 10
-  m_RandomFactor: 0.5
 --- !u!114 &8420116193919747716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1310,8 +1292,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008001626, y: -0.60327023, z: 0.3501486}
-    m_Extent: {x: 1.0781343, y: 0.64395446, z: 0.3463929}
+    m_Center: {x: 0.0072114468, y: -0.6113091, z: 0.32453397}
+    m_Extent: {x: 1.0789244, y: 0.65199333, z: 0.32077828}
   m_DirtyAABB: 0
 --- !u!183 &4252679029367470069
 Cloth:
@@ -2022,8 +2004,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.014112651, y: -1.0565608, z: 0.5243737}
-    m_Extent: {x: 1.9015315, y: 1.0734491, z: 0.49754936}
+    m_Center: {x: 0.011321068, y: -1.0586832, z: 0.47916722}
+    m_Extent: {x: 1.9043231, y: 1.0755715, z: 0.45234287}
   m_DirtyAABB: 0
 --- !u!183 &5196031704611603506
 Cloth:
@@ -2870,8 +2852,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008001626, y: -0.68638587, z: 0.349976}
-    m_Extent: {x: 1.0781343, y: 0.7326753, z: 0.34656549}
+    m_Center: {x: 0.004949689, y: -0.6881434, z: 0.3207679}
+    m_Extent: {x: 1.0811862, y: 0.7344328, z: 0.3173574}
   m_DirtyAABB: 0
 --- !u!183 &1278661915969683125
 Cloth:

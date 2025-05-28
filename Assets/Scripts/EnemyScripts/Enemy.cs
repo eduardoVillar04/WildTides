@@ -12,14 +12,15 @@ public abstract class Enemy : MonoBehaviour
     public HealthController m_HealthController;
     public float m_KnockbackForce;
     public float m_DeathSpeed;
-
-    [SerializeField] private bool m_AlreadyDied = false;
+    public float m_SecondsBeforeDespawn = 3f;
+    private float m_DespawnTimer = 3f;
 
     public virtual void Start()
     {
         m_Transform = GetComponent<Transform>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_HealthController = GetComponent<HealthController>();
+        m_DespawnTimer = m_SecondsBeforeDespawn;
     }
 
     public virtual void Update()
@@ -31,11 +32,13 @@ public abstract class Enemy : MonoBehaviour
             
             Sink();
 
-            if (!m_AlreadyDied)
+            m_DespawnTimer -= Time.deltaTime;
+
+            if(m_DespawnTimer < 0)
             {
-                Invoke("ReturnToPool", 2f);
-                m_AlreadyDied = true;
+                EntitiesPoolManager.instance.ReturnEntityToPool(this.gameObject);
             }
+
         }
     }
 
@@ -50,6 +53,9 @@ public abstract class Enemy : MonoBehaviour
         //Deal damage if knocked into terrain
         if(collision.gameObject.CompareTag("Terrain") || collision.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("[" + this.gameObject.name + "]" + " HIT BY: " + collision.gameObject.name);
+            if (collision.gameObject == this.gameObject) Debug.LogError("HIT BY MYSELF"); 
+            
             m_HealthController.DealDamage(1);
         }
 
@@ -59,10 +65,5 @@ public abstract class Enemy : MonoBehaviour
             Vector3 direction = collision.transform.position - transform.position;
             collision.gameObject.GetComponent<Rigidbody>().AddForce(direction.normalized * m_KnockbackForce, ForceMode.Impulse);
         }
-    }
-
-    public void ReturnToPool()
-    {
-        EntitiesPoolManager.instance.ReturnEntityToPool(this.gameObject);
     }
 }

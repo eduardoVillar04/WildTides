@@ -194,7 +194,7 @@ public class PirateController : Enemy
         float velocityMagnitude = Mathf.Sqrt((distanceToTarget * Physics.gravity.magnitude) / (2 * Mathf.Sin(m_ShootingAngle) * Mathf.Cos(m_ShootingAngle)));
         Vector3 initialVelocity = new Vector3(0, velocityMagnitude * Mathf.Cos(m_ShootingAngle), velocityMagnitude * Mathf.Sin(m_ShootingAngle));
         return initialVelocity;
-    }
+    }   
 
     private IEnumerator ChangeColliderState(Collider objCollider, float intangibleTime)
     {

@@ -4,6 +4,7 @@ using Unity.AI.Navigation;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Assertions.Must;
 using UnityEngine.Purchasing;
 
 public class NavMeshSpawner : MonoBehaviour
@@ -24,8 +25,10 @@ public class NavMeshSpawner : MonoBehaviour
     public float m_MaxSpawnDistance;
     public Renderer m_SpawnSurface;
     public float m_SpawningYpos = 0;
-
+    private NavMeshTriangulation m_NavmeshTriangulation;
     public Transform m_Player;
+
+    private List<Vector3> m_SpawnPosList = new List<Vector3>();
 
     private void Start()
     {
@@ -33,6 +36,7 @@ public class NavMeshSpawner : MonoBehaviour
 
         //Generate initial enemies
         GenerateEnemies(1);
+        m_NavmeshTriangulation = NavMesh.CalculateTriangulation();
     }
 
     private void Update()
@@ -56,7 +60,7 @@ public class NavMeshSpawner : MonoBehaviour
     {
         bool pointFound = false;
         NavMeshHit hit;
-        
+
         do
         {
             //The position coordinates must be inside the spawn surface
@@ -69,9 +73,26 @@ public class NavMeshSpawner : MonoBehaviour
         return hit.position;
     }
 
+    //Gets random positions until there is a valid one and returns it
+    public Vector3 GetValidSpawnPoint()
+    {
+        Vector3 spawnPos;
+
+        //Security meassure against infinite loop
+        int i = 0;
+        do
+        {
+            i++;
+            spawnPos = GetRandPos();
+        } while (!CheckIfPathIsValid(spawnPos, m_Player.position) && i < 10);
+
+        return spawnPos;
+    }
 
     public void GenerateEnemies(int tideLevel)
     {
+        //m_SpawnPosList.Clear();
+
         for (int i = 0; i < tideLevel; i++)
         {
             Vector3 randPos = Vector3.zero;
@@ -108,22 +129,6 @@ public class NavMeshSpawner : MonoBehaviour
         }
     }
 
-    //Gets random positions until there is a valid one and returns it
-    public Vector3 GetValidSpawnPoint()
-    {
-        Vector3 spawnPos;
-        //Security meassure against infinite loop
-        int i = 0;
-        do
-        {
-            i++;
-            spawnPos = GetRandPos();
-        } while (!CheckIfPathIsValid(spawnPos, m_Player.position) && i<10);
-
-        Debug.Log(i);
-
-        return spawnPos;
-    }
 
 
     public bool CheckIfPathIsValid(Vector3 initialPos, Vector3 endPos) 
@@ -131,21 +136,14 @@ public class NavMeshSpawner : MonoBehaviour
         NavMeshPath path = new NavMeshPath();
         NavMesh.CalculatePath(initialPos, endPos, NavMesh.AllAreas, path);
 
-        if (path.status == NavMeshPathStatus.PathComplete)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return path.status == NavMeshPathStatus.PathComplete;
     }
 
-    public void DestroyAllEnemies()
+    public void ReturnAllEnemiesToPools()
     {
         foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
-            Destroy(enemy);   
+            EntitiesPoolManager.instance.ReturnEntityToPool(enemy);
         }
     }
 }

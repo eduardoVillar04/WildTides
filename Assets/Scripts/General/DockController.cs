@@ -111,7 +111,7 @@ public class DockController : MonoBehaviour
         nextDock.SetActive(true);
         gameObject.SetActive(false);
 
-        m_NavMeshSpawner.DestroyAllEnemies();
+        m_NavMeshSpawner.ReturnAllEnemiesToPools();
         m_NavMeshSpawner.GenerateEnemies(m_TideLevelController.m_TideLevel);
     }
 }

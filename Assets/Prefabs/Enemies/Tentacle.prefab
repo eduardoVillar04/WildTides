@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5666261585234168772, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5666261585234168772, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
       propertyPath: m_LocalPosition.y
@@ -82,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5666261585234168772, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8700725330082129686, guid: 56b63e7cb5975234d95a2c3c6f3a4636, type: 3}
       propertyPath: m_IsActive
@@ -140,12 +140,7 @@ MonoBehaviour:
   m_DeathSpeed: 0.2
   m_SecondsBeforeDespawn: 3
   m_Damage: 1
-  m_Patrol: {fileID: 0}
   m_PlayerInView: 0
-  m_AllTargetPoints: []
-  m_CurrentTargetPointIndex: 0
-  m_CurrentTargetPoint: {fileID: 0}
-  m_IsPatrolingEnemy: 0
   m_ReturnPoint: {x: 0, y: 0, z: 0}
   m_TimeBetweenSetDestination: 0
   m_VisionSphere: {fileID: 0}
@@ -192,10 +187,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3.76731
+  m_Radius: 7.2212434
   m_Height: 26.6503
   m_Direction: 1
-  m_Center: {x: 0, y: 12.825151, z: -3.4785264}
+  m_Center: {x: -1.645559, y: 12.825151, z: -1.6701528}
 --- !u!54 &6082791120290048073
 Rigidbody:
   m_ObjectHideFlags: 0

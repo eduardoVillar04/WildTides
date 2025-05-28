@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -733,10 +733,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1002063420969858754, guid: cf5aba4ea3ccae84583e6d4654f183ae, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1391796388050977052, guid: cf5aba4ea3ccae84583e6d4654f183ae, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -753,9 +749,13 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2488357418650488525, guid: cf5aba4ea3ccae84583e6d4654f183ae, type: 3}
+    - target: {fileID: 2159908749491982299, guid: cf5aba4ea3ccae84583e6d4654f183ae, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968497769127936456, guid: cf5aba4ea3ccae84583e6d4654f183ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3065049294788400917, guid: cf5aba4ea3ccae84583e6d4654f183ae, type: 3}
       propertyPath: m_AnchorMax.x
@@ -833,10 +833,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4847654227695138292, guid: cf5aba4ea3ccae84583e6d4654f183ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5129404567830581238, guid: cf5aba4ea3ccae84583e6d4654f183ae, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1629452832}
+    - target: {fileID: 6101770356913796016, guid: cf5aba4ea3ccae84583e6d4654f183ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6187509657656173719, guid: cf5aba4ea3ccae84583e6d4654f183ae, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -845,6 +853,10 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1629452832}
+    - target: {fileID: 6967487237363519523, guid: cf5aba4ea3ccae84583e6d4654f183ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7325965478959875485, guid: cf5aba4ea3ccae84583e6d4654f183ae, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -853,6 +865,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1629452832}
+    - target: {fileID: 8161060088230562872, guid: cf5aba4ea3ccae84583e6d4654f183ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8675742409645048102, guid: cf5aba4ea3ccae84583e6d4654f183ae, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

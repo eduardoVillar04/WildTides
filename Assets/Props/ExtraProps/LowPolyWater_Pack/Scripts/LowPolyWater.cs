@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace LowPolyWater
 {
@@ -84,8 +85,7 @@ namespace LowPolyWater
                 distance = (distance % waveLength) / waveLength;
 
                 //Oscilate the wave height via sine to create a wave effect
-                v.y = waveHeight * Mathf.Sin(Time.time * Mathf.PI * 2.0f * waveFrequency
-                + (Mathf.PI * 2.0f * distance));
+                v.y = waveHeight * Mathf.Sin(Time.time * Mathf.PI * 2.0f * waveFrequency + (Mathf.PI * 2.0f * distance));
                 
                 //Update the vertex
                 vertices[i] = v;
@@ -96,6 +96,18 @@ namespace LowPolyWater
             mesh.RecalculateNormals();
             mesh.MarkDynamic();
             meshFilter.mesh = mesh;
+        }
+        public float GetWaveHeight()
+        {
+            return waveHeight;
+        }
+        public float GetWaveLength()
+        {
+            return waveLength;
+        }
+        public float GetWaveFrequency()
+        {
+            return waveFrequency;
         }
     }
 }

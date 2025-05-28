@@ -8,26 +8,23 @@ using UnityEngine.Purchasing;
 
 public class NavMeshSpawner : MonoBehaviour
 {
-    public Vector3 m_Position;
-    public bool m_R;
-    public int num;
-
     [Header("ENEMY PREFABS")]
     public GameObject m_BarrelPrefab;
     public GameObject m_PiratePrefab;
     public GameObject m_TentaclePrefab;
+    public GameObject m_FishBank;
 
     [Header("NUMBER OF SPAWNS")]
     public int m_NumOfBarrelsPerTL;
     public int m_NumOfPiratesPerTL;
     public int m_NumOfTentaclesPerTL;
+    public int m_NumOfFishBankPerTL;
 
     [Header("SPAWN VARIABLES")]
     public float m_MaxSpawnDistance;
     public Renderer m_SpawnSurface;
 
     public Transform m_Player;
-    
 
     private void Start()
     {
@@ -35,17 +32,19 @@ public class NavMeshSpawner : MonoBehaviour
 
         //Generate initial enemies
         GenerateEnemies(1);
-
     }
-
 
     private void Update()
     {
-        //TODO QUITAR (DEBUG)
-        if(Input.GetKeyDown(KeyCode.Space))
+
+#if UNITY_EDITOR
+        //DEBUG GENERATE ENEMIES
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            GenerateEnemies(5);
+            GenerateEnemies(10);
         }
+#endif
+
     }
 
     /// <summary>
@@ -68,30 +67,74 @@ public class NavMeshSpawner : MonoBehaviour
 
         return hit.position;
     }
-    
+
+    //OLD GENERATENEMIES
+
+    //public void GenerateEnemies(int tideLevel)
+    //{    
+    //    for (int i = 0; i < tideLevel;i++)
+    //    {
+    //        Vector3 randPos = Vector3.zero;
+    //        for (int j = 0; j < m_NumOfPiratesPerTL; j++)
+    //        {
+    //            randPos = GetValidSpawnPoint();
+    //            GameObject.Instantiate(m_PiratePrefab, randPos, Quaternion.identity);
+    //        }
+    //        for (int j = 0; j < m_NumOfTentaclesPerTL; j++)
+    //        {
+    //            randPos = GetValidSpawnPoint();
+    //            GameObject.Instantiate(m_TentaclePrefab, randPos, Quaternion.identity);
+    //        }
+    //        for (int j = 0; j < m_NumOfBarrelsPerTL; j++)
+    //        {
+    //            randPos = GetValidSpawnPoint();
+    //            //The barrels need to be rotated
+    //            GameObject.Instantiate(m_BarrelPrefab, randPos, Quaternion.Euler(-90, 0, 90));
+    //        }
+    //        for (int j = 0; j < m_NumOfFishBankPerTL; j++)
+    //        {
+    //            randPos = GetValidSpawnPoint();
+    //            GameObject.Instantiate(m_FishBank, randPos, Quaternion.identity);
+    //        }
+    //    }
+    //}
+
     public void GenerateEnemies(int tideLevel)
-    {    
-        for (int i = 0; i < tideLevel;i++)
+    {
+        for (int i = 0; i < tideLevel; i++)
         {
             Vector3 randPos = Vector3.zero;
             for (int j = 0; j < m_NumOfPiratesPerTL; j++)
             {
                 randPos = GetValidSpawnPoint();
-                GameObject.Instantiate(m_PiratePrefab, randPos, Quaternion.identity);
+                GameObject newEntity = EntitiesPoolManager.instance.GetEntityFromPool(EntityType.PIRATE);
+                newEntity.transform.position = randPos;
             }
             for (int j = 0; j < m_NumOfTentaclesPerTL; j++)
             {
                 randPos = GetValidSpawnPoint();
-                GameObject.Instantiate(m_TentaclePrefab, randPos, Quaternion.identity);
+                GameObject newEntity = EntitiesPoolManager.instance.GetEntityFromPool(EntityType.TENTACLE);
+                newEntity.transform.position = randPos;
             }
             for (int j = 0; j < m_NumOfBarrelsPerTL; j++)
             {
                 randPos = GetValidSpawnPoint();
+                GameObject newEntity = EntitiesPoolManager.instance.GetEntityFromPool(EntityType.EXPLOSIVE_BARREL);
+                newEntity.transform.position = randPos;
                 //The barrels need to be rotated
-                GameObject.Instantiate(m_BarrelPrefab, randPos, Quaternion.Euler(-90, 0, 90));
+                newEntity.transform.rotation = Quaternion.Euler(-90, 0, 90);
+            }
+            for (int j = 0; j < m_NumOfFishBankPerTL; j++)
+            {
+                if((i * m_NumOfFishBankPerTL) <= EntitiesPoolManager.instance.m_MaxNumOfFishBanks) //Make sure there are not more than the allow num of banks
+                {
+                    randPos = GetValidSpawnPoint();
+                    GameObject newEntity = EntitiesPoolManager.instance.GetEntityFromPool(EntityType.FISH_BANK);
+                    newEntity.transform.position = randPos;
+
+                }
             }
         }
-
     }
 
     //Gets random positions until there is a valid one and returns it
@@ -105,6 +148,8 @@ public class NavMeshSpawner : MonoBehaviour
             i++;
             spawnPos = GetRandPos();
         } while (!CheckIfPathIsValid(spawnPos, m_Player.position) && i<10);
+
+        Debug.Log(i);
 
         return spawnPos;
     }

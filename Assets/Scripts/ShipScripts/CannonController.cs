@@ -64,7 +64,6 @@ public class CannonController : MonoBehaviour
         //We can shoot when it isnt on cooldown and the player presses the button
         if (Time.time > m_ShootColdowntimer && m_ShootIsPressed && Time.timeScale != 0)
         {
-            m_ShootColdowntimer = Time.time + m_ShootCooldown;
             Shoot();
         }
     }
@@ -82,9 +81,17 @@ public class CannonController : MonoBehaviour
 
     public void Shoot()
     {
-        //We shake both the cannon and the main camera
-        StartCoroutine(m_MainCameraShake.Shake(m_ShakeTime, m_MainCamShakeMagnitude));
-        StartCoroutine(m_CannonCameraShake.Shake(m_ShakeTime, m_CannonCamShakeMagnitude));
+        //We shake the corresponding camera
+        if(m_MainCameraShake.isActiveAndEnabled)
+        {
+            StartCoroutine(m_MainCameraShake.Shake(m_ShakeTime, m_MainCamShakeMagnitude));
+        }
+        else
+        {
+            StartCoroutine(m_CannonCameraShake.Shake(m_ShakeTime, m_CannonCamShakeMagnitude));
+        }
+
+        m_ShootColdowntimer = Time.time + m_ShootCooldown;
 
         //We instantiate the projectile
         GameObject projectile = Instantiate(m_Projectile, m_CannonEndPoint.position, m_CannonEndPoint.rotation);
@@ -106,8 +113,14 @@ public class CannonController : MonoBehaviour
     public void Recoil()
     {
         //After each attack, the boat will suffer knockback from the shot
-        Vector3 direction = transform.position - m_CannonEndPoint.position;
-        m_ShipRigidbody.AddForce(direction * m_RecoilFroce, ForceMode.VelocityChange);
+        Vector3 forceDirection = transform.position - m_CannonEndPoint.position;
+
+        //We restrict the force direction so that it doesnt make the boat change Y pos
+        Vector3 restrainedForceDirection = new Vector3(forceDirection.x, 0.0f, forceDirection.z);
+
+        //Changes the positions of the force on the y axis, so the ship rotates when shooting. 3.3 is magic number that makes it look good
+        m_ShipRigidbody.AddForceAtPosition(restrainedForceDirection * m_RecoilFroce,
+            new Vector3(transform.position.x, transform.position.y - 3.3f, transform.position.z), ForceMode.VelocityChange);
     }
 
 }

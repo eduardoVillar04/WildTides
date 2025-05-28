@@ -6,21 +6,15 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Purchasing.Extension;
 using UnityEngine.Rendering;
+using static UnityEngine.GraphicsBuffer;
 
 public class PirateController : Enemy
 {
     public int m_Damage;
 
-    [Header("PATROL")]
-    public Transform m_Patrol;
-
     [Header("PURSUIT VARIABLES")]
     public float m_PursuitSpeed;
     public float m_StoppingDistance;
-    public Transform[] m_AllTargetPoints;
-    public int m_CurrentTargetPointIndex = 0;
-    public Transform m_CurrentTargetPoint;
-    public bool m_IsPatrolingEnemy;
 
     [Header("SHOOTING VARIABLES")]
     public float m_SpeedWhileShooting;
@@ -29,13 +23,13 @@ public class PirateController : Enemy
     public Transform m_CannonTransform;
     public float m_CannonRotationSpeed;
     public GameObject m_BulletPrefab;
-    public float m_BulletSpeed;
     public float m_TimeBetweenShots;
     public float m_ShotTimer;
+    public float m_ShootingAngle = 45.0f;
+    public float m_SecsBulletIsIntangibleAfterShooting = 0.3f;
 
     [Header("NAVIGATION VARIABLES")]
-    public Vector3 m_ReturnPoint;
-    public float m_TimeBetweenSetDestination;
+    public float m_TimeBetweenRerouting;
     private float m_RerouteTimer;
 
     [Header("COMPONENTS")]
@@ -43,24 +37,27 @@ public class PirateController : Enemy
     public NavMeshAgent m_NavMeshAgent;
     public Transform m_PlayerTransform;
     public GameObject m_TerrainCollider;
+    public GameObject m_Floaters;
 
     [Header("Audio")]
     public AudioClip m_ShootSound;
+
     public enum PirateStates
     {
         NONE = -1,
-        GO_TO_NEXT_POINT,
         CHECKING_FOR_PLAYER,
         PURSUING,
-        RETURN_TO_POINT
     }
 
-    public PirateStates m_CurrentState = PirateStates.CHECKING_FOR_PLAYER;
+    public PirateStates m_CurrentState = PirateStates.NONE;
+    private PirateStates m_LastState = PirateStates.NONE;
 
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
+        m_CurrentState = PirateStates.CHECKING_FOR_PLAYER;
+        m_LastState = m_CurrentState;
 
         //almost ready to fire
         m_ShotTimer = m_TimeBetweenShots - 0.5f;
@@ -68,31 +65,11 @@ public class PirateController : Enemy
         m_VisionSphere = GetComponent<SphereCollider>();
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
 
+        //Navmeshagent starts disabled so that the pirate floats initially
+        m_NavMeshAgent.enabled = false;
+
         //We find the player transforms by searching it with the tag
         m_PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-
-        //The return point for the pirate will be wherever it spawns
-
-        //If the patrol transform is null, an exception will be thrown
-        try
-        {
-            //We put all the patrol points into a list
-            m_AllTargetPoints = new Transform[m_Patrol.childCount];
-            for (int i = 0; i < m_AllTargetPoints.Length; i++)
-            {
-                m_AllTargetPoints[i] = m_Patrol.GetChild(i);
-            }
-            m_CurrentTargetPoint = m_AllTargetPoints[m_CurrentTargetPointIndex];
-            m_IsPatrolingEnemy = true;
-            m_CurrentState = PirateStates.GO_TO_NEXT_POINT;
-            m_CurrentTargetPointIndex = -1;
-        }
-        catch (System.Exception)
-        {
-            m_IsPatrolingEnemy = false;
-            m_ReturnPoint = transform.position;
-            m_CurrentState = PirateStates.CHECKING_FOR_PLAYER;
-        }
 
     }
 
@@ -101,52 +78,42 @@ public class PirateController : Enemy
     {
         base.Update();
 
+        OnStateChanged();
+
         switch (m_CurrentState)
         {
-            case PirateStates.GO_TO_NEXT_POINT:
-                GoToNextPoint();
-                break;
             case PirateStates.CHECKING_FOR_PLAYER:
                 CheckingForPlayer();
                 break;
             case PirateStates.PURSUING:
                 Pursuit();
                 break;
-            case PirateStates.RETURN_TO_POINT:
-                ReturnToPoint();
-                break;
             default:
                 break;
         }
 
+        m_LastState = m_CurrentState;
     }
+
+    private void OnStateChanged()
+    {
+        if(m_LastState != m_CurrentState)
+        {
+            //Switch if navMeshAgent is enabled if pirate entered or left checking for players
+            //When in checking for players the pirate has the navmeshagent component disabled so that floaters work, when it leaves the navmesh is enabled again
+            if(m_LastState == PirateStates.CHECKING_FOR_PLAYER || m_CurrentState == PirateStates.CHECKING_FOR_PLAYER)
+            {
+                m_Floaters.SetActive(!m_Floaters.activeSelf);
+                m_NavMeshAgent.enabled = !m_NavMeshAgent.enabled;
+            }
+        }
+    }
+
     public void CheckingForPlayer()
     {
         //We activate autobraking so the patroling pirates dont go past the patrol point
         m_NavMeshAgent.autoBraking = true;
-        if(!m_IsPatrolingEnemy) m_NavMeshAgent.isStopped = true;
-        
-        if (m_IsPatrolingEnemy && m_NavMeshAgent.remainingDistance < 0.1f)
-        {
-            m_CurrentState = PirateStates.GO_TO_NEXT_POINT;
-        }
-
-    }
-
-    public void GoToNextPoint()
-    {
-        //We add the aproppiate amount to the index, and we send the pirate to the next patrol point
-        m_CurrentTargetPointIndex++;
-        if (m_CurrentTargetPointIndex >= m_AllTargetPoints.Length)
-        {
-            m_CurrentTargetPointIndex = 0;
-        }
-        m_CurrentTargetPoint = m_AllTargetPoints[m_CurrentTargetPointIndex];
-
-        m_NavMeshAgent.SetDestination(m_CurrentTargetPoint.position);
-        m_NavMeshAgent.isStopped = false;
-
-        m_CurrentState = PirateStates.CHECKING_FOR_PLAYER;
+        m_NavMeshAgent.isStopped = true;
     }
 
     public void Pursuit()
@@ -155,12 +122,11 @@ public class PirateController : Enemy
         m_NavMeshAgent.autoBraking = true;
         m_NavMeshAgent.isStopped = false;
 
-        //[anterior]
         //The route is not calculated every frame to boost performance
         if (Time.time > m_RerouteTimer)
         {
             m_NavMeshAgent.SetDestination(m_PlayerTransform.position);
-            m_RerouteTimer = Time.time + m_TimeBetweenSetDestination;
+            m_RerouteTimer = Time.time + m_TimeBetweenRerouting;
             m_NavMeshAgent.stoppingDistance = m_StoppingDistance;
         }
 
@@ -198,35 +164,43 @@ public class PirateController : Enemy
 
     public void Shoot()
     {
-        GameObject cannonBullet = Instantiate(m_BulletPrefab, m_BulletSpawnPoint.position, Quaternion.identity);
-        Rigidbody cbRB = cannonBullet.GetComponent<Rigidbody>();
-        Vector3 direction = m_PlayerTransform.position - m_BulletSpawnPoint.position;
-        cbRB.AddForce(direction.normalized * m_BulletSpeed, ForceMode.VelocityChange);
+        //NEW SHOOTING BEHAVIOUR
+
+        //Might have to not take into account the Y component of the vector to get better results, these formulas are for objects in the same altitude
+
+        Vector3 targetPos = new Vector3(m_PlayerTransform.position.x, m_BulletSpawnPoint.position.y, m_PlayerTransform.position.z);
+        Vector3 directionVector = targetPos - m_BulletSpawnPoint.position;
+        float distanceToTarget = directionVector.magnitude;
+
+        //Instantiate the bullet so its forward vector is towards the target
+        GameObject newBullet = Instantiate(m_BulletPrefab, m_BulletSpawnPoint.position, Quaternion.LookRotation(directionVector));
+        Rigidbody bulletRb = newBullet.GetComponent<Rigidbody>();
+        Transform bulletTransform = newBullet.GetComponent<Transform>();
+
+        Vector3 initialLinearVelocity = CalculateInitialLinearVelocity(distanceToTarget);
+        bulletRb.AddForce(initialLinearVelocity.z * bulletTransform.forward, ForceMode.VelocityChange);
+        bulletRb.AddForce(initialLinearVelocity.y * bulletTransform.up, ForceMode.VelocityChange);
+
+        //We change the collider state from trigger to not trigger after spawning the bullet so that it doesnt destroy the enemy that shoots it
+        StartCoroutine(ChangeColliderState(newBullet.GetComponent<Collider>(), m_SecsBulletIsIntangibleAfterShooting));
+
         //Audio
         SoundEffectsManager.instance.PlaySoundFXClip(m_ShootSound, transform, 0.6f);
     }
 
-
-    public void ReturnToPoint()
+    private Vector3 CalculateInitialLinearVelocity(float distanceToTarget)
     {
-        m_NavMeshAgent.autoBraking = true;
-        m_NavMeshAgent.isStopped = false;
-        
-        if(!m_IsPatrolingEnemy)
-        {
-            m_NavMeshAgent.SetDestination(m_ReturnPoint);
-        }
-        else
-        {
-            m_NavMeshAgent.SetDestination(m_CurrentTargetPoint.position);
-        }
-
-        if(m_NavMeshAgent.remainingDistance < 1f)
-        {
-            m_CurrentState = PirateStates.CHECKING_FOR_PLAYER;
-        }
+        //Formulas in page 121 of physics for game developers
+        float velocityMagnitude = Mathf.Sqrt((distanceToTarget * Physics.gravity.magnitude) / (2 * Mathf.Sin(m_ShootingAngle) * Mathf.Cos(m_ShootingAngle)));
+        Vector3 initialVelocity = new Vector3(0, velocityMagnitude * Mathf.Cos(m_ShootingAngle), velocityMagnitude * Mathf.Sin(m_ShootingAngle));
+        return initialVelocity;
     }
 
+    private IEnumerator ChangeColliderState(Collider objCollider, float intangibleTime)
+    {
+        yield return new WaitForSeconds(intangibleTime);
+        objCollider.isTrigger = !objCollider.isTrigger;
+    }
 
     public void OnTriggerEnter(Collider other)
     {

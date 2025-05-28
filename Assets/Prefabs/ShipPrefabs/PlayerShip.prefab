@@ -6036,6 +6036,7 @@ GameObject:
   - component: {fileID: 5803667112111238344}
   - component: {fileID: 1790809471613563674}
   - component: {fileID: 513040281815799273}
+  - component: {fileID: 5014116440092148066}
   m_Layer: 0
   m_Name: BuoyantShip
   m_TagString: Player
@@ -6284,6 +6285,20 @@ MonoBehaviour:
   m_CurrentShipSpeed: 0
   m_MaxShipSpeedMagnitude: 10
   m_RandomFactor: 0.5
+--- !u!114 &5014116440092148066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5356595535704704301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94b890b9184285c40a7cb2e7c5d9b5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChestShip: {fileID: 9039420963625122841}
+  m_HasChest: 1
 --- !u!1 &5590291868433466973
 GameObject:
   m_ObjectHideFlags: 0
